@@ -144,13 +144,17 @@
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
             border: 1px solid rgba(255, 255, 255, 0.1);
             max-width: 500px;
+            width: 100%;
             margin: 0 auto;
+            overflow: hidden;
         }
 
         .hero-iframe iframe {
             border-radius: 10px;
             width: 100%;
             height: 600px;
+            max-height: 70vh;
+            display: block;
         }
 
         .hero-badge {
@@ -188,7 +192,7 @@
         .cta-buttons {
             display: flex;
             gap: 20px;
-            justify-content: center;
+            justify-content: flex-start;
             flex-wrap: wrap;
         }
 
@@ -393,10 +397,10 @@
             background: white;
         }
 
-        /* Dashboard Preview Section */
+        /* Dashboard Preview */
         .dashboard-preview {
             padding: 80px 20px;
-            background: white;
+            background: #1a1c2e;
         }
 
         .dashboard-mockup {
@@ -766,6 +770,16 @@
         }
 
         /* Mobile Responsive */
+        @media (max-width: 1200px) {
+            .hero-iframe {
+                max-width: 450px;
+            }
+            
+            .hero-iframe iframe {
+                height: 500px;
+            }
+        }
+
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -794,6 +808,11 @@
 
             .hero-iframe {
                 max-width: 100%;
+                padding: 15px;
+            }
+
+            .hero-iframe iframe {
+                height: 450px;
             }
 
             .features-grid,
@@ -840,20 +859,12 @@
                 </div>
             </div>
             <div class="hero-iframe">
-                <!-- Temporary placeholder to test -->
-                <div style="background: rgba(255,255,255,0.1); padding: 40px; border-radius: 10px; text-align: center; min-height: 600px; display: flex; align-items: center; justify-content: center; flex-direction: column;">
-                    <p style="color: white; margin-bottom: 20px;">Loading chatbot...</p>
-                    <p style="color: rgba(255,255,255,0.6); font-size: 14px;">If the chatbot doesn't load, try visiting directly:</p>
-                    <a href="https://beibeiamigosgpt.onrender.com" target="_blank" style="color: #8b5cf6; text-decoration: none; margin-top: 10px;">Open in new tab →</a>
-                </div>
                 <iframe 
                     src="https://beibeiamigosgpt.onrender.com" 
                     width="100%" 
                     height="600" 
-                    style="border: none; border-radius: 10px; display: none;" 
-                    title="Beibei Amigos Assistant"
-                    onload="this.style.display='block'; this.previousElementSibling.style.display='none';"
-                    onerror="console.error('Failed to load iframe');">
+                    style="border: none; border-radius: 10px;" 
+                    title="Beibei Amigos Assistant">
                 </iframe>
             </div>
         </div>
