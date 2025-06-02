@@ -88,11 +88,11 @@
             transform: translateY(-2px);
         }
 
-        /* Hero Section */
+        /* Hero Section - Updated for larger chatbot */
         .hero {
             background: linear-gradient(135deg, #2b2d42 0%, #3f4164 100%);
             padding: 150px 20px 80px;
-            min-height: 800px;
+            min-height: 900px; /* Increased height */
             display: flex;
             align-items: center;
             position: relative;
@@ -122,10 +122,10 @@
         }
 
         .hero-container {
-            max-width: 1400px;
+            max-width: 1600px; /* Increased max-width */
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1.2fr; /* Adjusted ratio to give more space to chatbot */
             gap: 60px;
             align-items: center;
             position: relative;
@@ -139,26 +139,37 @@
 
         .hero-iframe {
             background: rgba(255, 255, 255, 0.05);
-            padding: 15px;
+            padding: 25px; /* Increased padding */
             border-radius: 20px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            max-width: 500px;
+            max-width: 700px; /* Increased from 500px */
             width: 100%;
             margin: 0 auto;
             overflow: hidden;
             position: relative;
         }
 
+        .hero-iframe::before {
+            content: "Live Demo";
+            position: absolute;
+            top: -15px;
+            left: 30px;
+            background: #22d3ee;
+            color: #1a1c2e;
+            padding: 5px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            z-index: 1;
+        }
+
         .hero-iframe iframe {
             border-radius: 10px;
             width: 100%;
-            height: 650px;
-            max-height: 75vh;
+            height: 700px; /* Increased from 600px */
+            max-height: 80vh; /* Increased from 70vh */
             display: block;
-            position: relative;
-            top: -30px; /* Shift content up to show the head */
-            margin-bottom: -30px; /* Compensate for the shift */
         }
 
         .hero-badge {
@@ -235,6 +246,19 @@
             background: rgba(255, 255, 255, 0.1);
             border-color: white;
             transform: translateY(-3px);
+        }
+
+        /* Arrow animation */
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(0);
+            }
+            40% {
+                transform: translateX(10px);
+            }
+            60% {
+                transform: translateX(5px);
+            }
         }
 
         /* Features Section */
@@ -321,17 +345,17 @@
             line-height: 1.8;
         }
 
-        /* Demo Section */
+        /* Demo Section - Updated for larger chatbot */
         .demo-section {
             padding: 80px 20px;
             background: #2b2d42;
         }
 
         .demo-container {
-            max-width: 1200px;
+            max-width: 1400px; /* Increased from 1200px */
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1.2fr; /* Adjusted ratio */
             gap: 60px;
             align-items: center;
         }
@@ -374,10 +398,13 @@
 
         .demo-frame {
             background: white;
-            padding: 20px;
+            padding: 25px; /* Increased padding */
             border-radius: 20px;
             box-shadow: 0 20px 60px rgba(0,0,0,0.1);
             position: relative;
+            max-width: 700px; /* Added max-width */
+            width: 100%;
+            margin: 0 auto;
         }
 
         .demo-frame::before {
@@ -395,7 +422,7 @@
 
         .demo-frame iframe {
             width: 100%;
-            height: 600px;
+            height: 700px; /* Increased from 600px */
             border: none;
             border-radius: 10px;
             background: white;
@@ -773,14 +800,44 @@
             color: #666;
         }
 
-        /* Mobile Responsive */
-        @media (max-width: 1200px) {
-            .hero-iframe {
-                max-width: 450px;
+        /* Mobile Responsive - Updated for larger chatbot */
+        @media (max-width: 1400px) {
+            .hero-container,
+            .demo-container {
+                max-width: 1200px;
             }
             
-            .hero-iframe iframe {
-                height: 500px;
+            .hero-iframe,
+            .demo-frame {
+                max-width: 600px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .hero-iframe {
+                max-width: 500px;
+            }
+            
+            .hero-iframe iframe,
+            .demo-frame iframe {
+                height: 600px;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .hero-container,
+            .demo-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .hero-content {
+                text-align: center;
+            }
+            
+            .hero-iframe,
+            .demo-frame {
+                max-width: 600px;
             }
         }
 
@@ -789,13 +846,9 @@
                 display: none;
             }
 
-            .hero-container {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .hero-content {
-                text-align: center;
+            .hero {
+                min-height: auto;
+                padding: 120px 20px 60px;
             }
 
             .hero h1 {
@@ -810,17 +863,18 @@
                 justify-content: center;
             }
 
-            .hero-iframe {
+            .hero-iframe,
+            .demo-frame {
                 max-width: 100%;
                 padding: 15px;
             }
 
-            .hero-iframe iframe {
-                height: 450px;
+            .hero-iframe iframe,
+            .demo-frame iframe {
+                height: 500px;
             }
 
             .features-grid,
-            .demo-container,
             .contact-container {
                 grid-template-columns: 1fr;
             }
@@ -834,6 +888,13 @@
                 text-align: center;
             }
         }
+
+        @media (max-width: 480px) {
+            .hero-iframe iframe,
+            .demo-frame iframe {
+                height: 400px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -843,7 +904,6 @@
             <a href="#" class="logo">parlami.ai</a>
             <div class="nav-links">
                 <a href="#features">Features</a>
-                <a href="#demo">Live Demo</a>
                 <a href="#pricing">Pricing</a>
                 <a href="#contact">Contact</a>
                 <a href="/dashboard.html" class="login-btn">Login</a>
@@ -855,18 +915,24 @@
     <section class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <div class="hero-badge">Get Started</div>
                 <h1>Intelligent AI Assistant<br><span style="color: #8b5cf6;">for Preschools</span></h1>
-                <p>Turn curious website visitors into booked tours and enrolled families—effortlessly with AI-powered conversations.</p>
+                <p>Turn curious website visitors into booked tours and enrolled families—effortlessly with AI-powered conversations personalized with your preschool's information, family handbook, tuition rates, and any custom content you want to include.</p>
                 <div class="cta-buttons">
                     <a href="#contact" class="cta-secondary">Schedule a Demo</a>
+                </div>
+                <div style="margin-top: 30px; display: flex; align-items: center; gap: 15px;">
+                    <div>
+                        <h3 style="color: white; font-size: 32px; margin-bottom: 8px;">See It In Action</h3>
+                        <p style="color: rgba(255, 255, 255, 0.8); font-size: 18px;">Try our live chatbot demo from Beibei Amigos Preschool and see how it could work for your school.</p>
+                    </div>
+                    <div style="font-size: 48px; animation: bounce 2s infinite;">➡️</div>
                 </div>
             </div>
             <div class="hero-iframe">
                 <iframe 
                     src="https://beibeiamigosgpt.onrender.com" 
                     width="100%" 
-                    height="600" 
+                    height="700" 
                     style="border: none; border-radius: 10px;" 
                     title="Beibei Amigos Assistant">
                 </iframe>
@@ -897,7 +963,7 @@
                 <div class="feature-card">
                     <div class="feature-icon">
                         <span style="font-size: 48px;">😊</span>
-                        <h3>Warm, Helpful, and Human</h3>
+                        <h3>Warm, Helpful, and Human-like</h3>
                     </div>
                     <p>Friendly, supportive, and professional—like your most welcoming preschool director. Parents feel heard and confident about reaching out.</p>
                 </div>
@@ -917,34 +983,14 @@
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <span style="font-size: 48px;">🌟</span>
-                        <h3>24/7 Smart Support</h3>
+                        <span style="font-size: 48px;">🎨</span>
+                        <h3>Fully Customizable for Your School</h3>
                     </div>
-                    <p>Let your website work for you around the clock. Save time, book more tours, and impress parents from the first click.</p>
+                    <p>Make it uniquely yours—choose your chatbot's appearance, add your school's logo or mascot image, include a welcome video, and customize the suggested questions parents see. Every school's assistant is different, reflecting your unique identity and values.</p>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Demo Section -->
-    <section class="demo-section" id="demo">
-        <div class="demo-container">
-            <div class="demo-content">
-                <h2>See It In Action</h2>
-                <p>Try our live chatbot demo from Beibei Amigos Preschool and see how it could work for your school.</p>
-                <div class="demo-features">
-                    <div class="demo-feature">Instant Responses</div>
-                    <div class="demo-feature">Secure Conversations</div>
-                    <div class="demo-feature">Detailed Analytics</div>
-                    <div class="demo-feature">Continuous Learning</div>
-                </div>
-            </div>
-            <div class="demo-frame">
-                <iframe src="https://beibeiamigosgpt.onrender.com" title="Parlami.ai Demo"></iframe>
-            </div>
-        </div>
-    </section>
-
     <!-- Dashboard Preview -->
     <section class="dashboard-preview">
         <div class="container">
@@ -1019,30 +1065,19 @@
         <div class="container">
             <h2 class="section-title">Simple, Transparent Pricing</h2>
             <p class="section-subtitle">Everything you need to convert more website visitors into enrolled families.</p>
-            <div class="pricing-cards">
-                <div class="pricing-card">
+            <div class="pricing-cards" style="max-width: 400px; margin: 60px auto 0;">
+                <div class="pricing-card featured">
                     <h3>Standard</h3>
-                    <div class="price">$99<span> / month</span></div>
-                    <p class="price-subtitle">Perfect for small to medium preschools</p>
+                    <div class="price">$25<span> / month</span></div>
+                    <p class="price-subtitle">+ $200 one-time setup fee</p>
                     <ul class="pricing-features">
                         <li>AI-powered chatbot trained on your materials</li>
+                        <li>Personalized with your preschool's information</li>
                         <li>Mobile-responsive integration</li>
-                        <li>Basic analytics dashboard</li>
-                        <li>Weekly conversation reports</li>
+                        <li>Analytics dashboard</li>
+                        <li>Conversation tracking and insights</li>
+                        <li>Free updates and fine-tuning</li>
                         <li>Email support</li>
-                    </ul>
-                    <a href="#contact" class="cta-primary">Get Started</a>
-                </div>
-                <div class="pricing-card featured">
-                    <h3>Premium</h3>
-                    <div class="price">$149<span> / month</span></div>
-                    <p class="price-subtitle">Ideal for growing preschool networks</p>
-                    <ul class="pricing-features">
-                        <li>Everything in Standard</li>
-                        <li>Advanced analytics with insights</li>
-                        <li>Custom branding options</li>
-                        <li>Monthly model updates with new information</li>
-                        <li>Priority email & phone support</li>
                     </ul>
                     <a href="#contact" class="cta-primary">Get Started</a>
                 </div>
