@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet Your AI Marketing Team — Parlami.ai</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Quicksand', sans-serif; background: #2b2d42; color: #fff; line-height: 1.6; }
+
+        header { background: rgba(43,45,66,0.98); position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+        nav { max-width: 1200px; margin: 0 auto; padding: 20px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 28px; font-weight: 700; color: white; text-decoration: none; display: flex; align-items: center; gap: 10px; }
+        .logo::before { content: "💬"; font-size: 32px; }
+        .nav-links { display: flex; gap: 30px; align-items: center; }
+        .nav-links a { text-decoration: none; color: rgba(255,255,255,0.8); font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover { color: white; }
+
+        .page-hero { padding: 140px 20px 60px; text-align: center; background: linear-gradient(135deg, #2b2d42, #3f4164); position: relative; overflow: hidden; }
+        .page-hero::before { content: ""; position: absolute; width: 600px; height: 600px; background: rgba(139,92,246,0.08); border-radius: 50%; top: -300px; right: -200px; }
+        .page-hero h1 { font-size: 48px; margin-bottom: 15px; }
+        .page-hero h1 span { background: linear-gradient(135deg, #8b5cf6, #22d3ee); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .page-hero p { font-size: 20px; color: rgba(255,255,255,0.7); max-width: 700px; margin: 0 auto 10px; }
+        .ai-badge { display: inline-block; background: rgba(139,92,246,0.2); border: 1px solid rgba(139,92,246,0.4); color: #a78bfa; padding: 8px 24px; border-radius: 25px; font-weight: 600; font-size: 14px; margin-bottom: 20px; }
+
+        /* Workflow */
+        .workflow { padding: 80px 20px; background: #1a1c2e; }
+        .workflow .container { max-width: 1000px; margin: 0 auto; }
+        .workflow h2 { text-align: center; font-size: 36px; margin-bottom: 40px; }
+        .workflow-steps { display: flex; flex-direction: column; gap: 0; position: relative; }
+        .workflow-steps::before { content: ""; position: absolute; left: 30px; top: 30px; bottom: 30px; width: 3px; background: linear-gradient(180deg, #8b5cf6, #22d3ee); }
+        .wf-step { display: flex; gap: 30px; align-items: flex-start; padding: 20px 0; position: relative; }
+        .wf-icon { width: 60px; height: 60px; border-radius: 50%; background: rgba(139,92,246,0.2); border: 2px solid #8b5cf6; display: flex; align-items: center; justify-content: center; font-size: 28px; flex-shrink: 0; z-index: 1; }
+        .wf-content h3 { font-size: 20px; margin-bottom: 5px; }
+        .wf-content p { color: rgba(255,255,255,0.7); font-size: 16px; }
+
+        /* Agent Profiles */
+        .profiles { padding: 80px 20px; }
+        .profiles .container { max-width: 1200px; margin: 0 auto; }
+        .profiles h2 { text-align: center; font-size: 36px; margin-bottom: 50px; }
+
+        .agent-profile { display: grid; grid-template-columns: 250px 1fr; gap: 40px; align-items: start; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 40px; margin-bottom: 40px; transition: all 0.3s; }
+        .agent-profile:hover { background: rgba(255,255,255,0.07); border-color: rgba(139,92,246,0.3); }
+        .agent-portrait { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; border: 3px solid rgba(139,92,246,0.4); margin: 0 auto; display: block; }
+        .agent-portrait-wrap { text-align: center; }
+        .agent-portrait-wrap .agent-emoji { font-size: 40px; margin-bottom: 10px; display: block; }
+        .agent-portrait-wrap h3 { font-size: 24px; margin-top: 15px; }
+        .agent-portrait-wrap .agent-title { color: #a78bfa; font-size: 14px; font-weight: 600; margin-top: 4px; }
+        .agent-portrait-wrap .ai-label { display: inline-block; background: rgba(34,211,238,0.15); color: #22d3ee; font-size: 11px; padding: 3px 12px; border-radius: 10px; margin-top: 8px; font-weight: 600; letter-spacing: 0.5px; }
+        .agent-details h4 { font-size: 18px; margin: 20px 0 10px; color: #22d3ee; }
+        .agent-details h4:first-child { margin-top: 0; }
+        .agent-details p { color: rgba(255,255,255,0.75); margin-bottom: 10px; }
+        .agent-details ul { list-style: none; padding: 0; }
+        .agent-details ul li { padding: 6px 0; color: rgba(255,255,255,0.75); display: flex; align-items: center; gap: 10px; }
+        .agent-details ul li::before { content: "→"; color: #8b5cf6; font-weight: 700; }
+        .collab-tag { display: inline-block; background: rgba(139,92,246,0.15); color: #a78bfa; padding: 3px 12px; border-radius: 12px; font-size: 13px; margin: 3px 3px 3px 0; }
+
+        /* Approval Section */
+        .approval { padding: 80px 20px; background: #1a1c2e; }
+        .approval .container { max-width: 900px; margin: 0 auto; text-align: center; }
+        .approval h2 { font-size: 36px; margin-bottom: 20px; }
+        .approval p { color: rgba(255,255,255,0.7); font-size: 18px; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto; }
+        .approval-flow { display: flex; align-items: center; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 40px; }
+        .af-step { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 15px; padding: 20px; text-align: center; min-width: 160px; }
+        .af-step .af-icon { font-size: 36px; margin-bottom: 8px; }
+        .af-step h4 { font-size: 15px; }
+        .af-step p { font-size: 13px; color: rgba(255,255,255,0.6); }
+        .af-arrow { font-size: 28px; color: #8b5cf6; }
+        .cta-primary { background: #8b5cf6; color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 18px; transition: all 0.3s; display: inline-block; }
+        .cta-primary:hover { background: #7c3aed; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(139,92,246,0.3); }
+
+        footer { background: #111; color: #999; text-align: center; padding: 30px 20px; }
+
+        @media (max-width: 768px) {
+            .agent-profile { grid-template-columns: 1fr; text-align: center; }
+            .nav-links { display: none; }
+            .page-hero h1 { font-size: 32px; }
+            .approval-flow { flex-direction: column; }
+            .af-arrow { transform: rotate(90deg); }
+            .workflow-steps::before { left: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">parlami.ai</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#features">Features</a>
+                <a href="#agents">Meet the Team</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="page-hero">
+        <div class="ai-badge">🤖 AI-Powered Marketing Specialists</div>
+        <h1>Meet <span>Your AI Marketing Team</span></h1>
+        <p>12 specialized AI agents working 24/7 to grow your preschool — while you focus on education. Every agent is artificial intelligence, not a real person, designed to deliver real marketing results.</p>
+    </section>
+
+    <!-- Workflow Section -->
+    <section class="workflow">
+        <div class="container">
+            <h2>How Your Team Works Together</h2>
+            <div class="workflow-steps">
+                <div class="wf-step">
+                    <div class="wf-icon">☀️</div>
+                    <div class="wf-content">
+                        <h3>Morning Briefing</h3>
+                        <p>Every morning, Marco gathers data from all agents — ad performance, traffic spikes, new reviews, ranking changes — and delivers a concise briefing to your inbox or Discord.</p>
+                    </div>
+                </div>
+                <div class="wf-step">
+                    <div class="wf-icon">🔍</div>
+                    <div class="wf-content">
+                        <h3>Issue Detection</h3>
+                        <p>Agents continuously monitor their domains. Bussola spots a traffic drop. Annunci flags a bleeding ad campaign. Stella catches a negative review. Issues are identified in real time.</p>
+                    </div>
+                </div>
+                <div class="wf-step">
+                    <div class="wf-icon">🚨</div>
+                    <div class="wf-content">
+                        <h3>Smart Alerts</h3>
+                        <p>Marco triages alerts by urgency and sends you a clear notification: what happened, why it matters, and a recommended fix — with a one-click approval button.</p>
+                    </div>
+                </div>
+                <div class="wf-step">
+                    <div class="wf-icon">✅</div>
+                    <div class="wf-content">
+                        <h3>You Approve</h3>
+                        <p>Nothing happens without your say-so. Review the recommendation, click "Approve" or "Edit," and the responsible agent executes immediately. You stay in control.</p>
+                    </div>
+                </div>
+                <div class="wf-step">
+                    <div class="wf-icon">⚡</div>
+                    <div class="wf-content">
+                        <h3>Agent Executes</h3>
+                        <p>The specialist agent carries out the approved action — pausing a bad ad, publishing a blog post, responding to a review, fixing schema markup — and reports back with results.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agent Profiles -->
+    <section class="profiles" id="agents">
+        <div class="container">
+            <h2>Your 12 AI Marketing Specialists</h2>
+
+            <!-- Marco -->
+            <div class="agent-profile" id="marco">
+                <div class="agent-portrait-wrap">
+                    <span class="agent-emoji">☕</span>
+                    <img src="portraits/marco.png" alt="Marco AI Agent" class="agent-portrait" loading="lazy">
+                    <h3>Marco</h3>
+                    <div class="agent-title">Direttore di Marketing</div>
+                    <div class="ai-label">AI AGENT</div>
+                </div>
+                <div class="agent-details">
+                    <h4>What Marco Does For You</h4>
+                    <p>Marco is your AI marketing director — the orchestrator who keeps every agent in sync. He delivers your morning briefing, triages alerts, and makes sure nothing falls through the cracks.</p>
+                    <h4>Key Capabilities</h4>
+                    <ul>
+                        <li>Delivers daily morning briefings with key metrics from all agents</li>
+                        <li>Coordinates multi-agent workflows (e.g., Spia finds keyword opportunity → Penna writes content → Architetto publishes)</li>
+                        <li>Triages alerts by priority and sends you clear action items</li>
+                        <li>Manages the approval flow — nothing goes live without your OK</li>
+                        <li>Provides weekly and monthly performance summaries</li>
+                    </ul>
+                    <h4>Collaborates With</h4>
+                    <div><span class="collab-tag">All 11 Agents</span></div>
+                </div>
+            </div>
+
+            <!-- Annunci -->
+            <div class="agent-profile" id="annunci">
+                <div class="agent-portrait-wrap">
+                    <span class="agent-emoji">📣</span>
+                    <img src="portraits/annunci.png" alt="Annunci AI Agent" class="agent-portrait" loading="lazy">
+                    <h3>Annunci</h3>
+                    <div class="agent-title">Stratega Pubblicitario</div>
+                    <div class="ai-label">AI AGENT</div>
+                </div>
+                <div class="agent-details">
+                    <h4>What Annunci Does For You</h4>
+                    <p>Annunci is your Google Ads specialist — monitoring campaigns 24/7, catching wasted spend before it bleeds your budget, and generating new ad creatives that convert.</p>
+                    <h4>Key Capabilities</h4>
+                    <ul>
+                        <li>Monitors Google Ads campaigns in real-time for anomalies</li>
+                        <li>Performs forensic analysis on underperforming campaigns</li>
+                        <li>Generates new ad copy and creative variations</li>
+                        <li>Optimizes bidding strategies and keyword targeting</li>
+                        <li>Alerts you immediately when spend exceeds thresholds</li>
+                    </ul>
+                    <h4>Collaborates With</h4>
+                    <div><span class="collab-tag">Marco</span> <span class="collab-tag">Bussola</span> <span class="collab-tag">Spia</span> <span class="collab-tag">Faccia</span></div>
+                </div>
+            </div>
+
+            <!-- Bussola -->
+            <div class="agent-profile" id="bussola">
+                <div class="agent-portrait-wrap">
+                    <span class="agent-emoji">📊</span>
+                    <img src="portraits/bussola.png" alt="Bussola AI Agent" class="agent-portrait" loading="lazy">
+                    <h3>Bussola</h3>
+                    <div class="agent-title">Analista di Dati</div>
+                    <div class="ai-label">AI AGENT</div>
+                </div>
+                <div class="agent-details">
+                    <h4>What Bussola Does For You</h4>
+                    <p>Bussola is your data compass — she dives deep into Google Analytics 4 to understand where your traffic comes from, what converts, and where opportunities hide.</p>
+                    <h4>Key Capabilities</h4>
+                    <ul>
+                        <li>Analyzes GA4 data for traffic trends and anomalies</li>
+                        <li>Tracks conversion funnels from visit to enrollment inquiry</li>
+                        <li>Identifies top-performing pages and content</li>
+                        <li>Spots traffic drops and diagnoses causes</li>
+                        <li>Generates weekly analytics reports with actionable insights</li>
+                    </ul>
+                    <h4>Collaborates With</h4>
+                    <div><span class="collab-tag">Marco</span> <span class="collab-tag">Annunci</span> <span class="collab-tag">Spia</span> <span class="collab-tag">Architetto</span></div>
+                </div>
+            </div>
+
+            <!-- Spia -->
+            <div class="agent-profile" id="spia">
+                <div class="agent-portrait-wrap">
+                    <span class="agent-emoji">🔍</span>
+                    <img src="portraits/spia.png" alt="Spia AI Agent" class="agent-portrait" loading="lazy">
+                    <h3>Spia</h3>
+                    <div class="agent-title">Agente di Intelligence SEO</div>
+                    <div class="ai-label">AI AGENT</div>
+                </div>
+                <div class="agent-details">
+                    <h4>What Spia Does For You</h4>
+                    <p>Spia is your SEO intelligence agent — she tracks your keyword rankings, monitors what competitors are doing, and finds untapped opportunities to rank higher.</p>
+                    <h4>Key Capabilities</h4>
+                    <ul>
+                        <li>Tracks keyword rankings across search engines daily</li>
+                        <li>Monitors competitor websites for new content and strategies</li>
+                        <li>Identifies keyword gaps and content opportunities</li>
+                        <li>Analyzes backlink profiles and domain authority trends</li>
+                        <li>Alerts when competitors outrank you on key terms</li>
+                    </ul>
+                    <h4>Collaborates With</h4>
+                    <div><span class="collab-tag">Marco</span> <span class="collab-tag">Penna</span> <span class="collab-tag">Zona</span> <span class="collab-tag">Architetto</span></div>
+                </div>
+            </div>
+
+            <!-- Stella -->
+            <div class="agent-profile" id="stella">
+                <div class="agent-portrait-wrap">
+                    <span class="agent-emoji">⭐</span>
+                    <img src="portraits/stella.png" alt="Stella AI Agent" class="agent-portrait" loading="lazy">
+                    <h3>Stella</h3>
+                    <div class="agent-title">Custode della Reputazione</div>
+                    <div class="ai-label">AI AGENT</div>
+                </div>
+                <div class="agent-details">
+                    <h4>What Stella Does For You</h4>
+                    <p>Stella guards your online reputation — she monitors Google reviews and your Google Business Profile, alerting you instantly to new reviews and helping you respond professionally.</p>
+                    <h4>Key Capabilities</h4>
+                    <ul>
+                        <li>Monitors new Google reviews in real-time</li>
+                        <li>Drafts professional, personalized review responses</li>
+                        <li>Tracks your star rating trends over time</li>
+                        <li>Manages your Google Business Profile optimization</li>
+                        <li>Alerts immediately on negative reviews for fast response</li>
+                    </ul>
+                    <h4>Collaborates With</h4>
+                    <div><span class="collab-tag">Marco</span> <span class="collab-tag">Zona</span> <span class="collab-tag">Piazza</span></div>
+                </div>
+            </div>
+
+            <!-- Zona -->
+            <div class="agent-profile" id="zona">
+                <div class="agent-portrait-wrap">
+                    <span class="agent-emoji">📍</span>
+                    <img src="portraits/zona.png" alt="Zona AI Agent" class="agent-portrait" loading="lazy">
+                    <h3>Zona</h3>
+                    <div class="agent-title">Specialista SEO Locale</div>
+                    <div class="ai-label">AI AGENT</div>
+                </div>
+                <div class="agent-details">
+                    <h4>What Zona Does For You</h4>
+                    <p>Zona dominates local search — he tracks your GeoGrid rankings, optimizes your map pack presence, and ensures parents in your area find you first when searching for preschools.</p>
+                    <h4>Key Capabilities</h4>
+                    <ul>
+                        <li>Runs GeoGrid ranking scans to map your local visibility</li>
+                        <li>Optimizes Google Business Profile for local search</li>
+                        <li>Tracks map pack positions for target keywords</li>
+                        <li>Identifies local citation opportunities</li>
+                        <li>Monitors local competitor positioning</li>
+                    </ul>
+                    <h4>Collaborates With</h4>
+                    <div><span class="collab-tag">Marco</span> <span class="collab-tag">Spia</span> <span class="collab-tag">Stella</span> <span class="collab-tag">Architetto</span></div>
+                </div>
+            </div>
+
+            <!-- Architetto -->
+            <div class="agent-profile" id="architetto">
+                <div class="agent-portrait-wrap">
+                    <span class="agent-emoji">🏗️</span>
+                    <img src="portraits/architetto.png" alt="Architetto AI Agent" class="agent-portrait" loading="lazy">
+                    <h3>Architetto</h3>
+                    <div class="agent-title">Web Architect & Builder</div>
+                    <div class="ai-label">AI AGENT</div>
+                </div>
+                <div class="agent-details">
+                    <h4>What Architetto Does For You</h4>
+                    <p>Architetto is your website builder and health inspector — he ensures your site has proper schema markup, strong CTAs, helpful FAQs, and is ready for AI search engines like ChatGPT and Perplexity.</p>
+                    <h4>Key Capabilities</h4>
+                    <ul>
+                        <li>Monitors website health (speed, errors, broken links)</li>
+                        <li>Implements and maintains schema markup for rich results</li>
+                        <li>Builds new landing pages, FAQ sections, and CTAs</li>
+                        <li>Ensures AI-ready indexing (llms.txt, structured data)</li>
+                        <li>Runs technical SEO audits and fixes issues</li>
+                    </ul>
+                    <h4>Collaborates With</h4>
+                    <div><span class="collab-tag">Marco</span> <span class="collab-tag">Penna</span> <span class="collab-tag">Spia</span> <span class="collab-tag">Zona</span> <span class="collab-tag">Bussola</span></div>
+                </div>
+            </div>
+
+            <!-- Penna -->
+            <div class="agent-profile" id="penna">
+                <div class="agent-portrait-wrap">
+                    <span class="agent-emoji">✍️</span>
+                    <img src="portraits/penna.png" alt="Penna AI Agent" class="agent-portrait" loading="lazy">
+                    <h3>Penna</h3>
+                    <div class="agent-title">Scrittrice di Contenuti</div>
+                    <div class="ai-label">AI AGENT</div>
+                </div>
+                <div class="agent-details">
+                    <h4>What Penna Does For You</h4>
+                    <p>Penna is your content writer — she crafts SEO-optimized blog posts, community pages, and content that brings organic traffic and positions your school as a thought leader.</p>
+                    <h4>Key Capabilities</h4>
+                    <ul>
+                        <li>Writes SEO-optimized blog posts targeting key parent searches</li>
+                        <li>Creates community and neighborhood landing pages</li>
+                        <li>Develops content calendars aligned with enrollment seasons</li>
+                        <li>Writes compelling meta descriptions and page copy</li>
+                        <li>Publishes content directly to your WordPress site (with approval)</li>
+                    </ul>
+                    <h4>Collaborates With</h4>
+                    <div><span class="collab-tag">Marco</span> <span class="collab-tag">Spia</span> <span class="collab-tag">Architetto</span> <span class="collab-tag">Piazza</span></div>
+                </div>
+            </div>
+
+            <!-- Piazza -->
+            <div class="agent-profile" id="piazza">
+                <div class="agent-portrait-wrap">
+                    <span class="agent-emoji">📱</span>
+                    <img src="portraits/piazza.png" alt="Piazza AI Agent" class="agent-portrait" loading="lazy">
+                    <h3>Piazza</h3>
+                    <div class="agent-title">Gestore dei Social Media</div>
+                    <div class="ai-label">AI AGENT</div>
+                </div>
+                <div class="agent-details">
+                    <h4>What Piazza Does For You</h4>
+                    <p>Piazza manages your social media presence — she creates engaging content calendars, drafts posts, and keeps your school visible and active across social platforms.</p>
+                    <h4>Key Capabilities</h4>
+                    <ul>
+                        <li>Creates and manages monthly content calendars</li>
+                        <li>Drafts engaging social media posts with images</li>
+                        <li>Schedules posts for optimal engagement times</li>
+                        <li>Monitors social engagement and responds to comments</li>
+                        <li>Repurposes blog content into social-friendly formats</li>
+                    </ul>
+                    <h4>Collaborates With</h4>
+                    <div><span class="collab-tag">Marco</span> <span class="collab-tag">Penna</span> <span class="collab-tag">Stella</span> <span class="collab-tag">Faccia</span></div>
+                </div>
+            </div>
+
+            <!-- Faccia -->
+            <div class="agent-profile" id="faccia">
+                <div class="agent-portrait-wrap">
+                    <span class="agent-emoji">👤</span>
+                    <img src="portraits/faccia.png" alt="Faccia AI Agent" class="agent-portrait" loading="lazy">
+                    <h3>Faccia</h3>
+                    <div class="agent-title">Specialista Pubblicità Facebook</div>
+                    <div class="ai-label">AI AGENT</div>
+                </div>
+                <div class="agent-details">
+                    <h4>What Faccia Does For You</h4>
+                    <p>Faccia runs your Facebook and Instagram advertising — targeting local parents with compelling ads that drive tour bookings and enrollment inquiries.</p>
+                    <h4>Key Capabilities</h4>
+                    <ul>
+                        <li>Creates and manages Facebook/Instagram ad campaigns</li>
+                        <li>Targets local parent demographics with precision</li>
+                        <li>A/B tests ad creatives and copy variations</li>
+                        <li>Optimizes campaigns for cost-per-lead efficiency</li>
+                        <li>Retargets website visitors who didn't convert</li>
+                    </ul>
+                    <h4>Collaborates With</h4>
+                    <div><span class="collab-tag">Marco</span> <span class="collab-tag">Annunci</span> <span class="collab-tag">Piazza</span> <span class="collab-tag">Bussola</span></div>
+                </div>
+            </div>
+
+            <!-- Lettera -->
+            <div class="agent-profile" id="lettera">
+                <div class="agent-portrait-wrap">
+                    <span class="agent-emoji">💌</span>
+                    <img src="portraits/lettera.png" alt="Lettera AI Agent" class="agent-portrait" loading="lazy">
+                    <h3>Lettera</h3>
+                    <div class="agent-title">Direttrice delle Comunicazioni</div>
+                    <div class="ai-label">AI AGENT</div>
+                </div>
+                <div class="agent-details">
+                    <h4>What Lettera Does For You</h4>
+                    <p>Lettera manages your email campaigns and parent communications — from nurture sequences for prospective families to newsletters for current parents.</p>
+                    <h4>Key Capabilities</h4>
+                    <ul>
+                        <li>Creates email nurture sequences for prospective families</li>
+                        <li>Drafts parent newsletters and school updates</li>
+                        <li>Manages CRM contacts and segmentation</li>
+                        <li>Tracks open rates, clicks, and conversions</li>
+                        <li>Automates follow-ups for tour no-shows</li>
+                    </ul>
+                    <h4>Collaborates With</h4>
+                    <div><span class="collab-tag">Marco</span> <span class="collab-tag">Benvenuta</span> <span class="collab-tag">Bussola</span></div>
+                </div>
+            </div>
+
+            <!-- Benvenuta -->
+            <div class="agent-profile" id="benvenuta">
+                <div class="agent-portrait-wrap">
+                    <span class="agent-emoji">🤗</span>
+                    <img src="portraits/benvenuta.png" alt="Benvenuta AI Agent" class="agent-portrait" loading="lazy">
+                    <h3>Benvenuta</h3>
+                    <div class="agent-title">Assistente AI per Genitori</div>
+                    <div class="ai-label">AI AGENT</div>
+                </div>
+                <div class="agent-details">
+                    <h4>What Benvenuta Does For You</h4>
+                    <p>Benvenuta is your 24/7 website chatbot — she answers parent questions instantly about tuition, programs, schedules, and policies, turning curious visitors into booked tours.</p>
+                    <h4>Key Capabilities</h4>
+                    <ul>
+                        <li>Answers parent questions 24/7 on your website</li>
+                        <li>Trained on your school's handbook, tuition, and policies</li>
+                        <li>Guides parents toward scheduling tours and calling</li>
+                        <li>Speaks multiple languages for diverse communities</li>
+                        <li>Logs all conversations for your review and insights</li>
+                    </ul>
+                    <h4>Collaborates With</h4>
+                    <div><span class="collab-tag">Marco</span> <span class="collab-tag">Lettera</span> <span class="collab-tag">Bussola</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Human-in-the-Loop Approval -->
+    <section class="approval">
+        <div class="container">
+            <h2>You're Always in Control</h2>
+            <p>Our AI agents are powerful, but they never go rogue. Every significant action requires your approval. Here's how it works:</p>
+            <div class="approval-flow">
+                <div class="af-step">
+                    <div class="af-icon">🔍</div>
+                    <h4>Agent Detects Issue</h4>
+                    <p>e.g., ad overspending</p>
+                </div>
+                <div class="af-arrow">→</div>
+                <div class="af-step">
+                    <div class="af-icon">☕</div>
+                    <h4>Marco Reviews</h4>
+                    <p>Triages & recommends</p>
+                </div>
+                <div class="af-arrow">→</div>
+                <div class="af-step">
+                    <div class="af-icon">📬</div>
+                    <h4>You Get Alert</h4>
+                    <p>Clear action + one-click</p>
+                </div>
+                <div class="af-arrow">→</div>
+                <div class="af-step">
+                    <div class="af-icon">✅</div>
+                    <h4>You Approve</h4>
+                    <p>Click "Fix" or edit</p>
+                </div>
+                <div class="af-arrow">→</div>
+                <div class="af-step">
+                    <div class="af-icon">⚡</div>
+                    <h4>Agent Executes</h4>
+                    <p>Instant action + report</p>
+                </div>
+            </div>
+            <a href="index.html#contact" class="cta-primary">Get Your AI Team →</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Parlami.ai. All rights reserved. All team members are AI-powered agents, not real people.</p>
+    </footer>
+</body>
+</html>
