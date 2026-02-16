@@ -3,899 +3,174 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parlami.ai - Intelligent AI Assistant for Preschools</title>
+    <title>Parlami.ai — AI Marketing Team for Preschools</title>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Quicksand',sans-serif;line-height:1.6;color:#fff;overflow-x:hidden;background:#2b2d42}
 
-        body {
-            font-family: 'Quicksand', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            overflow-x: hidden;
-            background: #2b2d42;
-        }
+        /* Header */
+        header{background:rgba(43,45,66,.98);box-shadow:0 2px 10px rgba(0,0,0,.2);position:fixed;width:100%;top:0;z-index:1000;transition:all .3s}
+        nav{max-width:1200px;margin:0 auto;padding:20px;display:flex;justify-content:space-between;align-items:center}
+        .logo{font-size:28px;font-weight:700;color:#fff;text-decoration:none;display:flex;align-items:center;gap:10px}
+        .logo::before{content:"💬";font-size:32px}
+        .nav-links{display:flex;gap:30px;align-items:center}
+        .nav-links a{text-decoration:none;color:rgba(255,255,255,.8);font-weight:500;transition:color .3s}
+        .nav-links a:hover{color:#fff}
+        .login-btn{background:transparent;color:#fff;padding:10px 20px;border-radius:25px;text-decoration:none;transition:all .3s;border:2px solid rgba(255,255,255,.3)}
+        .login-btn:hover{background:rgba(255,255,255,.1);border-color:#fff;transform:translateY(-2px)}
 
-        /* Header & Navigation */
-        header {
-            background: rgba(43, 45, 66, 0.98);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
+        /* Shared */
+        .container{max-width:1200px;margin:0 auto}
+        .section-title{text-align:center;font-size:42px;margin-bottom:20px;font-weight:700}
+        .section-subtitle{text-align:center;font-size:20px;color:rgba(255,255,255,.7);margin-bottom:60px}
+        .ai-badge{display:inline-block;background:rgba(139,92,246,.2);border:1px solid rgba(139,92,246,.4);color:#a78bfa;padding:8px 24px;border-radius:25px;font-weight:600;font-size:14px}
+        .cta-primary{background:#8b5cf6;color:#fff;padding:15px 40px;border-radius:30px;text-decoration:none;font-weight:600;font-size:18px;transition:all .3s;display:inline-block}
+        .cta-primary:hover{background:#7c3aed;transform:translateY(-3px);box-shadow:0 10px 20px rgba(139,92,246,.3)}
+        .cta-secondary{background:transparent;color:#fff;padding:15px 40px;border-radius:30px;text-decoration:none;font-weight:600;font-size:18px;transition:all .3s;display:inline-block;border:2px solid rgba(255,255,255,.3)}
+        .cta-secondary:hover{background:rgba(255,255,255,.1);border-color:#fff;transform:translateY(-3px)}
 
-        nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+        /* Hero */
+        .hero{background:linear-gradient(135deg,#2b2d42,#3f4164);padding:150px 20px 150px;min-height:1100px;display:flex;align-items:center;position:relative;overflow:hidden}
+        .hero::before{content:"";position:absolute;width:500px;height:500px;background:rgba(139,92,246,.1);border-radius:50%;top:-250px;right:-250px}
+        .hero::after{content:"";position:absolute;width:400px;height:400px;background:rgba(34,211,238,.1);border-radius:50%;bottom:-200px;left:-200px}
+        .hero-container{max-width:1600px;margin:0 auto;display:grid;grid-template-columns:1fr 1.2fr;gap:60px;align-items:center;position:relative;z-index:1;width:100%}
+        .hero-content{text-align:left}
+        .hero h1{font-size:52px;margin-bottom:20px;font-weight:700;line-height:1.2}
+        .hero p{font-size:24px;color:rgba(255,255,255,.8);margin-bottom:40px;font-weight:500}
+        .hero-iframe{background:rgba(255,255,255,.05);padding:65px;border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.1);max-width:800px;width:100%;margin:0 auto;overflow:visible;position:relative}
+        .hero-iframe::before{content:"Live Demo";position:absolute;top:-18px;left:30px;background:#22d3ee;color:#1a1c2e;padding:8px 25px;border-radius:25px;font-size:18px;font-weight:700;z-index:1}
+        .hero-iframe iframe{border-radius:10px;width:100%;height:920px;max-height:90vh;display:block;min-height:920px}
+        .cta-buttons{display:flex;gap:20px;flex-wrap:wrap}
 
-        .logo {
-            font-size: 28px;
-            font-weight: 700;
-            color: white;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+        /* Feature Cards (shared) */
+        .features{padding:80px 20px;background:#1a1c2e}
+        .features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:40px;margin-top:60px}
+        .feature-card{background:rgba(255,255,255,.05);padding:40px 30px;border-radius:20px;transition:all .3s;position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.1)}
+        .feature-card::before{content:"";position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,#8b5cf6,#22d3ee);transform:translateX(-100%);transition:transform .3s}
+        .feature-card:hover::before{transform:translateX(0)}
+        .feature-card:hover{transform:translateY(-5px);background:rgba(255,255,255,.08);box-shadow:0 15px 40px rgba(139,92,246,.2)}
+        .feature-card h3{font-size:24px;margin-bottom:15px}
+        .feature-card p{color:rgba(255,255,255,.7);line-height:1.8}
 
-        .logo::before {
-            content: "💬";
-            font-size: 32px;
-        }
+        /* Team Section */
+        .team-section{padding:80px 20px;background:#2b2d42}
+        .team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:25px;margin-top:40px}
+        .agent-card{background:rgba(255,255,255,.05);padding:30px 25px;border-radius:20px;text-align:center;border:1px solid rgba(255,255,255,.1);transition:all .3s;position:relative;overflow:hidden}
+        .agent-card::before{content:"";position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,#8b5cf6,#22d3ee);transform:translateX(-100%);transition:transform .3s}
+        .agent-card:hover::before{transform:translateX(0)}
+        .agent-card:hover{transform:translateY(-5px);background:rgba(255,255,255,.08);box-shadow:0 15px 40px rgba(139,92,246,.2)}
+        .agent-card img{width:120px;height:120px;border-radius:50%;object-fit:cover;border:3px solid rgba(139,92,246,.4);margin-bottom:15px}
+        .agent-card .ai-tag{font-size:14px;color:#22d3ee;margin-bottom:5px}
+        .agent-card h3{font-size:20px;margin-bottom:4px}
+        .agent-card .title{color:#a78bfa;font-size:13px;font-weight:600;margin-bottom:12px}
+        .agent-card p{font-size:14px;color:rgba(255,255,255,.7);line-height:1.7}
+        .agent-card .learn-more{display:inline-block;margin-top:15px;color:#22d3ee;text-decoration:none;font-weight:600;font-size:14px;transition:color .3s}
+        .agent-card .learn-more:hover{color:#fff}
 
-        .nav-links {
-            display: flex;
-            gap: 30px;
-            align-items: center;
-        }
+        /* Workflow */
+        .workflow{padding:80px 20px;background:#1a1c2e}
+        .workflow .container{max-width:1000px;margin:0 auto}
+        .wf-steps{display:flex;flex-direction:column;gap:0;position:relative}
+        .wf-steps::before{content:"";position:absolute;left:30px;top:30px;bottom:30px;width:3px;background:linear-gradient(180deg,#8b5cf6,#22d3ee)}
+        .wf-step{display:flex;gap:30px;align-items:flex-start;padding:20px 0;position:relative}
+        .wf-icon{width:60px;height:60px;border-radius:50%;background:rgba(139,92,246,.2);border:2px solid #8b5cf6;display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0;z-index:1}
+        .wf-content h3{font-size:20px;margin-bottom:5px}
+        .wf-content p{color:rgba(255,255,255,.7);font-size:16px}
 
-        .nav-links a {
-            text-decoration: none;
-            color: rgba(255, 255, 255, 0.8);
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: white;
-        }
-
-        .login-btn {
-            background: transparent;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 25px;
-            text-decoration: none;
-            transition: all 0.3s;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .login-btn:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: white;
-            transform: translateY(-2px);
-        }
-
-        /* Hero Section - Updated for larger chatbot */
-        .hero {
-            background: linear-gradient(135deg, #2b2d42 0%, #3f4164 100%);
-            padding: 150px 20px 150px; /* Significantly increased bottom padding */
-            min-height: 1100px; /* Increased from 1000px */
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: "";
-            position: absolute;
-            width: 500px;
-            height: 500px;
-            background: rgba(139, 92, 246, 0.1);
-            border-radius: 50%;
-            top: -250px;
-            right: -250px;
-        }
-
-        .hero::after {
-            content: "";
-            position: absolute;
-            width: 400px;
-            height: 400px;
-            background: rgba(34, 211, 238, 0.1);
-            border-radius: 50%;
-            bottom: -200px;
-            left: -200px;
-        }
-
-        .hero-container {
-            max-width: 1600px; /* Increased max-width */
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1.2fr; /* Adjusted ratio to give more space to chatbot */
-            gap: 60px;
-            align-items: center;
-            position: relative;
-            z-index: 1;
-            width: 100%;
-        }
-
-        .hero-content {
-            text-align: left;
-        }
-
-        .hero-iframe {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 65px; /* Increased padding to 65px */
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            max-width: 800px; /* Increased from 780px */
-            width: 100%;
-            margin: 0 auto;
-            overflow: visible; /* Changed from hidden to visible */
-            position: relative;
-        }
-
-        .hero-iframe::before {
-            content: "Live Demo";
-            position: absolute;
-            top: -18px;
-            left: 30px;
-            background: #22d3ee;
-            color: #1a1c2e;
-            padding: 8px 25px;
-            border-radius: 25px;
-            font-size: 18px;
-            font-weight: 700;
-            z-index: 1;
-        }
-
-        .hero-iframe iframe {
-            border-radius: 10px;
-            width: 100%;
-            height: 920px; /* Increased from 900px */
-            max-height: 90vh; /* Increased from 85vh */
-            display: block;
-            min-height: 920px; /* Added minimum height */
-        }
-
-        .hero-badge {
-            background: rgba(139, 92, 246, 0.2);
-            color: #a78bfa;
-            padding: 8px 20px;
-            border-radius: 20px;
-            display: inline-block;
-            margin-bottom: 20px;
-            font-weight: 600;
-            font-size: 14px;
-            border: 1px solid rgba(139, 92, 246, 0.3);
-        }
-
-        .hero h1 {
-            font-size: 52px;
-            color: white;
-            margin-bottom: 20px;
-            font-weight: 700;
-            line-height: 1.2;
-        }
-
-        .hero h1 br + text,
-        .hero h1 span {
-            color: #8b5cf6;
-        }
-
-        .hero p {
-            font-size: 24px;
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 40px;
-            font-weight: 500;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: flex-start;
-            flex-wrap: wrap;
-        }
-
-        .cta-primary {
-            background: #8b5cf6;
-            color: white;
-            padding: 15px 40px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 18px;
-            transition: all 0.3s;
-            display: inline-block;
-        }
-
-        .cta-primary:hover {
-            background: #7c3aed;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(139, 92, 246, 0.3);
-        }
-
-        .cta-secondary {
-            background: transparent;
-            color: white;
-            padding: 15px 40px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 18px;
-            transition: all 0.3s;
-            display: inline-block;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .cta-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: white;
-            transform: translateY(-3px);
-        }
-
-        /* Arrow animation */
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateX(0);
-            }
-            40% {
-                transform: translateX(10px);
-            }
-            60% {
-                transform: translateX(5px);
-            }
-        }
-
-        /* Features Section */
-        .features {
-            padding: 80px 20px;
-            background: #1a1c2e;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 42px;
-            color: white;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            font-size: 20px;
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 60px;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
-        }
-
-        .feature-card {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 40px 30px;
-            border-radius: 20px;
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .feature-card::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, #8b5cf6, #22d3ee);
-            transform: translateX(-100%);
-            transition: transform 0.3s;
-        }
-
-        .feature-card:hover::before {
-            transform: translateX(0);
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.08);
-            box-shadow: 0 15px 40px rgba(139, 92, 246, 0.2);
-        }
-
-        .feature-icon {
-            font-size: 48px;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .feature-card h3 {
-            font-size: 24px;
-            color: white;
-            margin-bottom: 15px;
-        }
-
-        .feature-card p {
-            color: rgba(255, 255, 255, 0.7);
-            line-height: 1.8;
-        }
-
-        /* Demo Section - Updated for larger chatbot */
-        .demo-section {
-            padding: 80px 20px;
-            background: #2b2d42;
-        }
-
-        .demo-container {
-            max-width: 1400px; /* Increased from 1200px */
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1.2fr; /* Adjusted ratio */
-            gap: 60px;
-            align-items: center;
-        }
-
-        .demo-content h2 {
-            font-size: 42px;
-            color: white;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-
-        .demo-content p {
-            font-size: 18px;
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 30px;
-            line-height: 1.8;
-        }
-
-        .demo-features {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-top: 40px;
-        }
-
-        .demo-feature {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 16px;
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        .demo-feature::before {
-            content: "✓";
-            color: #22d3ee;
-            font-weight: 700;
-            font-size: 20px;
-        }
-
-        .demo-frame {
-            background: white;
-            padding: 25px; /* Increased padding */
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
-            position: relative;
-            max-width: 700px; /* Added max-width */
-            width: 100%;
-            margin: 0 auto;
-        }
-
-        .demo-frame::before {
-            content: "Live Demo";
-            position: absolute;
-            top: -15px;
-            left: 30px;
-            background: #22d3ee;
-            color: #1a1c2e;
-            padding: 5px 20px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        .demo-frame iframe {
-            width: 100%;
-            height: 700px; /* Increased from 600px */
-            border: none;
-            border-radius: 10px;
-            background: white;
-        }
+        /* Approval Flow */
+        .approval{padding:80px 20px;background:#2b2d42}
+        .approval .container{max-width:900px;margin:0 auto;text-align:center}
+        .approval h2{font-size:36px;margin-bottom:20px}
+        .approval>div>p{color:rgba(255,255,255,.7);font-size:18px;margin-bottom:40px;max-width:700px;margin-left:auto;margin-right:auto}
+        .approval-flow{display:flex;align-items:center;justify-content:center;gap:15px;flex-wrap:wrap;margin-bottom:40px}
+        .af-step{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:15px;padding:20px;text-align:center;min-width:140px}
+        .af-step .af-icon{font-size:36px;margin-bottom:8px}
+        .af-step h4{font-size:15px}
+        .af-step p{font-size:13px;color:rgba(255,255,255,.6)}
+        .af-arrow{font-size:28px;color:#8b5cf6}
 
         /* Dashboard Preview */
-        .dashboard-preview {
-            padding: 80px 20px;
-            background: #1a1c2e;
-        }
+        .dashboard-preview{padding:80px 20px;background:#1a1c2e}
+        .dashboard-mockup{max-width:1000px;margin:60px auto;background:rgba(255,255,255,.05);border-radius:20px;padding:20px;box-shadow:0 20px 60px rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.1)}
+        .mockup-header{background:rgba(255,255,255,.08);padding:20px;border-radius:10px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:center}
+        .mockup-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:20px}
+        .stat-box{background:rgba(255,255,255,.08);padding:20px;border-radius:10px;text-align:center;border:1px solid rgba(255,255,255,.1)}
+        .stat-value{font-size:32px;font-weight:700;color:#8b5cf6}
+        .stat-label{color:rgba(255,255,255,.7);font-size:14px;margin-top:5px}
+        .stat-change{color:#22d3ee;font-size:12px;margin-top:5px}
+        .mockup-table{background:rgba(255,255,255,.08);border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1)}
+        .table-header{padding:20px;border-bottom:1px solid rgba(255,255,255,.1);font-weight:600}
+        .table-row{display:grid;grid-template-columns:2fr 3fr 3fr 1fr;padding:15px 20px;border-bottom:1px solid rgba(255,255,255,.05);font-size:14px;color:rgba(255,255,255,.7)}
+        .table-row:hover{background:rgba(255,255,255,.05)}
 
-        .dashboard-mockup {
-            max-width: 1000px;
-            margin: 60px auto;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            padding: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
+        /* Pricing */
+        .pricing{padding:80px 20px;background:#2b2d42}
+        .pricing-card{background:rgba(255,255,255,.05);padding:40px;border-radius:20px;text-align:center;position:relative;transition:all .3s;border:1px solid rgba(255,255,255,.1)}
+        .pricing-card:hover{transform:translateY(-10px);background:rgba(255,255,255,.08);box-shadow:0 20px 60px rgba(139,92,246,.2)}
+        .pricing-card.featured{transform:scale(1.05);background:rgba(139,92,246,.1);border-color:rgba(139,92,246,.3);box-shadow:0 20px 60px rgba(139,92,246,.3)}
+        .pricing-card.featured::before{content:"POPULAR";position:absolute;top:-15px;right:30px;background:#8b5cf6;color:#fff;padding:5px 20px;border-radius:20px;font-size:12px;font-weight:600}
+        .pricing-card h3{font-size:28px;margin-bottom:10px}
+        .price{font-size:48px;font-weight:700;color:#8b5cf6;margin:20px 0}
+        .price span{font-size:18px;font-weight:400;color:rgba(255,255,255,.7)}
+        .price-subtitle{color:rgba(255,255,255,.7);margin-bottom:30px;font-style:italic}
+        .pricing-features{list-style:none;margin:30px 0;text-align:left}
+        .pricing-features li{padding:10px 0;color:rgba(255,255,255,.8);display:flex;align-items:center;gap:10px}
+        .pricing-features li::before{content:"✓";color:#22d3ee;font-weight:700;font-size:18px}
 
-        .mockup-header {
-            background: rgba(255, 255, 255, 0.08);
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .mockup-stats {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-
-        .stat-box {
-            background: rgba(255, 255, 255, 0.08);
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .stat-value {
-            font-size: 32px;
-            font-weight: 700;
-            color: #8b5cf6;
-        }
-
-        .stat-label {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 14px;
-            margin-top: 5px;
-        }
-
-        .stat-change {
-            color: #22d3ee;
-            font-size: 12px;
-            margin-top: 5px;
-        }
-
-        .mockup-table {
-            background: rgba(255, 255, 255, 0.08);
-            border-radius: 10px;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .table-header {
-            padding: 20px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            font-weight: 600;
-            color: white;
-        }
-
-        .table-row {
-            display: grid;
-            grid-template-columns: 2fr 3fr 3fr 1fr;
-            padding: 15px 20px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            font-size: 14px;
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .table-row:hover {
-            background: rgba(255, 255, 255, 0.05);
-        }
-
-        /* Pricing Section */
-        .pricing {
-            padding: 80px 20px;
-            background: #2b2d42;
-        }
-
-        .pricing-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .pricing-card {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 40px;
-            border-radius: 20px;
-            text-align: center;
-            position: relative;
-            transition: all 0.3s;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .pricing-card:hover {
-            transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.08);
-            box-shadow: 0 20px 60px rgba(139, 92, 246, 0.2);
-        }
-
-        .pricing-card.featured {
-            transform: scale(1.05);
-            background: rgba(139, 92, 246, 0.1);
-            border-color: rgba(139, 92, 246, 0.3);
-            box-shadow: 0 20px 60px rgba(139, 92, 246, 0.3);
-        }
-
-        .pricing-card.featured::before {
-            content: "POPULAR";
-            position: absolute;
-            top: -15px;
-            right: 30px;
-            background: #8b5cf6;
-            color: white;
-            padding: 5px 20px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-        }
-
-        .pricing-card h3 {
-            font-size: 28px;
-            color: white;
-            margin-bottom: 10px;
-        }
-
-        .price {
-            font-size: 48px;
-            font-weight: 700;
-            color: #8b5cf6;
-            margin: 20px 0;
-        }
-
-        .price span {
-            font-size: 18px;
-            font-weight: 400;
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .price-subtitle {
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 30px;
-            font-style: italic;
-        }
-
-        .pricing-features {
-            list-style: none;
-            margin: 30px 0;
-            text-align: left;
-        }
-
-        .pricing-features li {
-            padding: 10px 0;
-            color: rgba(255, 255, 255, 0.8);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .pricing-features li::before {
-            content: "✓";
-            color: #22d3ee;
-            font-weight: 700;
-            font-size: 18px;
-        }
-
-        /* Contact Form Section */
-        .contact-section {
-            padding: 80px 20px;
-            background: #1a1c2e;
-        }
-
-        .contact-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: start;
-        }
-
-        .contact-info h2 {
-            font-size: 42px;
-            color: white;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-
-        .contact-info p {
-            font-size: 18px;
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 30px;
-            line-height: 1.8;
-        }
-
-        .contact-steps {
-            margin-top: 40px;
-        }
-
-        .contact-step {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 30px;
-            align-items: start;
-        }
-
-        .step-number {
-            background: #8b5cf6;
-            color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            flex-shrink: 0;
-        }
-
-        .step-content h4 {
-            color: white;
-            margin-bottom: 5px;
-        }
-
-        .step-content p {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 16px;
-        }
-
-        .contact-form {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .form-group {
-            margin-bottom: 25px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            color: rgba(255, 255, 255, 0.9);
-            font-weight: 600;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid rgba(255, 255, 255, 0.1);
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
-            font-size: 16px;
-            transition: all 0.3s;
-            font-family: 'Quicksand', sans-serif;
-            color: white;
-        }
-
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: rgba(255, 255, 255, 0.4);
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #8b5cf6;
-            background: rgba(255, 255, 255, 0.08);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-
-        .form-submit {
-            background: #8b5cf6;
-            color: white;
-            padding: 15px 40px;
-            border: none;
-            border-radius: 30px;
-            font-size: 18px;
-            font-weight: 600;
-            cursor: pointer;
-            width: 100%;
-            transition: all 0.3s;
-        }
-
-        .form-submit:hover {
-            background: #7c3aed;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(139, 92, 246, 0.3);
-        }
+        /* Contact */
+        .contact-section{padding:80px 20px;background:#1a1c2e}
+        .contact-container{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+        .contact-info h2{font-size:42px;margin-bottom:20px;font-weight:700}
+        .contact-info p{font-size:18px;color:rgba(255,255,255,.7);margin-bottom:30px;line-height:1.8}
+        .contact-steps{margin-top:40px}
+        .contact-step{display:flex;gap:20px;margin-bottom:30px;align-items:start}
+        .step-number{background:#8b5cf6;color:#fff;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0}
+        .step-content h4{margin-bottom:5px}
+        .step-content p{color:rgba(255,255,255,.7);font-size:16px}
+        .contact-form{background:rgba(255,255,255,.05);padding:40px;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.1)}
+        .form-group{margin-bottom:25px}
+        .form-group label{display:block;margin-bottom:8px;color:rgba(255,255,255,.9);font-weight:600}
+        .form-group input,.form-group textarea{width:100%;padding:12px;border:2px solid rgba(255,255,255,.1);background:rgba(255,255,255,.05);border-radius:10px;font-size:16px;transition:all .3s;font-family:'Quicksand',sans-serif;color:#fff}
+        .form-group input::placeholder,.form-group textarea::placeholder{color:rgba(255,255,255,.4)}
+        .form-group input:focus,.form-group textarea:focus{outline:none;border-color:#8b5cf6;background:rgba(255,255,255,.08)}
+        .form-group textarea{resize:vertical;min-height:100px}
+        .form-submit{background:#8b5cf6;color:#fff;padding:15px 40px;border:none;border-radius:30px;font-size:18px;font-weight:600;cursor:pointer;width:100%;transition:all .3s;font-family:'Quicksand',sans-serif}
+        .form-submit:hover{background:#7c3aed;transform:translateY(-2px);box-shadow:0 10px 20px rgba(139,92,246,.3)}
 
         /* Footer */
-        footer {
-            background: #1a1a1a;
-            color: white;
-            padding: 60px 20px 30px;
+        footer{background:#111;color:#999;padding:60px 20px 30px}
+        .footer-content{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+        .footer-brand h3{font-size:28px;margin-bottom:15px;color:#8b5cf6}
+        .footer-brand p{color:#999;line-height:1.8}
+        .footer-section h4{margin-bottom:20px;color:#fff}
+        .footer-section ul{list-style:none}
+        .footer-section ul li{margin-bottom:10px}
+        .footer-section a{color:#999;text-decoration:none;transition:color .3s}
+        .footer-section a:hover{color:#fff}
+        .footer-bottom{text-align:center;padding-top:30px;border-top:1px solid #333;color:#666}
+
+        /* Responsive */
+        @media(max-width:1400px){.hero-container{max-width:1200px}.hero-iframe{max-width:600px}}
+        @media(max-width:1200px){.hero-iframe{max-width:500px}.hero-iframe iframe{height:600px}}
+        @media(max-width:1024px){.hero-container{grid-template-columns:1fr;text-align:center}.hero-content{text-align:center}.hero-iframe{max-width:600px}}
+        @media(max-width:768px){
+            .nav-links{display:none}
+            .hero{min-height:auto;padding:120px 20px 60px}
+            .hero h1{font-size:36px}
+            .hero p{font-size:18px}
+            .cta-buttons{justify-content:center}
+            .hero-iframe{max-width:100%;padding:15px}
+            .hero-iframe iframe{height:500px;min-height:500px}
+            .features-grid,.team-grid,.contact-container{grid-template-columns:1fr}
+            .mockup-stats{grid-template-columns:repeat(2,1fr)}
+            .footer-content{grid-template-columns:1fr;text-align:center}
+            .approval-flow{flex-direction:column}
+            .af-arrow{transform:rotate(90deg)}
+            .wf-steps::before{left:20px}
+            .section-title{font-size:32px}
         }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-brand h3 {
-            font-size: 28px;
-            margin-bottom: 15px;
-            color: #8b5cf6;
-        }
-
-        .footer-brand p {
-            color: #999;
-            line-height: 1.8;
-        }
-
-        .footer-section h4 {
-            margin-bottom: 20px;
-            color: white;
-        }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section ul li {
-            margin-bottom: 10px;
-        }
-
-        .footer-section a {
-            color: #999;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-section a:hover {
-            color: white;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid #333;
-            color: #666;
-        }
-
-        /* Mobile Responsive - Updated for larger chatbot */
-        @media (max-width: 1400px) {
-            .hero-container,
-            .demo-container {
-                max-width: 1200px;
-            }
-            
-            .hero-iframe,
-            .demo-frame {
-                max-width: 600px;
-            }
-        }
-
-        @media (max-width: 1200px) {
-            .hero-iframe {
-                max-width: 500px;
-            }
-            
-            .hero-iframe iframe,
-            .demo-frame iframe {
-                height: 600px;
-            }
-        }
-
-        @media (max-width: 1024px) {
-            .hero-container,
-            .demo-container {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            
-            .hero-content {
-                text-align: center;
-            }
-            
-            .hero-iframe,
-            .demo-frame {
-                max-width: 600px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero {
-                min-height: auto;
-                padding: 120px 20px 60px;
-            }
-
-            .hero h1 {
-                font-size: 36px;
-            }
-
-            .hero p {
-                font-size: 18px;
-            }
-
-            .cta-buttons {
-                justify-content: center;
-            }
-
-            .hero-iframe,
-            .demo-frame {
-                max-width: 100%;
-                padding: 15px;
-            }
-
-            .hero-iframe iframe,
-            .demo-frame iframe {
-                height: 500px;
-            }
-
-            .features-grid,
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
-
-            .mockup-stats {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-iframe iframe,
-            .demo-frame iframe {
-                height: 400px;
-            }
-        }
+        @media(max-width:480px){.hero-iframe iframe{height:400px;min-height:400px}}
     </style>
 </head>
 <body>
@@ -906,6 +181,7 @@
             <div class="nav-links">
                 <a href="#features">Features</a>
                 <a href="#team">AI Team</a>
+                <a href="#workflow">How It Works</a>
                 <a href="#pricing">Pricing</a>
                 <a href="#contact">Contact</a>
                 <a href="/dashboard.html" class="login-btn">Login</a>
@@ -913,285 +189,308 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <h1>Intelligent AI Assistant<br><span style="color: #8b5cf6;">for Preschools</span></h1>
-                <p>Turn curious website visitors into booked tours and enrolled families—effortlessly with AI-powered conversations personalized with your preschool's information, family handbook, tuition rates, and any custom content you want to include.</p>
+                <h1>Your AI Marketing Team<br><span style="color:#8b5cf6">Works While You Sleep</span></h1>
+                <p>12 AI specialists monitor your ads, SEO, reviews, social media, and website 24/7 — while you focus on education. Save thousands vs. a traditional agency.</p>
                 <div class="cta-buttons">
-                    <a href="#contact" class="cta-secondary">Schedule a Demo</a>
+                    <a href="#contact" class="cta-primary">Get Your AI Team →</a>
+                    <a href="#team" class="cta-secondary">Meet the Team</a>
                 </div>
-                <div style="margin-top: 30px;">
-                    <h3 style="color: white; font-size: 32px; margin-bottom: 8px;">See It In Action</h3>
-                    <p style="color: rgba(255, 255, 255, 0.8); font-size: 24px;">Try our live chatbot from Beibei Amigos Language Preschool and discover how effortless it is for parents to get the answers they need—instantly. No more searching through web pages or waiting for email replies. Our AI-powered assistant is built by a preschool owner, designed specifically for other schools, and ensures families get the information they want, right when they need it.
-Ready to enhance your school's parent experience? Subscribe to Parlami.ai and let your chatbot do the work for you.</p>
+                <div style="margin-top:30px">
+                    <h3 style="font-size:32px;margin-bottom:8px">See It In Action</h3>
+                    <p style="font-size:18px;color:rgba(255,255,255,.8)">Try our live chatbot from Beibei Amigos Language Preschool. Our AI-powered assistant answers parent questions instantly — no searching through pages or waiting for email replies.</p>
                 </div>
             </div>
             <div class="hero-iframe">
-                <iframe 
-                    src="https://beibeiamigosgpt.onrender.com" 
-                    width="100%" 
-                    height="700" 
-                    style="border: none; border-radius: 10px;" 
-                    title="Beibei Amigos Assistant">
-                </iframe>
+                <iframe src="https://beibeiamigosgpt.onrender.com" width="100%" height="700" style="border:none;border-radius:10px" title="Beibei Amigos Assistant"></iframe>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
+    <!-- Features -->
     <section class="features" id="features">
         <div class="container">
-            <h2 class="section-title">Why Choose Parlami.ai?</h2>
-            <p class="section-subtitle">Our smart chatbots are designed specifically for preschools, helping you convert more inquiries into enrollments.</p>
+            <h2 class="section-title">Why Preschools Choose Parlami</h2>
+            <p class="section-subtitle">AI-powered marketing that actually understands early childhood education.</p>
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <span style="font-size: 48px;">🎯</span>
-                        <h3>Tailored to Your Preschool</h3>
-                    </div>
-                    <p>Custom-trained on your school's materials—including family handbook, tuition rates, and policies. Gives accurate answers that reflect your values.</p>
+                    <div style="font-size:48px;margin-bottom:20px">💰</div>
+                    <h3>Save $3,000+/month vs. Agencies</h3>
+                    <p>A full marketing team costs $5K–$15K/month. Our 12 AI agents deliver the same services — Google Ads, SEO, content, social media, reputation management — for a fraction of the cost.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <span style="font-size: 48px;">🏫</span>
-                        <h3>Drive Tours and Phone Calls</h3>
-                    </div>
-                    <p>Guide families from interest to action. Makes it easy for parents to schedule tours, call the school, or get tuition info directly.</p>
+                    <div style="font-size:48px;margin-bottom:20px">🕐</div>
+                    <h3>24/7 Monitoring, Zero Overtime</h3>
+                    <p>Your AI team never sleeps. They catch wasted ad spend at 2am, respond to reviews on weekends, and spot ranking drops before Monday morning.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <span style="font-size: 48px;">😊</span>
-                        <h3>Warm, Helpful, and Human-like</h3>
-                    </div>
-                    <p>Friendly, supportive, and professional—like your most welcoming preschool director. Parents feel heard and confident about reaching out.</p>
+                    <div style="font-size:48px;margin-bottom:20px">🎯</div>
+                    <h3>Built for Preschools</h3>
+                    <p>Not a generic marketing tool. Our agents understand enrollment seasons, parent psychology, local SEO for schools, and early childhood education messaging.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <span style="font-size: 48px;">🔒</span>
-                        <h3>Built for Privacy</h3>
-                    </div>
-                    <p>Privacy and security built in from the ground up. All conversations are encrypted and stored securely, with no data shared or sold.</p>
+                    <div style="font-size:48px;margin-bottom:20px">✅</div>
+                    <h3>You Stay in Control</h3>
+                    <p>Every significant action requires your approval. AI agents recommend — you decide. No surprises, no rogue campaigns, no unauthorized changes.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <span style="font-size: 48px;">📊</span>
-                        <h3>Insights for Smarter Decisions</h3>
-                    </div>
-                    <p>Every conversation logged in your private dashboard. See what parents are asking, track interest in programs, and refine your marketing.</p>
+                    <div style="font-size:48px;margin-bottom:20px">📊</div>
+                    <h3>Morning Briefings & Insights</h3>
+                    <p>Start every day with a clear summary: what happened overnight, what needs attention, and what's working. Data from all 12 agents in one place.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <span style="font-size: 48px;">🎨</span>
-                        <h3>Fully Customizable for Your School</h3>
-                    </div>
-                    <p>Make it uniquely yours—choose your chatbot's appearance, add your school's logo or mascot image, include a welcome video, and customize the suggested questions parents see. Every school's assistant is different, reflecting your unique identity and values.</p>
+                    <div style="font-size:48px;margin-bottom:20px">🤝</div>
+                    <h3>Agents That Collaborate</h3>
+                    <p>When Spia finds a keyword opportunity, she tells Penna to write a post, Architetto to build the page, and Annunci to target it with ads. They work as a team.</p>
                 </div>
             </div>
         </div>
     </section>
 
-        <!-- Dashboard Preview -->
+    <!-- Meet Your AI Team -->
+    <section class="team-section" id="team">
+        <div class="container" style="max-width:1400px">
+            <div style="text-align:center;margin-bottom:10px">
+                <span class="ai-badge">🤖 AI-Powered Marketing Specialists</span>
+            </div>
+            <h2 class="section-title">Meet Your AI Marketing Team</h2>
+            <p class="section-subtitle">12 specialized AI agents — not real people — delivering real marketing results around the clock.</p>
+
+            <div class="team-grid">
+                <div class="agent-card">
+                    <img src="portraits/marco.png" alt="Marco — AI Marketing Director" loading="lazy">
+                    <div class="ai-tag">☕ AI Agent</div>
+                    <h3>Marco</h3>
+                    <div class="title">Direttore di Marketing</div>
+                    <p>Coordinates all agents, delivers morning briefings, and manages approval workflows. Your AI director.</p>
+                    <a href="team/marco.html" class="learn-more">Learn More →</a>
+                </div>
+
+                <div class="agent-card">
+                    <img src="portraits/annunci.png" alt="Annunci — AI Google Ads Specialist" loading="lazy">
+                    <div class="ai-tag">📣 AI Agent</div>
+                    <h3>Annunci</h3>
+                    <div class="title">Google Ads Specialist</div>
+                    <p>Monitors Google Ads 24/7, catches wasted spend, optimizes campaigns, and generates winning creatives.</p>
+                    <a href="team/annunci.html" class="learn-more">Learn More →</a>
+                </div>
+
+                <div class="agent-card">
+                    <img src="portraits/bussola.png" alt="Bussola — AI Data Analyst" loading="lazy">
+                    <div class="ai-tag">📊 AI Agent</div>
+                    <h3>Bussola</h3>
+                    <div class="title">Data Analyst</div>
+                    <p>Dives deep into GA4 analytics — tracking traffic, conversions, and trends to find growth opportunities.</p>
+                    <a href="team/bussola.html" class="learn-more">Learn More →</a>
+                </div>
+
+                <div class="agent-card">
+                    <img src="portraits/spia.png" alt="Spia — AI SEO Intelligence Agent" loading="lazy">
+                    <div class="ai-tag">🔍 AI Agent</div>
+                    <h3>Spia</h3>
+                    <div class="title">SEO Intelligence Agent</div>
+                    <p>Tracks keyword rankings, monitors competitors, and finds untapped SEO opportunities.</p>
+                    <a href="team/spia.html" class="learn-more">Learn More →</a>
+                </div>
+
+                <div class="agent-card">
+                    <img src="portraits/stella.png" alt="Stella — AI Reputation Manager" loading="lazy">
+                    <div class="ai-tag">⭐ AI Agent</div>
+                    <h3>Stella</h3>
+                    <div class="title">Reputation Manager</div>
+                    <p>Monitors Google reviews in real-time, drafts professional responses, and protects your online reputation.</p>
+                    <a href="team/stella.html" class="learn-more">Learn More →</a>
+                </div>
+
+                <div class="agent-card">
+                    <img src="portraits/zona.png" alt="Zona — AI Local SEO Specialist" loading="lazy">
+                    <div class="ai-tag">📍 AI Agent</div>
+                    <h3>Zona</h3>
+                    <div class="title">Local SEO Specialist</div>
+                    <p>Dominates local search with GeoGrid tracking, map pack optimization, and local citation building.</p>
+                    <a href="team/zona.html" class="learn-more">Learn More →</a>
+                </div>
+
+                <div class="agent-card">
+                    <img src="portraits/architetto.png" alt="Architetto — AI Web Architect" loading="lazy">
+                    <div class="ai-tag">🏗️ AI Agent</div>
+                    <h3>Architetto</h3>
+                    <div class="title">Web Architect & Builder</div>
+                    <p>Keeps your website healthy — schema markup, page speed, CTAs, FAQs, and AI-ready indexing.</p>
+                    <a href="team/architetto.html" class="learn-more">Learn More →</a>
+                </div>
+
+                <div class="agent-card">
+                    <img src="portraits/penna.png" alt="Penna — AI Content Writer" loading="lazy">
+                    <div class="ai-tag">✍️ AI Agent</div>
+                    <h3>Penna</h3>
+                    <div class="title">Content Writer</div>
+                    <p>Crafts SEO blog posts, community pages, and content that brings organic traffic to your school.</p>
+                    <a href="team/penna.html" class="learn-more">Learn More →</a>
+                </div>
+
+                <div class="agent-card">
+                    <img src="portraits/piazza.png" alt="Piazza — AI Social Media Manager" loading="lazy">
+                    <div class="ai-tag">📱 AI Agent</div>
+                    <h3>Piazza</h3>
+                    <div class="title">Social Media Manager</div>
+                    <p>Manages your social presence with engaging content calendars and optimized posting schedules.</p>
+                    <a href="team/piazza.html" class="learn-more">Learn More →</a>
+                </div>
+
+                <div class="agent-card">
+                    <img src="portraits/faccia.png" alt="Faccia — AI Facebook Ads Specialist" loading="lazy">
+                    <div class="ai-tag">👤 AI Agent</div>
+                    <h3>Faccia</h3>
+                    <div class="title">Facebook Ads Specialist</div>
+                    <p>Runs targeted Facebook & Instagram ads that reach local parents and drive tour bookings.</p>
+                    <a href="team/faccia.html" class="learn-more">Learn More →</a>
+                </div>
+
+                <div class="agent-card">
+                    <img src="portraits/lettera.png" alt="Lettera — AI Communications Director" loading="lazy">
+                    <div class="ai-tag">💌 AI Agent</div>
+                    <h3>Lettera</h3>
+                    <div class="title">Communications Director</div>
+                    <p>Manages email campaigns, parent nurture sequences, CRM segmentation, and follow-up automation.</p>
+                    <a href="team/lettera.html" class="learn-more">Learn More →</a>
+                </div>
+
+                <div class="agent-card">
+                    <img src="portraits/benvenuta.png" alt="Benvenuta — AI Parent Chatbot" loading="lazy">
+                    <div class="ai-tag">🤗 AI Agent</div>
+                    <h3>Benvenuta</h3>
+                    <div class="title">Parent Chatbot Assistant</div>
+                    <p>Your 24/7 website chatbot answering parent questions about tuition, programs, and scheduling tours.</p>
+                    <a href="team/benvenuta.html" class="learn-more">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workflow: How They Work Together -->
+    <section class="workflow" id="workflow">
+        <div class="container">
+            <h2 class="section-title">How Your AI Team Works</h2>
+            <p class="section-subtitle" style="margin-bottom:40px">Marco coordinates all agents in a seamless daily workflow — from data collection to action.</p>
+            <div class="wf-steps">
+                <div class="wf-step">
+                    <div class="wf-icon">☀️</div>
+                    <div class="wf-content">
+                        <h3>Morning Briefing</h3>
+                        <p>Every morning, Marco gathers data from all agents — ad performance, traffic spikes, new reviews, ranking changes — and delivers a concise briefing to your inbox.</p>
+                    </div>
+                </div>
+                <div class="wf-step">
+                    <div class="wf-icon">🔍</div>
+                    <div class="wf-content">
+                        <h3>Continuous Monitoring</h3>
+                        <p>Agents watch their domains 24/7. Bussola spots a traffic drop. Annunci flags a bleeding campaign. Stella catches a negative review. Issues are found in real time.</p>
+                    </div>
+                </div>
+                <div class="wf-step">
+                    <div class="wf-icon">🤝</div>
+                    <div class="wf-content">
+                        <h3>Cross-Agent Collaboration</h3>
+                        <p>Agents talk to each other. Spia finds a keyword gap → tells Penna to write content → Architetto builds the page → Annunci targets it with ads. Seamless teamwork.</p>
+                    </div>
+                </div>
+                <div class="wf-step">
+                    <div class="wf-icon">🚨</div>
+                    <div class="wf-content">
+                        <h3>Smart Alerts</h3>
+                        <p>Marco triages issues by urgency and sends you a clear notification: what happened, why it matters, and a recommended fix — with a one-click approval button.</p>
+                    </div>
+                </div>
+                <div class="wf-step">
+                    <div class="wf-icon">✅</div>
+                    <div class="wf-content">
+                        <h3>You Approve, Agent Executes</h3>
+                        <p>Nothing happens without your say-so. Review the recommendation, click "Approve" or "Edit," and the specialist agent executes immediately and reports back with results.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Human-in-the-Loop Approval -->
+    <section class="approval">
+        <div class="container">
+            <h2>You're Always in Control</h2>
+            <p>Our AI agents are powerful, but they never go rogue. Every significant action requires your approval.</p>
+            <div class="approval-flow">
+                <div class="af-step">
+                    <div class="af-icon">🔍</div>
+                    <h4>Agent Detects Issue</h4>
+                    <p>e.g., ad overspending</p>
+                </div>
+                <div class="af-arrow">→</div>
+                <div class="af-step">
+                    <div class="af-icon">☕</div>
+                    <h4>Marco Reviews</h4>
+                    <p>Triages & recommends</p>
+                </div>
+                <div class="af-arrow">→</div>
+                <div class="af-step">
+                    <div class="af-icon">📬</div>
+                    <h4>You Get Alert</h4>
+                    <p>Clear action + one-click</p>
+                </div>
+                <div class="af-arrow">→</div>
+                <div class="af-step">
+                    <div class="af-icon">✅</div>
+                    <h4>You Approve</h4>
+                    <p>Click "Fix" or edit</p>
+                </div>
+                <div class="af-arrow">→</div>
+                <div class="af-step">
+                    <div class="af-icon">⚡</div>
+                    <h4>Agent Executes</h4>
+                    <p>Instant action + report</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Preview -->
     <section class="dashboard-preview">
         <div class="container">
             <h2 class="section-title">Powerful Admin Dashboard</h2>
-            <p class="section-subtitle">Track conversations, analyze parent inquiries, and make data-driven decisions with our intuitive dashboard.</p>
-            
+            <p class="section-subtitle">Track conversations, analyze parent inquiries, and make data-driven decisions.</p>
             <div class="dashboard-mockup">
                 <div class="mockup-header">
                     <div>
-                        <div style="font-weight: 700; color: white; font-size: 24px;">Parlami Dashboard</div>
-                        <div style="color: rgba(255, 255, 255, 0.7);">admin@beibeiamigos.com</div>
+                        <div style="font-weight:700;font-size:24px">Parlami Dashboard</div>
+                        <div style="color:rgba(255,255,255,.7)">admin@yourschool.com</div>
                     </div>
-                    <div style="color: rgba(255, 255, 255, 0.7);">Admin profile</div>
+                    <div style="color:rgba(255,255,255,.7)">Admin profile</div>
                 </div>
-                
                 <div class="mockup-stats">
-                    <div class="stat-box">
-                        <div class="stat-value">347</div>
-                        <div class="stat-label">Total Conversations</div>
-                        <div class="stat-change">↑ 12%</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-value">52</div>
-                        <div class="stat-label">Tour Requests</div>
-                        <div class="stat-change">↑ 8%</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-value">5</div>
-                        <div class="stat-label">Common Questions</div>
-                        <div class="stat-change">key topics</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-value">89%</div>
-                        <div class="stat-label">Resolution Rate</div>
-                        <div class="stat-change">↑ 5%</div>
-                    </div>
+                    <div class="stat-box"><div class="stat-value">347</div><div class="stat-label">Total Conversations</div><div class="stat-change">↑ 12%</div></div>
+                    <div class="stat-box"><div class="stat-value">52</div><div class="stat-label">Tour Requests</div><div class="stat-change">↑ 8%</div></div>
+                    <div class="stat-box"><div class="stat-value">5</div><div class="stat-label">Common Questions</div><div class="stat-change">key topics</div></div>
+                    <div class="stat-box"><div class="stat-value">89%</div><div class="stat-label">Resolution Rate</div><div class="stat-change">↑ 5%</div></div>
                 </div>
-                
                 <div class="mockup-table">
                     <div class="table-header">Recent Conversations</div>
-                    <div class="table-row" style="font-weight: 600; color: white;">
-                        <div>Date/Time</div>
-                        <div>User Question</div>
-                        <div>Response</div>
-                        <div>Status</div>
-                    </div>
-                    <div class="table-row">
-                        <div>5/15/2023 2:45 PM</div>
-                        <div>What is your tuition for 3-year-olds?</div>
-                        <div>Our tuition for 3-year-olds is $950/month for full-time...</div>
-                        <div style="color: #22d3ee;">Complete</div>
-                    </div>
-                    <div class="table-row">
-                        <div>5/15/2023 1:30 PM</div>
-                        <div>Do you have space available for fall?</div>
-                        <div>Yes, we have limited spaces available for our fall program...</div>
-                        <div style="color: #22d3ee;">Complete</div>
-                    </div>
-                    <div class="table-row">
-                        <div>5/15/2023 11:20 AM</div>
-                        <div>What languages do you teach?</div>
-                        <div>We offer immersive instruction in Spanish and Mandarin...</div>
-                        <div style="color: #22d3ee;">Complete</div>
-                    </div>
+                    <div class="table-row" style="font-weight:600;color:#fff"><div>Date/Time</div><div>User Question</div><div>Response</div><div>Status</div></div>
+                    <div class="table-row"><div>5/15 2:45 PM</div><div>What is your tuition for 3-year-olds?</div><div>Our tuition for 3-year-olds is $950/month for full-time...</div><div style="color:#22d3ee">Complete</div></div>
+                    <div class="table-row"><div>5/15 1:30 PM</div><div>Do you have space available for fall?</div><div>Yes, we have limited spaces available for our fall program...</div><div style="color:#22d3ee">Complete</div></div>
+                    <div class="table-row"><div>5/15 11:20 AM</div><div>What languages do you teach?</div><div>We offer immersive instruction in Spanish and Mandarin...</div><div style="color:#22d3ee">Complete</div></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Meet Your AI Team Section -->
-    <section class="features" id="team" style="background: #2b2d42;">
-        <div class="container" style="max-width: 1400px;">
-            <div style="text-align: center; margin-bottom: 10px;">
-                <span style="display: inline-block; background: rgba(139,92,246,0.2); border: 1px solid rgba(139,92,246,0.4); color: #a78bfa; padding: 8px 24px; border-radius: 25px; font-weight: 600; font-size: 14px;">🤖 AI-Powered Marketing Specialists</span>
-            </div>
-            <h2 class="section-title">Meet Your AI Marketing Team</h2>
-            <p class="section-subtitle">12 specialized AI agents working 24/7 to grow your preschool — so you can focus on education.<br>Every team member is an AI agent, not a real person, delivering real marketing results.</p>
-            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; margin-top: 40px;">
-
-                <div class="feature-card" style="padding: 30px 25px; text-align: center;">
-                    <img src="portraits/marco.png" alt="Marco AI Agent" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid rgba(139,92,246,0.4); margin-bottom: 15px;" loading="lazy">
-                    <div style="font-size: 14px; color: #22d3ee; margin-bottom: 5px;">☕ AI Agent</div>
-                    <h3 style="font-size: 20px; margin-bottom: 4px; color: white;">Marco</h3>
-                    <div style="color: #a78bfa; font-size: 13px; font-weight: 600; margin-bottom: 12px;">Direttore di Marketing</div>
-                    <p style="font-size: 14px; color: rgba(255,255,255,0.7);">Coordinates all agents, delivers morning briefings, and manages the approval workflow. Your AI director.</p>
-                    <a href="team.html#marco" style="display: inline-block; margin-top: 15px; color: #22d3ee; text-decoration: none; font-weight: 600; font-size: 14px;">Learn More →</a>
-                </div>
-
-                <div class="feature-card" style="padding: 30px 25px; text-align: center;">
-                    <img src="portraits/annunci.png" alt="Annunci AI Agent" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid rgba(139,92,246,0.4); margin-bottom: 15px;" loading="lazy">
-                    <div style="font-size: 14px; color: #22d3ee; margin-bottom: 5px;">📣 AI Agent</div>
-                    <h3 style="font-size: 20px; margin-bottom: 4px; color: white;">Annunci</h3>
-                    <div style="color: #a78bfa; font-size: 13px; font-weight: 600; margin-bottom: 12px;">Google Ads Specialist</div>
-                    <p style="font-size: 14px; color: rgba(255,255,255,0.7);">Monitors your Google Ads 24/7, catches wasted spend, optimizes campaigns, and generates winning creatives.</p>
-                    <a href="team.html#annunci" style="display: inline-block; margin-top: 15px; color: #22d3ee; text-decoration: none; font-weight: 600; font-size: 14px;">Learn More →</a>
-                </div>
-
-                <div class="feature-card" style="padding: 30px 25px; text-align: center;">
-                    <img src="portraits/bussola.png" alt="Bussola AI Agent" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid rgba(139,92,246,0.4); margin-bottom: 15px;" loading="lazy">
-                    <div style="font-size: 14px; color: #22d3ee; margin-bottom: 5px;">📊 AI Agent</div>
-                    <h3 style="font-size: 20px; margin-bottom: 4px; color: white;">Bussola</h3>
-                    <div style="color: #a78bfa; font-size: 13px; font-weight: 600; margin-bottom: 12px;">Data Analyst</div>
-                    <p style="font-size: 14px; color: rgba(255,255,255,0.7);">Dives deep into GA4 analytics — tracking traffic, conversions, and trends to find growth opportunities.</p>
-                    <a href="team.html#bussola" style="display: inline-block; margin-top: 15px; color: #22d3ee; text-decoration: none; font-weight: 600; font-size: 14px;">Learn More →</a>
-                </div>
-
-                <div class="feature-card" style="padding: 30px 25px; text-align: center;">
-                    <img src="portraits/spia.png" alt="Spia AI Agent" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid rgba(139,92,246,0.4); margin-bottom: 15px;" loading="lazy">
-                    <div style="font-size: 14px; color: #22d3ee; margin-bottom: 5px;">🔍 AI Agent</div>
-                    <h3 style="font-size: 20px; margin-bottom: 4px; color: white;">Spia</h3>
-                    <div style="color: #a78bfa; font-size: 13px; font-weight: 600; margin-bottom: 12px;">SEO Intelligence Agent</div>
-                    <p style="font-size: 14px; color: rgba(255,255,255,0.7);">Tracks your keyword rankings, monitors competitors, and finds untapped SEO opportunities.</p>
-                    <a href="team.html#spia" style="display: inline-block; margin-top: 15px; color: #22d3ee; text-decoration: none; font-weight: 600; font-size: 14px;">Learn More →</a>
-                </div>
-
-                <div class="feature-card" style="padding: 30px 25px; text-align: center;">
-                    <img src="portraits/stella.png" alt="Stella AI Agent" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid rgba(139,92,246,0.4); margin-bottom: 15px;" loading="lazy">
-                    <div style="font-size: 14px; color: #22d3ee; margin-bottom: 5px;">⭐ AI Agent</div>
-                    <h3 style="font-size: 20px; margin-bottom: 4px; color: white;">Stella</h3>
-                    <div style="color: #a78bfa; font-size: 13px; font-weight: 600; margin-bottom: 12px;">Reputation Manager</div>
-                    <p style="font-size: 14px; color: rgba(255,255,255,0.7);">Monitors Google reviews in real-time, drafts responses, and protects your online reputation.</p>
-                    <a href="team.html#stella" style="display: inline-block; margin-top: 15px; color: #22d3ee; text-decoration: none; font-weight: 600; font-size: 14px;">Learn More →</a>
-                </div>
-
-                <div class="feature-card" style="padding: 30px 25px; text-align: center;">
-                    <img src="portraits/zona.png" alt="Zona AI Agent" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid rgba(139,92,246,0.4); margin-bottom: 15px;" loading="lazy">
-                    <div style="font-size: 14px; color: #22d3ee; margin-bottom: 5px;">📍 AI Agent</div>
-                    <h3 style="font-size: 20px; margin-bottom: 4px; color: white;">Zona</h3>
-                    <div style="color: #a78bfa; font-size: 13px; font-weight: 600; margin-bottom: 12px;">Local SEO Specialist</div>
-                    <p style="font-size: 14px; color: rgba(255,255,255,0.7);">Dominates local search with GeoGrid tracking, map pack optimization, and local citation building.</p>
-                    <a href="team.html#zona" style="display: inline-block; margin-top: 15px; color: #22d3ee; text-decoration: none; font-weight: 600; font-size: 14px;">Learn More →</a>
-                </div>
-
-                <div class="feature-card" style="padding: 30px 25px; text-align: center;">
-                    <img src="portraits/architetto.png" alt="Architetto AI Agent" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid rgba(139,92,246,0.4); margin-bottom: 15px;" loading="lazy">
-                    <div style="font-size: 14px; color: #22d3ee; margin-bottom: 5px;">🏗️ AI Agent</div>
-                    <h3 style="font-size: 20px; margin-bottom: 4px; color: white;">Architetto</h3>
-                    <div style="color: #a78bfa; font-size: 13px; font-weight: 600; margin-bottom: 12px;">Web Architect & Builder</div>
-                    <p style="font-size: 14px; color: rgba(255,255,255,0.7);">Keeps your website healthy — schema markup, page speed, CTAs, FAQs, and AI-ready indexing.</p>
-                    <a href="team.html#architetto" style="display: inline-block; margin-top: 15px; color: #22d3ee; text-decoration: none; font-weight: 600; font-size: 14px;">Learn More →</a>
-                </div>
-
-                <div class="feature-card" style="padding: 30px 25px; text-align: center;">
-                    <img src="portraits/penna.png" alt="Penna AI Agent" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid rgba(139,92,246,0.4); margin-bottom: 15px;" loading="lazy">
-                    <div style="font-size: 14px; color: #22d3ee; margin-bottom: 5px;">✍️ AI Agent</div>
-                    <h3 style="font-size: 20px; margin-bottom: 4px; color: white;">Penna</h3>
-                    <div style="color: #a78bfa; font-size: 13px; font-weight: 600; margin-bottom: 12px;">Content Writer</div>
-                    <p style="font-size: 14px; color: rgba(255,255,255,0.7);">Crafts SEO blog posts, community pages, and content that brings organic traffic to your school.</p>
-                    <a href="team.html#penna" style="display: inline-block; margin-top: 15px; color: #22d3ee; text-decoration: none; font-weight: 600; font-size: 14px;">Learn More →</a>
-                </div>
-
-                <div class="feature-card" style="padding: 30px 25px; text-align: center;">
-                    <img src="portraits/piazza.png" alt="Piazza AI Agent" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid rgba(139,92,246,0.4); margin-bottom: 15px;" loading="lazy">
-                    <div style="font-size: 14px; color: #22d3ee; margin-bottom: 5px;">📱 AI Agent</div>
-                    <h3 style="font-size: 20px; margin-bottom: 4px; color: white;">Piazza</h3>
-                    <div style="color: #a78bfa; font-size: 13px; font-weight: 600; margin-bottom: 12px;">Social Media Manager</div>
-                    <p style="font-size: 14px; color: rgba(255,255,255,0.7);">Manages your social media presence with engaging content calendars and optimized posting schedules.</p>
-                    <a href="team.html#piazza" style="display: inline-block; margin-top: 15px; color: #22d3ee; text-decoration: none; font-weight: 600; font-size: 14px;">Learn More →</a>
-                </div>
-
-                <div class="feature-card" style="padding: 30px 25px; text-align: center;">
-                    <img src="portraits/faccia.png" alt="Faccia AI Agent" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid rgba(139,92,246,0.4); margin-bottom: 15px;" loading="lazy">
-                    <div style="font-size: 14px; color: #22d3ee; margin-bottom: 5px;">👤 AI Agent</div>
-                    <h3 style="font-size: 20px; margin-bottom: 4px; color: white;">Faccia</h3>
-                    <div style="color: #a78bfa; font-size: 13px; font-weight: 600; margin-bottom: 12px;">Facebook Ads Specialist</div>
-                    <p style="font-size: 14px; color: rgba(255,255,255,0.7);">Runs targeted Facebook & Instagram ads that reach local parents and drive tour bookings.</p>
-                    <a href="team.html#faccia" style="display: inline-block; margin-top: 15px; color: #22d3ee; text-decoration: none; font-weight: 600; font-size: 14px;">Learn More →</a>
-                </div>
-
-                <div class="feature-card" style="padding: 30px 25px; text-align: center;">
-                    <img src="portraits/lettera.png" alt="Lettera AI Agent" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid rgba(139,92,246,0.4); margin-bottom: 15px;" loading="lazy">
-                    <div style="font-size: 14px; color: #22d3ee; margin-bottom: 5px;">💌 AI Agent</div>
-                    <h3 style="font-size: 20px; margin-bottom: 4px; color: white;">Lettera</h3>
-                    <div style="color: #a78bfa; font-size: 13px; font-weight: 600; margin-bottom: 12px;">Communications Director</div>
-                    <p style="font-size: 14px; color: rgba(255,255,255,0.7);">Manages email campaigns, parent nurture sequences, CRM segmentation, and follow-up automation.</p>
-                    <a href="team.html#lettera" style="display: inline-block; margin-top: 15px; color: #22d3ee; text-decoration: none; font-weight: 600; font-size: 14px;">Learn More →</a>
-                </div>
-
-                <div class="feature-card" style="padding: 30px 25px; text-align: center;">
-                    <img src="portraits/benvenuta.png" alt="Benvenuta AI Agent" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid rgba(139,92,246,0.4); margin-bottom: 15px;" loading="lazy">
-                    <div style="font-size: 14px; color: #22d3ee; margin-bottom: 5px;">🤗 AI Agent</div>
-                    <h3 style="font-size: 20px; margin-bottom: 4px; color: white;">Benvenuta</h3>
-                    <div style="color: #a78bfa; font-size: 13px; font-weight: 600; margin-bottom: 12px;">Parent Chatbot Assistant</div>
-                    <p style="font-size: 14px; color: rgba(255,255,255,0.7);">Your 24/7 website chatbot answering parent questions about tuition, programs, and scheduling tours.</p>
-                    <a href="team.html#benvenuta" style="display: inline-block; margin-top: 15px; color: #22d3ee; text-decoration: none; font-weight: 600; font-size: 14px;">Learn More →</a>
-                </div>
-
-            </div>
-            <div style="text-align: center; margin-top: 50px;">
-                <a href="team.html" class="cta-primary">See Full Team Details →</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing Section -->
+    <!-- Pricing -->
     <section class="pricing" id="pricing">
         <div class="container">
             <h2 class="section-title">Simple, Transparent Pricing</h2>
             <p class="section-subtitle">Everything you need to convert more website visitors into enrolled families.</p>
-            <div class="pricing-cards" style="max-width: 400px; margin: 60px auto 0;">
+            <div style="max-width:400px;margin:60px auto 0">
                 <div class="pricing-card featured">
                     <h3>Standard</h3>
                     <div class="price">$25<span> / month</span></div>
@@ -1211,65 +510,27 @@ Ready to enhance your school's parent experience? Subscribe to Parlami.ai and le
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact -->
     <section class="contact-section" id="contact">
         <div class="contact-container">
             <div class="contact-info">
-                <h2>Ready to Transform Your Preschool Website?</h2>
-                <p>Let's talk about how our AI chatbot can help you enroll more families and save your staff time.</p>
-                
+                <h2>Ready to Transform Your Preschool Marketing?</h2>
+                <p>Let's talk about how your AI marketing team can help you enroll more families and save your staff time.</p>
                 <div class="contact-steps">
-                    <h3 style="color: white; margin-bottom: 30px;">What happens next?</h3>
-                    <div class="contact-step">
-                        <div class="step-number">1</div>
-                        <div class="step-content">
-                            <h4>We'll contact you within 1 business day</h4>
-                            <p>to schedule a personalized demo</p>
-                        </div>
-                    </div>
-                    <div class="contact-step">
-                        <div class="step-number">2</div>
-                        <div class="step-content">
-                            <h4>Our team will customize a chatbot</h4>
-                            <p>trained specifically on your preschool's materials</p>
-                        </div>
-                    </div>
-                    <div class="contact-step">
-                        <div class="step-number">3</div>
-                        <div class="step-content">
-                            <h4>We'll help you integrate and optimize</h4>
-                            <p>the chatbot with your website for conversions</p>
-                        </div>
-                    </div>
+                    <h3 style="margin-bottom:30px">What happens next?</h3>
+                    <div class="contact-step"><div class="step-number">1</div><div class="step-content"><h4>We'll contact you within 1 business day</h4><p>to schedule a personalized demo</p></div></div>
+                    <div class="contact-step"><div class="step-number">2</div><div class="step-content"><h4>We configure your 12-agent AI team</h4><p>trained specifically on your school's data</p></div></div>
+                    <div class="contact-step"><div class="step-number">3</div><div class="step-content"><h4>Your team starts working immediately</h4><p>monitoring, optimizing, and reporting — 24/7</p></div></div>
                 </div>
             </div>
-            
             <form class="contact-form" id="demoForm">
-                <h3 style="color: white; margin-bottom: 30px;">Request a Demo</h3>
-                <div class="form-group">
-                    <label for="name">Your Name</label>
-                    <input type="text" id="name" name="name" required placeholder="Jane Smith">
-                </div>
-                <div class="form-group">
-                    <label for="school">School Name</label>
-                    <input type="text" id="school" name="school" required placeholder="Sunshine Preschool">
-                </div>
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required placeholder="jane@sunshinepreschool.com">
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
-                </div>
-                <div class="form-group">
-                    <label for="website">School Website</label>
-                    <input type="url" id="website" name="website" placeholder="https://www.sunshinepreschool.com">
-                </div>
-                <div class="form-group">
-                    <label for="message">Additional Information</label>
-                    <textarea id="message" name="message" placeholder="Tell us about your school and what you're looking for..."></textarea>
-                </div>
+                <h3 style="margin-bottom:30px">Request a Demo</h3>
+                <div class="form-group"><label for="name">Your Name</label><input type="text" id="name" name="name" required placeholder="Jane Smith"></div>
+                <div class="form-group"><label for="school">School Name</label><input type="text" id="school" name="school" required placeholder="Sunshine Preschool"></div>
+                <div class="form-group"><label for="email">Email Address</label><input type="email" id="email" name="email" required placeholder="jane@sunshinepreschool.com"></div>
+                <div class="form-group"><label for="phone">Phone Number</label><input type="tel" id="phone" name="phone" placeholder="(555) 123-4567"></div>
+                <div class="form-group"><label for="website">School Website</label><input type="url" id="website" name="website" placeholder="https://www.sunshinepreschool.com"></div>
+                <div class="form-group"><label for="message">Additional Information</label><textarea id="message" name="message" placeholder="Tell us about your school and what you're looking for..."></textarea></div>
                 <button type="submit" class="form-submit">Schedule My Demo</button>
             </form>
         </div>
@@ -1280,14 +541,13 @@ Ready to enhance your school's parent experience? Subscribe to Parlami.ai and le
         <div class="footer-content">
             <div class="footer-brand">
                 <h3>parlami.ai</h3>
-                <p>Smart chatbots designed specifically for preschools, helping you convert more inquiries into enrollments.</p>
+                <p>AI-powered marketing teams designed specifically for preschools. All team members are artificial intelligence agents, not real people.</p>
             </div>
             <div class="footer-section">
                 <h4>Company</h4>
                 <ul>
                     <li><a href="#">About Us</a></li>
-                    <li><a href="#">Our Team</a></li>
-                    <li><a href="#">Careers</a></li>
+                    <li><a href="#team">AI Team</a></li>
                     <li><a href="#">Privacy Policy</a></li>
                 </ul>
             </div>
@@ -1296,7 +556,6 @@ Ready to enhance your school's parent experience? Subscribe to Parlami.ai and le
                 <ul>
                     <li><a href="#">Blog</a></li>
                     <li><a href="#">Support Center</a></li>
-                    <li><a href="#">Case Studies</a></li>
                     <li><a href="#">FAQ</a></li>
                 </ul>
             </div>
@@ -1304,9 +563,6 @@ Ready to enhance your school's parent experience? Subscribe to Parlami.ai and le
                 <h4>Contact</h4>
                 <ul>
                     <li><a href="mailto:info@parlami.ai">info@parlami.ai</a></li>
-                    <li><a href="tel:8005551234">(800) 555-1234</a></li>
-                    <li>123 AI Boulevard</li>
-                    <li>San Francisco, CA 94103</li>
                 </ul>
             </div>
         </div>
@@ -1316,47 +572,9 @@ Ready to enhance your school's parent experience? Subscribe to Parlami.ai and le
     </footer>
 
     <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Add scroll effect to header
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.3)';
-                header.style.background = 'rgba(26, 28, 46, 0.98)';
-            } else {
-                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.2)';
-                header.style.background = 'rgba(43, 45, 66, 0.98)';
-            }
-        });
-
-        // Handle demo form submission
-        document.getElementById('demoForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
-            
-            // Here you would normally send this to your backend
-            // For now, we'll just show an alert
-            alert('Thank you for your interest! We\'ll contact you within 1 business day to schedule your demo.');
-            
-            // Clear the form
-            this.reset();
-        });
+        document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',function(e){e.preventDefault();const t=document.querySelector(this.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'})})});
+        window.addEventListener('scroll',function(){const h=document.querySelector('header');if(window.scrollY>50){h.style.boxShadow='0 2px 20px rgba(0,0,0,.3)';h.style.background='rgba(26,28,46,.98)'}else{h.style.boxShadow='0 2px 10px rgba(0,0,0,.2)';h.style.background='rgba(43,45,66,.98)'}});
+        document.getElementById('demoForm').addEventListener('submit',function(e){e.preventDefault();alert("Thank you for your interest! We'll contact you within 1 business day to schedule your demo.");this.reset()});
     </script>
 </body>
 </html>
