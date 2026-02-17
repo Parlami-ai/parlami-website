@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parlami.ai — Tu Equipo de Marketing con Inteligencia Artificial</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Quicksand',sans-serif;line-height:1.6;color:#fff;overflow-x:hidden;background:#1a1a2e}
+
+        /* Header */
+        header{background:rgba(26,26,46,.98);box-shadow:0 2px 10px rgba(0,0,0,.3);position:fixed;width:100%;top:0;z-index:1000;transition:all .3s}
+        nav{max-width:1200px;margin:0 auto;padding:20px;display:flex;justify-content:space-between;align-items:center}
+        .logo{font-size:28px;font-weight:700;color:#fff;text-decoration:none;display:flex;align-items:center;gap:10px}
+        .logo img{height:70px;width:auto}
+        .logo::before{content:none}
+        .nav-links{display:flex;gap:30px;align-items:center}
+        .nav-links a{text-decoration:none;color:rgba(255,255,255,.8);font-weight:500;transition:color .3s}
+        .nav-links a:hover{color:#fff}
+        .login-btn{background:transparent;color:#fff;padding:10px 20px;border-radius:25px;text-decoration:none;transition:all .3s;border:2px solid rgba(255,255,255,.3)}
+        .login-btn:hover{background:rgba(255,255,255,.1);border-color:#fff;transform:translateY(-2px)}
+
+        /* Shared */
+        .container{max-width:1200px;margin:0 auto}
+        .section-title{text-align:center;font-size:42px;margin-bottom:20px;font-weight:700}
+        .section-subtitle{text-align:center;font-size:20px;color:rgba(255,255,255,.7);margin-bottom:60px}
+        .ai-badge{display:inline-block;background:rgba(139,92,246,.2);border:1px solid rgba(139,92,246,.4);color:#a78bfa;padding:8px 24px;border-radius:25px;font-weight:600;font-size:14px}
+        .cta-primary{background:#8b5cf6;color:#fff;padding:15px 40px;border-radius:30px;text-decoration:none;font-weight:600;font-size:18px;transition:all .3s;display:inline-block}
+        .cta-primary:hover{background:#7c3aed;transform:translateY(-3px);box-shadow:0 10px 20px rgba(139,92,246,.3)}
+        .cta-secondary{background:transparent;color:#fff;padding:15px 40px;border-radius:30px;text-decoration:none;font-weight:600;font-size:18px;transition:all .3s;display:inline-block;border:2px solid rgba(255,255,255,.3)}
+        .cta-secondary:hover{background:rgba(255,255,255,.1);border-color:#fff;transform:translateY(-3px)}
+
+        /* Hero */
+        .hero{background:linear-gradient(135deg,#1a1a2e,#16213e);padding:150px 20px 150px;min-height:1100px;display:flex;align-items:center;position:relative;overflow:hidden}
+        .hero::before{content:"";position:absolute;width:500px;height:500px;background:rgba(139,92,246,.1);border-radius:50%;top:-250px;right:-250px}
+        .hero::after{content:"";position:absolute;width:400px;height:400px;background:rgba(34,211,238,.1);border-radius:50%;bottom:-200px;left:-200px}
+        .hero-content{text-align:left}
+        .hero h1{font-size:52px;margin-bottom:20px;font-weight:700;line-height:1.2}
+        .hero p{font-size:24px;color:rgba(255,255,255,.8);margin-bottom:40px;font-weight:500}
+        .cta-buttons{display:flex;gap:20px;flex-wrap:wrap}
+
+        /* Feature Cards (shared) */
+        .features{padding:80px 20px;background:#16213e}
+        .features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:40px;margin-top:60px}
+        .feature-card{background:rgba(255,255,255,.05);padding:40px 30px;border-radius:20px;transition:all .3s;position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.1)}
+        .feature-card::before{content:"";position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,#8b5cf6,#22d3ee);transform:translateX(-100%);transition:transform .3s}
+        .feature-card:hover::before{transform:translateX(0)}
+        .feature-card:hover{transform:translateY(-5px);background:rgba(255,255,255,.08);box-shadow:0 15px 40px rgba(139,92,246,.2)}
+        .feature-card h3{font-size:24px;margin-bottom:15px}
+        .feature-card p{color:rgba(255,255,255,.7);line-height:1.8}
+
+        /* Team Section */
+        .team-section{padding:80px 20px;background:#1a1a2e}
+        .team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:25px;margin-top:40px}
+        .agent-card{background:rgba(255,255,255,.05);padding:30px 25px;border-radius:20px;text-align:center;border:1px solid rgba(255,255,255,.1);transition:all .3s;position:relative;overflow:hidden}
+        .agent-card::before{content:"";position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,#8b5cf6,#22d3ee);transform:translateX(-100%);transition:transform .3s}
+        .agent-card:hover::before{transform:translateX(0)}
+        .agent-card:hover{transform:translateY(-5px);background:rgba(255,255,255,.08);box-shadow:0 15px 40px rgba(139,92,246,.2)}
+        .agent-card img{width:120px;height:120px;border-radius:50%;object-fit:cover;border:3px solid rgba(139,92,246,.4);margin-bottom:15px}
+        .agent-card .ai-tag{font-size:14px;color:#22d3ee;margin-bottom:5px}
+        .agent-card h3{font-size:20px;margin-bottom:4px}
+        .agent-card .title{color:#a78bfa;font-size:13px;font-weight:600;margin-bottom:12px}
+        .agent-card p{font-size:14px;color:rgba(255,255,255,.7);line-height:1.7}
+        .agent-card .learn-more{display:inline-block;margin-top:15px;color:#fff;background:rgba(34,211,238,.15);border:1px solid rgba(34,211,238,.4);text-decoration:none;font-weight:600;font-size:16px;padding:10px 24px;border-radius:25px;transition:all .3s}
+        .agent-card .learn-more:hover{background:#22d3ee;color:#1a1a2e;transform:translateY(-2px);box-shadow:0 5px 15px rgba(34,211,238,.3)}
+
+        /* Workflow */
+        .workflow{padding:80px 20px;background:#16213e}
+        .workflow .container{max-width:1000px;margin:0 auto}
+        .wf-steps{display:flex;flex-direction:column;gap:0;position:relative}
+        .wf-steps::before{content:"";position:absolute;left:30px;top:30px;bottom:30px;width:3px;background:linear-gradient(180deg,#8b5cf6,#22d3ee)}
+        .wf-step{display:flex;gap:30px;align-items:flex-start;padding:20px 0;position:relative}
+        .wf-icon{width:60px;height:60px;border-radius:50%;background:rgba(139,92,246,.2);border:2px solid #8b5cf6;display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0;z-index:1}
+        .wf-content h3{font-size:20px;margin-bottom:5px}
+        .wf-content p{color:rgba(255,255,255,.7);font-size:16px}
+
+        /* Approval Flow */
+        .approval{padding:80px 20px;background:#1a1a2e}
+        .approval .container{max-width:900px;margin:0 auto;text-align:center}
+        .approval h2{font-size:36px;margin-bottom:20px}
+        .approval>div>p{color:rgba(255,255,255,.7);font-size:18px;margin-bottom:40px;max-width:700px;margin-left:auto;margin-right:auto}
+        .approval-flow{display:flex;align-items:center;justify-content:center;gap:15px;flex-wrap:wrap;margin-bottom:40px}
+        .af-step{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:15px;padding:20px;text-align:center;min-width:140px}
+        .af-step .af-icon{font-size:36px;margin-bottom:8px}
+        .af-step h4{font-size:15px}
+        .af-step p{font-size:13px;color:rgba(255,255,255,.6)}
+        .af-arrow{font-size:28px;color:#8b5cf6}
+
+        /* Dashboard Preview */
+        .dashboard-preview{padding:80px 20px;background:#16213e}
+        .dashboard-mockup{max-width:1000px;margin:60px auto;background:rgba(255,255,255,.05);border-radius:20px;padding:20px;box-shadow:0 20px 60px rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.1)}
+        .mockup-header{background:rgba(255,255,255,.08);padding:20px;border-radius:10px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:center}
+        .mockup-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:20px}
+        .stat-box{background:rgba(255,255,255,.08);padding:20px;border-radius:10px;text-align:center;border:1px solid rgba(255,255,255,.1)}
+        .stat-value{font-size:32px;font-weight:700;color:#8b5cf6}
+        .stat-label{color:rgba(255,255,255,.7);font-size:14px;margin-top:5px}
+        .stat-change{color:#22d3ee;font-size:12px;margin-top:5px}
+        .mockup-table{background:rgba(255,255,255,.08);border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1)}
+        .table-header{padding:20px;border-bottom:1px solid rgba(255,255,255,.1);font-weight:600}
+        .table-row{display:grid;grid-template-columns:2fr 3fr 3fr 1fr;padding:15px 20px;border-bottom:1px solid rgba(255,255,255,.05);font-size:14px;color:rgba(255,255,255,.7)}
+        .table-row:hover{background:rgba(255,255,255,.05)}
+
+        /* Pricing */
+        .pricing{padding:80px 20px;background:#1a1a2e}
+        .pricing-card{background:rgba(255,255,255,.05);padding:40px;border-radius:20px;text-align:center;position:relative;transition:all .3s;border:1px solid rgba(255,255,255,.1)}
+        .pricing-card:hover{transform:translateY(-10px);background:rgba(255,255,255,.08);box-shadow:0 20px 60px rgba(139,92,246,.2)}
+        .pricing-card.featured{transform:scale(1.05);background:rgba(139,92,246,.1);border-color:rgba(139,92,246,.3);box-shadow:0 20px 60px rgba(139,92,246,.3)}
+        .pricing-card.featured::before{content:"POPULAR";position:absolute;top:-15px;right:30px;background:#8b5cf6;color:#fff;padding:5px 20px;border-radius:20px;font-size:12px;font-weight:600}
+        .pricing-card h3{font-size:28px;margin-bottom:10px}
+        .price{font-size:48px;font-weight:700;color:#8b5cf6;margin:20px 0}
+        .price span{font-size:18px;font-weight:400;color:rgba(255,255,255,.7)}
+        .price-subtitle{color:rgba(255,255,255,.7);margin-bottom:30px;font-style:italic}
+        .pricing-features{list-style:none;margin:30px 0;text-align:left}
+        .pricing-features li{padding:10px 0;color:rgba(255,255,255,.8);display:flex;align-items:center;gap:10px}
+        .pricing-features li::before{content:"✓";color:#22d3ee;font-weight:700;font-size:18px}
+
+        /* Contact */
+        .contact-section{padding:80px 20px;background:#16213e}
+        .contact-container{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+        .contact-info h2{font-size:42px;margin-bottom:20px;font-weight:700}
+        .contact-info p{font-size:18px;color:rgba(255,255,255,.7);margin-bottom:30px;line-height:1.8}
+        .contact-steps{margin-top:40px}
+        .contact-step{display:flex;gap:20px;margin-bottom:30px;align-items:start}
+        .step-number{background:#8b5cf6;color:#fff;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0}
+        .step-content h4{margin-bottom:5px}
+        .step-content p{color:rgba(255,255,255,.7);font-size:16px}
+        .contact-form{background:rgba(255,255,255,.05);padding:40px;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.1)}
+        .form-group{margin-bottom:25px}
+        .form-group label{display:block;margin-bottom:8px;color:rgba(255,255,255,.9);font-weight:600}
+        .form-group input,.form-group textarea{width:100%;padding:12px;border:2px solid rgba(255,255,255,.1);background:rgba(255,255,255,.05);border-radius:10px;font-size:16px;transition:all .3s;font-family:'Quicksand',sans-serif;color:#fff}
+        .form-group input::placeholder,.form-group textarea::placeholder{color:rgba(255,255,255,.4)}
+        .form-group input:focus,.form-group textarea:focus{outline:none;border-color:#8b5cf6;background:rgba(255,255,255,.08)}
+        .form-group textarea{resize:vertical;min-height:100px}
+        .form-submit{background:#8b5cf6;color:#fff;padding:15px 40px;border:none;border-radius:30px;font-size:18px;font-weight:600;cursor:pointer;width:100%;transition:all .3s;font-family:'Quicksand',sans-serif}
+        .form-submit:hover{background:#7c3aed;transform:translateY(-2px);box-shadow:0 10px 20px rgba(139,92,246,.3)}
+
+        /* Footer */
+        footer{background:#111;color:#999;padding:60px 20px 30px}
+        .footer-content{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+        .footer-brand h3{font-size:28px;margin-bottom:15px;color:#8b5cf6}
+        .footer-brand p{color:#999;line-height:1.8}
+        .footer-section h4{margin-bottom:20px;color:#fff}
+        .footer-section ul{list-style:none}
+        .footer-section ul li{margin-bottom:10px}
+        .footer-section a{color:#999;text-decoration:none;transition:color .3s}
+        .footer-section a:hover{color:#fff}
+        .footer-bottom{text-align:center;padding-top:30px;border-top:1px solid #333;color:#666}
+
+        /* Responsive */
+        @media(max-width:768px){
+            .nav-links{display:none}
+            .hero{min-height:auto;padding:120px 20px 60px}
+            .hero h1{font-size:36px}
+            .hero p{font-size:18px}
+            .cta-buttons{justify-content:center}
+            .features-grid,.team-grid,.contact-container{grid-template-columns:1fr}
+            .mockup-stats{grid-template-columns:repeat(2,1fr)}
+            .footer-content{grid-template-columns:1fr;text-align:center}
+            .approval-flow{flex-direction:column}
+            .af-arrow{transform:rotate(90deg)}
+            .wf-steps::before{left:20px}
+            .section-title{font-size:32px}
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="#" class="logo"><img src="../parlami-logo-full.png" alt="Parlami.ai"> parlami.ai</a>
+            <div class="nav-links">
+                <a href="#features">Funciones</a>
+                <a href="#team">Equipo IA</a>
+                <a href="#workflow">Cómo Funciona</a>
+                <a href="#pricing">Precios</a>
+                <a href="#contact">Contacto</a>
+                <a href="/">EN</a> | <a href="/es">ES</a>
+                <a href="/dashboard.html" class="login-btn">Iniciar Sesión</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" style="min-height:auto;padding:150px 20px 80px">
+        <div style="max-width:900px;margin:0 auto;text-align:center;position:relative;z-index:1">
+            <div style="margin-bottom:20px"><span class="ai-badge">🤖 Especialistas en Marketing con Inteligencia Artificial</span></div>
+            <h1 style="font-size:56px;margin-bottom:20px;font-weight:700;line-height:1.2">Tu Equipo de Marketing IA<br><span style="color:#8b5cf6">Trabaja Mientras Duermes</span></h1>
+            <p style="font-size:22px;color:rgba(255,255,255,.85);margin-bottom:30px;max-width:800px;margin-left:auto;margin-right:auto">Parlami.ai es una fuerza de trabajo digital multiagente de IA que orquesta toda tu estrategia de marketing — desde SEO y anuncios pagados hasta mapas locales y reputación — asegurando que cada dólar invertido esté directamente vinculado a los ingresos.</p>
+            <p style="font-size:18px;color:rgba(255,255,255,.65);margin-bottom:20px;max-width:750px;margin-left:auto;margin-right:auto">Creado por el dueño de dos preescolares que se cansó de pagar miles por SEO, marketing digital, redacción de contenido y desarrollo web — decidió construir su propia plataforma de marketing. <a href="https://parlami-dashboard.onrender.com/dashboard?demo=true" style="color:#22d3ee;text-decoration:underline">Ve el panel en vivo creado para sus preescolares.</a></p>
+            <p style="font-size:18px;color:rgba(255,255,255,.65);margin-bottom:40px;max-width:750px;margin-left:auto;margin-right:auto">12 agentes especializados de Inteligencia Artificial reemplazan la naturaleza fragmentada y aislada de las agencias tradicionales con una mente colectiva unificada 24/7. En lugar de informes inconexos, recibes un análisis integral de toda tu estrategia de marketing cada mañana — con decisiones listas para ejecutar, no datos sin procesar. Y siempre tienes un gerente de cuenta real que te ayuda a ejecutar las decisiones importantes.</p>
+            <div style="max-width:800px;margin:0 auto 40px;padding:25px;background:rgba(34,211,238,.08);border:1px solid rgba(34,211,238,.25);border-radius:16px;text-align:center">
+                <p style="font-size:18px;font-weight:700;color:#22d3ee;margin-bottom:6px">👤 Todos los Planes Incluyen un Gerente de Cuenta Real</p>
+                <p style="font-size:15px;color:rgba(255,255,255,.75);line-height:1.7">Tu equipo de Inteligencia Artificial es poderoso — pero un humano real revisa los informes de Marco cada mañana, toma las decisiones estratégicas finales e impulsa las ventas de tu cuenta. Nunca te quedas hablando con una máquina. Cada cliente obtiene un gerente de cuenta dedicado que conoce tu negocio.</p>
+            </div>
+            <div class="cta-buttons" style="justify-content:center">
+                <a href="#contact" class="cta-primary">Obtén Tu Equipo IA →</a>
+                <a href="#team" class="cta-secondary">Conoce al Equipo ↓</a>
+                <a href="https://parlami-dashboard.onrender.com/dashboard?demo=true" class="cta-secondary" style="border-color:rgba(34,211,238,.4);color:#22d3ee" target="_blank">Ver el Panel 📊</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet Your AI Team -->
+    <section class="team-section" id="team">
+        <div class="container" style="max-width:1400px">
+            <div style="text-align:center;margin-bottom:10px">
+                <span class="ai-badge">🤖 Especialistas en Marketing con Inteligencia Artificial</span>
+            </div>
+            <h2 class="section-title">Conoce a Tu Equipo de Marketing IA</h2>
+            <p class="section-subtitle">12 agentes especializados de Inteligencia Artificial que entregan resultados reales de marketing las 24 horas. Tus agentes monitorean todo 24/7 y te alertan por urgencia. Cada mañana lees tu informe, revisas las recomendaciones y apruebas que tus agentes tomen acción. Nada sucede sin tu autorización.</p>
+
+            <div class="team-grid">
+                <div class="agent-card">
+                    <img src="../portraits/marco.png" alt="Marco — Director de Marketing IA" loading="lazy">
+                    <div class="ai-tag">☕ Agente de Inteligencia Artificial</div>
+                    <h3>Marco</h3>
+                    <div class="title">Direttore di Marketing</div>
+                    <p>El Jefe. Orquesta todo el enjambre, priorizando alertas y gestionando el flujo de aprobación. Entrega decisiones listas para ejecutar cada mañana.</p>
+                    <a href="../team/marco.html" class="learn-more">Más Información →</a>
+                </div>
+
+                <div class="agent-card">
+                    <img src="../portraits/annunci.png" alt="Annunci — Especialista en Google Ads IA" loading="lazy">
+                    <div class="ai-tag">📣 Agente de Inteligencia Artificial</div>
+                    <h3>Annunci</h3>
+                    <div class="title">Especialista en Google Ads</div>
+                    <p>Un analista forense que detecta el gasto desperdiciado de inmediato. Gestiona un pipeline creativo, generando y probando nuevos creativos publicitarios para optimizar las conversiones.</p>
+                    <a href="../team/annunci.html" class="learn-more">Más Información →</a>
+                </div>
+
+                <div class="agent-card">
+                    <img src="../portraits/bussola.png" alt="Bussola — Analista de Datos IA" loading="lazy">
+                    <div class="ai-tag">📊 Agente de Inteligencia Artificial</div>
+                    <h3>Bussola</h3>
+                    <div class="title">Analista de Datos</div>
+                    <p>La Fuente de la Verdad. Valida que las etiquetas de seguimiento se activen correctamente e interpreta GA4 para distinguir entre tráfico vacío y tendencias valiosas de conversión.</p>
+                    <a href="../team/bussola.html" class="learn-more">Más Información →</a>
+                </div>
+
+                <div class="agent-card">
+                    <img src="../portraits/spia.png" alt="Spia — Agente de Inteligencia SEO IA" loading="lazy">
+                    <div class="ai-tag">🔍 Agente de Inteligencia Artificial</div>
+                    <h3>Spia</h3>
+                    <div class="title">Agente de Inteligencia SEO</div>
+                    <p>El Explorador del Mercado. Monitorea rankings de palabras clave, analiza backlinks de competidores e identifica brechas de contenido — temas en los que tus competidores están ganando y tú no.</p>
+                    <a href="../team/spia.html" class="learn-more">Más Información →</a>
+                </div>
+
+                <div class="agent-card">
+                    <img src="../portraits/stella.png" alt="Stella — Gerente de Reputación IA" loading="lazy">
+                    <div class="ai-tag">⭐ Agente de Inteligencia Artificial</div>
+                    <h3>Stella</h3>
+                    <div class="title">Gerente de Reputación</div>
+                    <p>La Guardiana. Monitorea reseñas de Google y redacta respuestas profesionales para tu aprobación. Optimiza constantemente tu Perfil de Negocio de Google para máxima visibilidad.</p>
+                    <a href="../team/stella.html" class="learn-more">Más Información →</a>
+                </div>
+
+                <div class="agent-card">
+                    <img src="../portraits/zona.png" alt="Zona — Especialista en SEO Local IA" loading="lazy">
+                    <div class="ai-tag">📍 Agente de Inteligencia Artificial</div>
+                    <h3>Zona</h3>
+                    <div class="title">Especialista en SEO Local</div>
+                    <p>El Táctico de Mapas. Rastrea rankings de GeoGrid para asegurar el dominio en el Map Pack. Gestiona citaciones locales y monitorea el posicionamiento de competidores cuadra por cuadra.</p>
+                    <a href="../team/zona.html" class="learn-more">Más Información →</a>
+                </div>
+
+                <div class="agent-card">
+                    <img src="../portraits/architetto.png" alt="Architetto — Arquitecto Web IA" loading="lazy">
+                    <div class="ai-tag">🏗️ Agente de Inteligencia Artificial</div>
+                    <h3>Architetto</h3>
+                    <div class="title">Arquitecto y Constructor Web</div>
+                    <p>El Constructor. Monitorea la salud del sitio y construye páginas de destino de alta conversión, CTAs y FAQs. Implementa marcado Schema e indexación lista para IA para que tu sitio sea leído por motores de búsqueda e IA por igual.</p>
+                    <a href="../team/architetto.html" class="learn-more">Más Información →</a>
+                </div>
+
+                <div class="agent-card">
+                    <img src="../portraits/penna.png" alt="Penna — Redactor de Contenido IA" loading="lazy">
+                    <div class="ai-tag">✍️ Agente de Inteligencia Artificial</div>
+                    <h3>Penna</h3>
+                    <div class="title">Redactor de Contenido</div>
+                    <p>La Voz. Escribe publicaciones de blog optimizadas para SEO y páginas comunitarias basadas en la inteligencia de Spia. Gestiona el calendario de contenido y publica directamente en WordPress tras la aprobación.</p>
+                    <a href="../team/penna.html" class="learn-more">Más Información →</a>
+                </div>
+
+                <div class="agent-card">
+                    <img src="../portraits/piazza.png" alt="Piazza — Gerente de Redes Sociales IA" loading="lazy">
+                    <div class="ai-tag">📱 Agente de Inteligencia Artificial</div>
+                    <h3>Piazza</h3>
+                    <div class="title">Gerente de Redes Sociales</div>
+                    <p>El Amplificador. Reutiliza el contenido del blog en publicaciones sociales atractivas. Gestiona el calendario de publicaciones y rastrea el engagement para mantener tu marca en la mente de todos.</p>
+                    <a href="../team/piazza.html" class="learn-more">Más Información →</a>
+                </div>
+
+                <div class="agent-card">
+                    <img src="../portraits/faccia.png" alt="Faccia — Especialista en Facebook Ads IA" loading="lazy">
+                    <div class="ai-tag">👤 Agente de Inteligencia Artificial</div>
+                    <h3>Faccia</h3>
+                    <div class="title">Especialista en Facebook Ads</div>
+                    <p>El Gerente de Meta. Ejecuta campañas dirigidas en Facebook e Instagram, enfocándose en demografías de padres y retargeting de "compradores de vitrina" de vuelta a la página de reserva de tours.</p>
+                    <a href="../team/faccia.html" class="learn-more">Más Información →</a>
+                </div>
+
+                <div class="agent-card">
+                    <img src="../portraits/lettera.png" alt="Lettera — Director de Comunicaciones IA" loading="lazy">
+                    <div class="ai-tag">💌 Agente de Inteligencia Artificial</div>
+                    <h3>Lettera</h3>
+                    <div class="title">Director de Comunicaciones</div>
+                    <p>El Cerrador. Gestiona el ciclo de vida después de capturar el lead — secuencias de nurturing, boletines para padres y campañas de seguimiento para recuperar oportunidades perdidas.</p>
+                    <a href="../team/lettera.html" class="learn-more">Más Información →</a>
+                </div>
+
+                <div class="agent-card">
+                    <img src="../portraits/benvenuta.png" alt="Benvenuta — Chatbot para Padres IA" loading="lazy">
+                    <div class="ai-tag">🤗 Agente de Inteligencia Artificial</div>
+                    <h3>Benvenuta</h3>
+                    <div class="title">Asistente Chatbot para Padres</div>
+                    <p>El Conserje Siempre Disponible. Responde preguntas de padres 24/7 y registra cada interacción como inteligencia de marketing, retroalimentando las preguntas reales de los padres a Marco para mejorar la estrategia.</p>
+                    <a href="../team/benvenuta.html" class="learn-more">Más Información →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workflow: Alerts → Morning Report → You Approve -->
+    <section class="workflow" id="workflow">
+        <div class="container">
+            <h2 class="section-title">Alertas, Informes, Tú Decides</h2>
+            <p class="section-subtitle" style="margin-bottom:40px">Tus agentes monitorean todo 24/7 y te alertan por urgencia. Cada mañana lees tu informe, revisas las recomendaciones y apruebas que tus agentes tomen acción. Nada sucede sin tu autorización.</p>
+            <div class="wf-steps">
+                <div class="wf-step">
+                    <div class="wf-icon">🔍</div>
+                    <div class="wf-content">
+                        <h3>Monitoreo 24/7</h3>
+                        <p>Tus 12 agentes nunca duermen. Escanean continuamente Google Ads, rankings SEO, reseñas, salud del sitio web, redes sociales y más — detectando problemas en el momento en que aparecen.</p>
+                    </div>
+                </div>
+                <div class="wf-step">
+                    <div class="wf-icon">🚨</div>
+                    <div class="wf-content">
+                        <h3>Alertas por Urgencia</h3>
+                        <p><strong style="color:#ef4444">🔴 Crítico:</strong> Anuncios desperdiciando dinero, sitio caído, seguimiento roto — se te notifica de inmediato.<br><strong style="color:#f59e0b">🟡 Advertencia:</strong> Rankings cayendo, CPA subiendo, actividad de competidores — marcado para tu revisión matutina.<br><strong style="color:#22c55e">🟢 Oportunidad:</strong> Brechas de palabras clave, ideas de contenido, mejoras de optimización — en cola para cuando estés listo.</p>
+                    </div>
+                </div>
+                <div class="wf-step">
+                    <div class="wf-icon">☀️</div>
+                    <div class="wf-content">
+                        <h3>Tu Informe Matutino Diario</h3>
+                        <p>Cada mañana, Marco sintetiza datos de los 12 agentes en un informe claro: qué pasó durante la noche, qué necesita atención y recomendaciones específicas con aprobación de un clic. Comienza tu día con decisiones, no con datos.</p>
+                    </div>
+                </div>
+                <div class="wf-step">
+                    <div class="wf-icon">✅</div>
+                    <div class="wf-content">
+                        <h3>Tú Apruebas — Los Agentes Ejecutan</h3>
+                        <p>Revisa cada recomendación. Haz clic en "Aprobar" y el agente especialista ejecuta de inmediato — pausando una campaña mala, publicando un blog, respondiendo a una reseña, arreglando una página rota. Tú mantienes el control. Siempre.</p>
+                    </div>
+                </div>
+                <div class="wf-step">
+                    <div class="wf-icon">🤝</div>
+                    <div class="wf-content">
+                        <h3>Los Agentes Colaboran Automáticamente</h3>
+                        <p>Cuando Spia encuentra una brecha de palabras clave, le dice a Penna que escriba el contenido, a Architetto que construya la página y a Annunci que la promocione con anuncios. Tu equipo trabaja junto como una agencia real — pero más rápido, más económico y 24/7.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security & Trust -->
+    <section class="approval">
+        <div class="container">
+            <h2>Tus Cuentas Están Seguras</h2>
+            <p>Impulsado por <strong style="color:#22d3ee">OpenClaw</strong> — infraestructura de nivel empresarial más segura que el 99% de los despliegues VPS.</p>
+            <div class="approval-flow">
+                <div class="af-step">
+                    <div class="af-icon">🔥</div>
+                    <h4>Protección Firewall</h4>
+                    <p>Servidor reforzado con firewall activo</p>
+                </div>
+                <div class="af-arrow">→</div>
+                <div class="af-step">
+                    <div class="af-icon">🛡️</div>
+                    <h4>Fail2Ban Activo</h4>
+                    <p>Ataques de fuerza bruta bloqueados automáticamente</p>
+                </div>
+                <div class="af-arrow">→</div>
+                <div class="af-step">
+                    <div class="af-icon">🔑</div>
+                    <h4>Solo Claves SSH</h4>
+                    <p>Sin contraseñas — solo claves</p>
+                </div>
+                <div class="af-arrow">→</div>
+                <div class="af-step">
+                    <div class="af-icon">🔒</div>
+                    <h4>Red Privada</h4>
+                    <p>Malla encriptada Tailscale</p>
+                </div>
+                <div class="af-arrow">→</div>
+                <div class="af-step">
+                    <div class="af-icon">🏦</div>
+                    <h4>Configuración Bloqueada</h4>
+                    <p>Credenciales encriptadas y archivos env</p>
+                </div>
+            </div>
+            <p style="color:rgba(255,255,255,.6);font-size:15px;margin-top:30px">Tus cuentas de Google Ads, Analytics y redes sociales se gestionan de forma segura a través de OAuth — nunca compartes contraseñas. Todas las credenciales de API están encriptadas en reposo, aisladas por cliente y protegidas por múltiples capas de refuerzo del servidor.</p>
+            <div style="margin-top:30px"><a href="#contact" class="cta-primary">Obtén Tu Equipo IA →</a></div>
+        </div>
+    </section>
+    <!-- Live Dashboard Preview -->
+    <section class="dashboard-preview" id="dashboard">
+        <div class="container">
+            <div style="text-align:center;margin-bottom:10px">
+                <span class="ai-badge">📊 Panel de Agentes en Vivo</span>
+            </div>
+            <h2 class="section-title">Ve a Tu Equipo IA Trabajando</h2>
+            <p class="section-subtitle">Panel en tiempo real que muestra el estado de los agentes, alertas, programaciones cron y métricas de rendimiento — todo en un solo lugar.</p>
+            <div style="max-width:1100px;margin:0 auto;background:rgba(0,0,0,.3);border-radius:20px;padding:8px;box-shadow:0 20px 60px rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.1);position:relative">
+                <div style="position:absolute;top:-16px;left:30px;background:linear-gradient(135deg,#8b5cf6,#22d3ee);color:#fff;padding:8px 25px;border-radius:25px;font-size:14px;font-weight:700;z-index:1">⚡ Vista Previa del Panel en Vivo</div>
+                <iframe src="https://parlami-dashboard.onrender.com/dashboard" style="width:100%;height:700px;border:none;border-radius:16px;background:#1a1c2e" title="Panel de Agentes Parlami" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2 class="section-title">Precios Simples y Transparentes</h2>
+            <p class="section-subtitle">Un empleado junior de marketing cuesta $4K/mes. Una agencia cuesta $5K–$15K. Parlami te da un equipo de especialistas en Inteligencia Artificial — y nunca duermen.</p>
+
+            <div style="max-width:900px;margin:0 auto 50px;padding:30px;background:rgba(34,211,238,.08);border:1px solid rgba(34,211,238,.25);border-radius:16px;text-align:center">
+                <p style="font-size:20px;font-weight:700;color:#22d3ee;margin-bottom:8px">👤 Todos los Planes Incluyen un Gerente de Cuenta Real</p>
+                <p style="font-size:16px;color:rgba(255,255,255,.75);line-height:1.7">Tu equipo de Inteligencia Artificial es poderoso — pero un humano real revisa los informes de Marco cada mañana, toma las decisiones estratégicas finales e impulsa las ventas de tu cuenta. Nunca te quedas hablando con una máquina. Cada cliente obtiene un gerente de cuenta dedicado que conoce tu negocio.</p>
+            </div>
+
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;max-width:1200px;margin:0 auto">
+
+                <div class="pricing-card">
+                    <h3>Motor de Anuncios</h3>
+                    <p style="color:#22d3ee;font-weight:600;font-size:14px;margin-bottom:5px">EL IMPULSOR DE INGRESOS</p>
+                    <div class="price">$997<span> / mes</span></div>
+                    <p class="price-subtitle">Gestionamos tus anuncios, rastreamos cada dólar y nos aseguramos de que no desperdicies presupuesto. El camino más rápido hacia más leads.</p>
+                    <ul class="pricing-features">
+                        <li><strong>5 Agentes de Inteligencia Artificial:</strong></li>
+                        <li>☕ Marco — informes diarios y estrategia</li>
+                        <li>📣 Annunci — gestión y optimización de Google Ads</li>
+                        <li>👤 Faccia — campañas de anuncios en Facebook e Instagram</li>
+                        <li>⭐ Stella — monitoreo de reseñas de Google, respuestas redactadas y publicación en tu Perfil de Negocio de Google usando tus fotos y contenido</li>
+                        <li>📊 Bussola — analítica, seguimiento de conversiones y ROI</li>
+                        <li style="margin-top:12px;color:#22d3ee">✔ Gerente de cuenta dedicado</li>
+                        <li style="color:#22d3ee">✔ Seguridad del servidor (Firewall, Fail2Ban, Tailscale)</li>
+                        <li style="color:#22d3ee">✔ Panel de alertas en tiempo real</li>
+                    </ul>
+                    <a href="#contact" class="cta-primary" style="background:#6366f1">Comenzar</a>
+                </div>
+
+                <div class="pricing-card featured">
+                    <h3>Anuncios + SEO</h3>
+                    <p style="color:#22d3ee;font-weight:600;font-size:14px;margin-bottom:5px">EL MOTOR DE VISIBILIDAD</p>
+                    <div class="price">$1,497<span> / mes</span></div>
+                    <p class="price-subtitle">Los anuncios pagados te consiguen leads hoy. El SEO te consigue leads gratis para siempre. Este plan hace ambas cosas.</p>
+                    <ul class="pricing-features">
+                        <li><strong>7 Agentes de Inteligencia Artificial:</strong></li>
+                        <li>Todo en Motor de Anuncios MÁS</li>
+                        <li>🔍 Spia — seguimiento de palabras clave SEO e inteligencia competitiva</li>
+                        <li>🏗️ Architetto — construcción de páginas web, marcado schema, CTAs, FAQs e indexación lista para IA para que motores de búsqueda IA como ChatGPT y Perplexity encuentren tu negocio</li>
+                        <li>Auditorías y correcciones de SEO técnico</li>
+                        <li>Monitoreo de velocidad y salud del sitio</li>
+                        <li style="margin-top:12px;color:#22d3ee">✔ Gerente de cuenta dedicado</li>
+                        <li style="color:#22d3ee">✔ Panel de alertas en tiempo real</li>
+                        <li style="color:#22d3ee">✔ Seguridad del servidor (Firewall, Fail2Ban, Tailscale)</li>
+                    </ul>
+                    <a href="#contact" class="cta-primary">Comenzar</a>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>Agencia Completa</h3>
+                    <p style="color:#22d3ee;font-weight:600;font-size:14px;margin-bottom:5px">EL EQUIPO DE MARKETING COMPLETO</p>
+                    <div class="price">$1,997<span> / mes</span></div>
+                    <p class="price-subtitle">Nos encargamos de todo el ciclo de marketing — anuncios, SEO, contenido, redes sociales, email, local y captura de leads. Tu reemplazo completo de agencia.</p>
+                    <ul class="pricing-features">
+                        <li><strong>Los 12 Agentes de Inteligencia Artificial:</strong></li>
+                        <li>Todo en Anuncios + SEO MÁS</li>
+                        <li>✍️ Penna — publicaciones de blog SEO, páginas comunitarias y estrategia de contenido</li>
+                        <li>📱 Piazza — publicaciones en redes sociales (Facebook, Instagram, GMB)</li>
+                        <li>📍 Zona — SEO local, GeoGrid y páginas de destino comunitarias</li>
+                        <li>💌 Lettera — nurturing por email, CRM y gestión de lista de espera</li>
+                        <li>🤗 Benvenuta — chatbot 24/7 en el sitio web y captura de leads</li>
+                        <li style="margin-top:12px"><strong>Creación de Contenido con IA:</strong></li>
+                        <li>📣 Generación de assets y creativos para Google Ads</li>
+                        <li>📝 Redacción y publicación de blogs SEO</li>
+                        <li>📍 Publicaciones en Google My Business</li>
+                        <li>📱 Contenido para Facebook e Instagram</li>
+                        <li>🌐 Construcción de páginas comunitarias y de destino</li>
+                        <li style="margin-top:12px;color:#22d3ee">✔ Gerente de cuenta dedicado</li>
+                        <li style="color:#22d3ee">✔ Panel de alertas en tiempo real</li>
+                        <li style="color:#22d3ee">✔ Seguridad del servidor (Firewall, Fail2Ban, Tailscale)</li>
+                        <li style="color:#22d3ee">✔ Soporte prioritario y llamadas de estrategia</li>
+                    </ul>
+                    <a href="#contact" class="cta-primary" style="background:#6366f1">Comenzar</a>
+                </div>
+
+            </div>
+            <div style="text-align:center;margin-top:40px">
+                <p style="color:rgba(255,255,255,.5);font-size:16px">¿Necesitas multi-ubicación, multi-marca o escala empresarial? <a href="#contact" style="color:#22d3ee;text-decoration:underline">Contáctanos para precios empresariales.</a></p>
+            </div>
+        </div>
+    </section>
+    <!-- Contact -->
+    <section class="contact-section" id="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>¿Listo para Transformar Tu Marketing?</h2>
+                <p>Hablemos de cómo tu equipo de marketing con Inteligencia Artificial puede generar más leads, ahorrar miles y trabajar 24/7.</p>
+                <div class="contact-steps">
+                    <h3 style="margin-bottom:30px">¿Qué sucede después?</h3>
+                    <div class="contact-step"><div class="step-number">1</div><div class="step-content"><h4>Te contactaremos dentro de 1 día hábil</h4><p>para programar una demostración personalizada</p></div></div>
+                    <div class="contact-step"><div class="step-number">2</div><div class="step-content"><h4>Configuramos tu equipo de 12 agentes IA</h4><p>entrenado específicamente con los datos de tu negocio</p></div></div>
+                    <div class="contact-step"><div class="step-number">3</div><div class="step-content"><h4>Tu equipo comienza a trabajar de inmediato</h4><p>monitoreando, optimizando e informando — 24/7</p></div></div>
+                </div>
+            </div>
+            <form class="contact-form" id="demoForm">
+                <h3 style="margin-bottom:30px">Solicitar una Demostración</h3>
+                <div class="form-group"><label for="name">Tu Nombre</label><input type="text" id="name" name="name" required placeholder="María García"></div>
+                <div class="form-group"><label for="school">Nombre del Negocio</label><input type="text" id="school" name="school" required placeholder="Tu Nombre de Negocio"></div>
+                <div class="form-group"><label for="email">Correo Electrónico</label><input type="email" id="email" name="email" required placeholder="maria@tupreescolar.com"></div>
+                <div class="form-group"><label for="phone">Número de Teléfono</label><input type="tel" id="phone" name="phone" placeholder="(555) 123-4567"></div>
+                <div class="form-group"><label for="website">Sitio Web</label><input type="url" id="website" name="website" placeholder="https://www.tunegocio.com"></div>
+                <div class="form-group"><label for="message">Información Adicional</label><textarea id="message" name="message" placeholder="Cuéntanos sobre tu negocio y lo que estás buscando..."></textarea></div>
+                <button type="submit" class="form-submit">Programar Mi Demostración</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>parlami.ai</h3>
+                <p>Equipos de marketing con Inteligencia Artificial para cualquier negocio. Todos los miembros del equipo son agentes de Inteligencia Artificial trabajando 24/7.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Empresa</h4>
+                <ul>
+                    <li><a href="#">Sobre Nosotros</a></li>
+                    <li><a href="#team">Equipo IA</a></li>
+                    <li><a href="#">Política de Privacidad</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Recursos</h4>
+                <ul>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Centro de Soporte</a></li>
+                    <li><a href="#">Preguntas Frecuentes</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <ul>
+                    <li><a href="mailto:info@parlami.ai">info@parlami.ai</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Parlami.ai. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',function(e){e.preventDefault();const t=document.querySelector(this.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'})})});
+        window.addEventListener('scroll',function(){const h=document.querySelector('header');if(window.scrollY>50){h.style.boxShadow='0 2px 20px rgba(0,0,0,.3)';h.style.background='rgba(26,28,46,.98)'}else{h.style.boxShadow='0 2px 10px rgba(0,0,0,.2)';h.style.background='rgba(43,45,66,.98)'}});
+        document.getElementById('demoForm').addEventListener('submit',function(e){e.preventDefault();alert("¡Gracias por tu interés! Te contactaremos dentro de 1 día hábil para programar tu demostración.");this.reset()});
+    </script>
+</body>
+</html>
