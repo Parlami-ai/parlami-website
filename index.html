@@ -579,7 +579,21 @@
     <script>
         document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',function(e){e.preventDefault();const t=document.querySelector(this.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'})})});
         window.addEventListener('scroll',function(){const h=document.querySelector('header');if(window.scrollY>50){h.style.boxShadow='0 2px 20px rgba(0,0,0,.3)';h.style.background='rgba(26,28,46,.98)'}else{h.style.boxShadow='0 2px 10px rgba(0,0,0,.2)';h.style.background='rgba(43,45,66,.98)'}});
-        document.getElementById('demoForm').addEventListener('submit',function(e){e.preventDefault();alert("Thank you for your interest! We'll contact you within 1 business day to schedule your demo.");this.reset()});
+        document.getElementById('demoForm').addEventListener('submit',async function(e){
+            e.preventDefault();
+            const btn=this.querySelector('.form-submit');
+            btn.disabled=true;btn.textContent='Sending...';
+            try{
+                const res=await fetch('https://parlami-dashboard.onrender.com/api/demo-request',{
+                    method:'POST',headers:{'Content-Type':'application/json'},
+                    body:JSON.stringify({name:this.name.value,school:this.school.value,email:this.email.value,phone:this.phone.value,website:this.website.value,message:this.message.value,source:'website'})
+                });
+                const data=await res.json();
+                alert(data.message||"Thank you! We'll contact you within 1 business day.");
+                this.reset();
+            }catch(err){alert("Thank you for your interest! We'll contact you within 1 business day.");}
+            btn.disabled=false;btn.textContent='Schedule My Demo';
+        });
     </script>
 </body>
 </html>
