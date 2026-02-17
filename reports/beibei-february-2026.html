@@ -1,0 +1,2278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Parlami.ai Monthly Intelligence Report — Beibei Amigos & Amici Trilingual Montessori — February 2026">
+<title>Parlami.ai Intelligence Report — Beibei Amigos | February 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-primary: #0d0d1a;
+    --bg-secondary: #1a1a2e;
+    --bg-card: #16213e;
+    --bg-card-hover: #1e2a4a;
+    --purple: #7c3aed;
+    --purple-light: #9d64f5;
+    --purple-glow: rgba(124, 58, 237, 0.15);
+    --cyan: #06b6d4;
+    --cyan-light: #22d3ee;
+    --cyan-glow: rgba(6, 182, 212, 0.12);
+    --red: #ef4444;
+    --red-bg: rgba(239, 68, 68, 0.1);
+    --red-border: rgba(239, 68, 68, 0.3);
+    --orange: #f97316;
+    --orange-bg: rgba(249, 115, 22, 0.1);
+    --orange-border: rgba(249, 115, 22, 0.3);
+    --yellow: #eab308;
+    --yellow-bg: rgba(234, 179, 8, 0.1);
+    --yellow-border: rgba(234, 179, 8, 0.3);
+    --green: #22c55e;
+    --green-bg: rgba(34, 197, 94, 0.1);
+    --green-border: rgba(34, 197, 94, 0.3);
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --border: rgba(255,255,255,0.06);
+    --border-light: rgba(255,255,255,0.03);
+    --sidebar-width: 260px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    font-size: 14px;
+  }
+
+  /* ── SIDEBAR ── */
+  .sidebar {
+    position: fixed;
+    top: 0; left: 0;
+    width: var(--sidebar-width);
+    height: 100vh;
+    background: var(--bg-secondary);
+    border-right: 1px solid var(--border);
+    overflow-y: auto;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sidebar-header {
+    padding: 24px 20px 20px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .sidebar-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+
+  .logo-icon {
+    width: 32px; height: 32px;
+    background: linear-gradient(135deg, var(--purple), var(--cyan));
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px; font-weight: 700;
+    color: white;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  .logo-text {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    background: linear-gradient(90deg, var(--purple-light), var(--cyan));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .sidebar-meta {
+    font-size: 11px;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  .sidebar-nav {
+    padding: 16px 12px;
+    flex: 1;
+  }
+
+  .nav-section-label {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    padding: 8px 8px 4px;
+    margin-top: 8px;
+  }
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 8px;
+    border-radius: 6px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 12.5px;
+    font-weight: 450;
+    transition: all 0.15s;
+    cursor: pointer;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+  }
+
+  .nav-link:hover {
+    background: var(--purple-glow);
+    color: var(--text-primary);
+  }
+
+  .nav-link .nav-icon { font-size: 14px; min-width: 18px; }
+
+  .nav-badge {
+    margin-left: auto;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 1px 6px;
+    border-radius: 10px;
+  }
+
+  .badge-red { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-border); }
+  .badge-yellow { background: var(--yellow-bg); color: var(--yellow); border: 1px solid var(--yellow-border); }
+  .badge-green { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+  .badge-cyan { background: var(--cyan-glow); color: var(--cyan); border: 1px solid rgba(6,182,212,0.3); }
+  .badge-purple { background: var(--purple-glow); color: var(--purple-light); border: 1px solid rgba(124,58,237,0.3); }
+  .badge-orange { background: var(--orange-bg); color: var(--orange); border: 1px solid var(--orange-border); }
+
+  /* ── MAIN CONTENT ── */
+  .main {
+    margin-left: var(--sidebar-width);
+    min-height: 100vh;
+  }
+
+  /* ── TOPBAR ── */
+  .topbar {
+    background: linear-gradient(135deg, var(--bg-secondary) 0%, #1e1040 50%, var(--bg-secondary) 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 32px 40px 28px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .topbar::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -10%;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(124,58,237,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .topbar::after {
+    content: '';
+    position: absolute;
+    bottom: -30%; left: 20%;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(6,182,212,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .report-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--purple-light);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .report-label::before {
+    content: '';
+    display: inline-block;
+    width: 20px; height: 1px;
+    background: var(--purple-light);
+  }
+
+  .report-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+
+  .report-subtitle {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+  }
+
+  .topbar-meta {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .meta-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  .meta-item .dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--green);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  /* ── CONTENT AREA ── */
+  .content {
+    padding: 32px 40px;
+    max-width: 1200px;
+  }
+
+  /* ── SECTION ── */
+  .section {
+    margin-bottom: 48px;
+    scroll-margin-top: 24px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-icon {
+    width: 36px; height: 36px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  .icon-purple { background: var(--purple-glow); border: 1px solid rgba(124,58,237,0.2); }
+  .icon-cyan { background: var(--cyan-glow); border: 1px solid rgba(6,182,212,0.2); }
+  .icon-red { background: var(--red-bg); border: 1px solid var(--red-border); }
+  .icon-green { background: var(--green-bg); border: 1px solid var(--green-border); }
+  .icon-yellow { background: var(--yellow-bg); border: 1px solid var(--yellow-border); }
+  .icon-orange { background: var(--orange-bg); border: 1px solid var(--orange-border); }
+
+  .section-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .section-agent {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-left: auto;
+  }
+
+  /* ── CARDS ── */
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .metric-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .metric-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+  }
+
+  .metric-card.purple::before { background: linear-gradient(90deg, var(--purple), transparent); }
+  .metric-card.cyan::before { background: linear-gradient(90deg, var(--cyan), transparent); }
+  .metric-card.red::before { background: linear-gradient(90deg, var(--red), transparent); }
+  .metric-card.green::before { background: linear-gradient(90deg, var(--green), transparent); }
+  .metric-card.yellow::before { background: linear-gradient(90deg, var(--yellow), transparent); }
+  .metric-card.orange::before { background: linear-gradient(90deg, var(--orange), transparent); }
+
+  .metric-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+  }
+
+  .metric-value {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .metric-value.danger { color: var(--red); }
+  .metric-value.warning { color: var(--yellow); }
+  .metric-value.success { color: var(--green); }
+
+  .metric-sub {
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  /* ── TABLES ── */
+  .table-wrap {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 16px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  thead th {
+    background: rgba(255,255,255,0.03);
+    padding: 10px 14px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+  }
+
+  tbody td {
+    padding: 10px 14px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border-light);
+    vertical-align: middle;
+  }
+
+  tbody tr:last-child td { border-bottom: none; }
+
+  tbody tr:hover { background: rgba(255,255,255,0.02); }
+
+  td.text-primary { color: var(--text-primary); font-weight: 500; }
+  td.text-green { color: var(--green); font-weight: 600; }
+  td.text-red { color: var(--red); font-weight: 600; }
+  td.text-yellow { color: var(--yellow); font-weight: 600; }
+  td.text-cyan { color: var(--cyan); font-weight: 600; }
+  td.text-purple { color: var(--purple-light); font-weight: 600; }
+  td.text-orange { color: var(--orange); font-weight: 600; }
+  td.text-muted { color: var(--text-muted); font-size: 12px; }
+
+  /* ── ALERTS ── */
+  .alert {
+    display: flex;
+    gap: 12px;
+    padding: 14px 16px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border-left: 3px solid;
+    align-items: flex-start;
+  }
+
+  .alert.critical {
+    background: var(--red-bg);
+    border-color: var(--red);
+  }
+
+  .alert.warning {
+    background: var(--yellow-bg);
+    border-color: var(--yellow);
+  }
+
+  .alert.info {
+    background: var(--cyan-glow);
+    border-color: var(--cyan);
+  }
+
+  .alert.success {
+    background: var(--green-bg);
+    border-color: var(--green);
+  }
+
+  .alert.orange {
+    background: var(--orange-bg);
+    border-color: var(--orange);
+  }
+
+  .alert-icon { font-size: 16px; margin-top: 1px; flex-shrink: 0; }
+  .alert-body { flex: 1; }
+  .alert-title { font-weight: 600; font-size: 13px; color: var(--text-primary); margin-bottom: 3px; }
+  .alert-text { font-size: 12px; color: var(--text-secondary); line-height: 1.5; }
+  .alert-action { font-size: 11px; color: var(--text-muted); margin-top: 4px; }
+
+  .severity-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .sev-critical { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-border); }
+  .sev-high { background: var(--orange-bg); color: var(--orange); border: 1px solid var(--orange-border); }
+  .sev-medium { background: var(--yellow-bg); color: var(--yellow); border: 1px solid var(--yellow-border); }
+  .sev-low { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+  .sev-win { background: var(--cyan-glow); color: var(--cyan); border: 1px solid rgba(6,182,212,0.3); }
+
+  /* ── ACTION ITEMS ── */
+  .action-list { display: flex; flex-direction: column; gap: 10px; }
+
+  .action-item {
+    display: flex;
+    gap: 12px;
+    padding: 12px 14px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    align-items: flex-start;
+  }
+
+  .action-num {
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    background: var(--purple-glow);
+    border: 1px solid rgba(124,58,237,0.3);
+    color: var(--purple-light);
+    font-size: 11px;
+    font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .action-body { flex: 1; }
+  .action-title { font-size: 13px; font-weight: 600; color: var(--text-primary); margin-bottom: 4px; }
+  .action-detail { font-size: 12px; color: var(--text-secondary); line-height: 1.5; }
+  .action-meta { display: flex; gap: 8px; margin-top: 6px; flex-wrap: wrap; align-items: center; }
+  .action-tag {
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .tag-agent { background: var(--purple-glow); color: var(--purple-light); }
+  .tag-save { background: var(--green-bg); color: var(--green); }
+  .tag-date { background: rgba(255,255,255,0.05); color: var(--text-muted); }
+
+  /* ── KW ANALYSIS ── */
+  .qs-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .qs-track {
+    flex: 1;
+    height: 6px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 3px;
+    overflow: hidden;
+    max-width: 80px;
+  }
+
+  .qs-fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.3s;
+  }
+
+  .qs-0 { width: 0%; background: var(--red); }
+  .qs-3 { width: 30%; background: var(--red); }
+  .qs-4 { width: 40%; background: var(--orange); }
+  .qs-7 { width: 70%; background: var(--yellow); }
+  .qs-10 { width: 100%; background: var(--green); }
+
+  /* ── GEOGRID ── */
+  .geogrid-visual {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 4px;
+    max-width: 280px;
+    margin: 16px 0;
+  }
+
+  .grid-cell {
+    aspect-ratio: 1;
+    border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    position: relative;
+    cursor: default;
+  }
+
+  .cell-1 { background: rgba(34,197,94,0.8); color: white; }
+  .cell-2 { background: rgba(34,197,94,0.6); color: white; }
+  .cell-3 { background: rgba(34,197,94,0.4); color: white; }
+  .cell-4, .cell-5 { background: rgba(234,179,8,0.5); color: white; }
+  .cell-6, .cell-7 { background: rgba(249,115,22,0.4); color: white; }
+  .cell-8, .cell-9 { background: rgba(239,68,68,0.4); color: white; }
+  .cell-10plus { background: rgba(239,68,68,0.2); color: var(--red); font-size: 10px; }
+  .cell-center { border: 2px solid white !important; box-shadow: 0 0 0 2px rgba(255,255,255,0.3); }
+
+  /* ── COMPARISON TABLE ── */
+  .compare-table {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .compare-table table thead th:first-child { background: transparent; }
+  .compare-table table thead th:nth-child(2) { background: rgba(239,68,68,0.05); }
+  .compare-table table thead th:nth-child(3) { background: var(--purple-glow); }
+
+  .compare-table td:nth-child(2) { color: var(--text-muted); }
+  .compare-table td:nth-child(3) { color: var(--cyan); font-weight: 500; }
+
+  /* ── WIN BOX ── */
+  .win-box {
+    background: var(--green-bg);
+    border: 1px solid var(--green-border);
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .win-box .win-icon { color: var(--green); font-size: 16px; flex-shrink: 0; }
+
+  /* ── SCHOOL TABS ── */
+  .school-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .school-tab {
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .school-tab.beibei {
+    background: rgba(124,58,237,0.15);
+    color: var(--purple-light);
+    border: 1px solid rgba(124,58,237,0.3);
+  }
+
+  .school-tab.amici {
+    background: var(--cyan-glow);
+    color: var(--cyan);
+    border: 1px solid rgba(6,182,212,0.3);
+  }
+
+  /* ── COMPETITOR CARD ── */
+  .competitor-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px;
+    margin-bottom: 10px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .threat-level {
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .threat-high { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-border); }
+  .threat-medium { background: var(--yellow-bg); color: var(--yellow); border: 1px solid var(--yellow-border); }
+  .threat-low { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+
+  /* ── FOOTER ── */
+  .footer {
+    margin-left: var(--sidebar-width);
+    border-top: 1px solid var(--border);
+    padding: 24px 40px;
+    background: var(--bg-secondary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: gap;
+    gap: 16px;
+  }
+
+  .footer-agents {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .agent-chip {
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 600;
+    background: var(--purple-glow);
+    color: var(--purple-light);
+    border: 1px solid rgba(124,58,237,0.2);
+  }
+
+  /* ── DIVIDER ── */
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 20px 0;
+  }
+
+  /* ── INLINE TAGS ── */
+  .tag-inline {
+    display: inline-flex;
+    align-items: center;
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-size: 10px;
+    font-weight: 600;
+    vertical-align: middle;
+    margin: 0 2px;
+  }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .headline-note {
+    font-size: 11px;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: 4px;
+  }
+
+  /* ── PRINT ── */
+  @media print {
+    .sidebar { position: relative; width: 100%; height: auto; }
+    .main, .footer { margin-left: 0; }
+    .sidebar-nav { display: none; }
+    .content { padding: 20px; }
+    .metric-card { break-inside: avoid; }
+    .alert { break-inside: avoid; }
+    .section { break-inside: avoid; }
+    body { background: white; color: #1a1a2e; }
+    .card, .metric-card, .table-wrap, .alert, .action-item, .competitor-card, .win-box { 
+      border: 1px solid #ddd !important;
+      background: #f9f9f9 !important;
+    }
+    .metric-value { color: #1a1a2e !important; }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .sidebar { display: none; }
+    .main, .footer { margin-left: 0; }
+    .content { padding: 20px; }
+    .topbar { padding: 24px 20px; }
+    .card-grid { grid-template-columns: 1fr 1fr; }
+    .two-col { grid-template-columns: 1fr; }
+  }
+
+  .highlight-box {
+    background: linear-gradient(135deg, var(--purple-glow), var(--cyan-glow));
+    border: 1px solid rgba(124,58,237,0.25);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 16px;
+  }
+
+  .highlight-box .hb-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+  }
+
+  .highlight-box .hb-text {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  .mini-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+
+  .mini-stat {
+    text-align: center;
+    padding: 10px;
+    background: rgba(255,255,255,0.03);
+    border-radius: 6px;
+    border: 1px solid var(--border-light);
+  }
+
+  .mini-stat .ms-val {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  .mini-stat .ms-lab {
+    font-size: 10px;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+
+  .progress-bar {
+    height: 4px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 2px;
+    overflow: hidden;
+    margin: 4px 0;
+  }
+  .progress-fill { height: 100%; border-radius: 2px; }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════ SIDEBAR ═══════════════════════════════════════ -->
+<nav class="sidebar">
+  <div class="sidebar-header">
+    <div class="sidebar-logo">
+      <div class="logo-icon">P</div>
+      <span class="logo-text">Parlami.ai</span>
+    </div>
+    <div class="sidebar-meta">
+      Intelligence Report<br>
+      Beibei Amigos & Amici Montessori<br>
+      <strong style="color: var(--text-secondary);">February 2026</strong>
+    </div>
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Report</div>
+    <a href="#executive" class="nav-link"><span class="nav-icon">📊</span> Executive Summary <span class="nav-badge badge-red">CRITICAL</span></a>
+
+    <div class="nav-section-label">Channels</div>
+    <a href="#ads" class="nav-link"><span class="nav-icon">🎯</span> Google Ads (Annunci) <span class="nav-badge badge-red">🔴</span></a>
+    <a href="#seo" class="nav-link"><span class="nav-icon">🔍</span> SEO Intelligence (Spia) <span class="nav-badge badge-red">🔴</span></a>
+    <a href="#local" class="nav-link"><span class="nav-icon">📍</span> Local SEO / Maps (Zona) <span class="nav-badge badge-yellow">⚠️</span></a>
+    <a href="#web" class="nav-link"><span class="nav-icon">🏗️</span> Website Health</a>
+    <a href="#analytics" class="nav-link"><span class="nav-icon">📈</span> Analytics (Bussola) <span class="nav-badge badge-red">🔴</span></a>
+    <a href="#content" class="nav-link"><span class="nav-icon">✍️</span> Content & Blog (Penna)</a>
+    <a href="#social" class="nav-link"><span class="nav-icon">📱</span> Social Media (Piazza)</a>
+    <a href="#gbp" class="nav-link"><span class="nav-icon">⭐</span> Google Business (Stella)</a>
+    <a href="#chatbot" class="nav-link"><span class="nav-icon">🤖</span> Chatbot Intel (Benvenuta) <span class="nav-badge badge-cyan">🧠</span></a>
+
+    <div class="nav-section-label">Intelligence</div>
+    <a href="#competitors" class="nav-link"><span class="nav-icon">⚔️</span> Competitor Watch</a>
+    <a href="#actions" class="nav-link"><span class="nav-icon">✅</span> Action Items <span class="nav-badge badge-purple">18</span></a>
+    <a href="#comparison" class="nav-link"><span class="nav-icon">🆚</span> vs. Agency Report</a>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════ TOPBAR ═══════════════════════════════════════ -->
+<header class="topbar">
+  <div class="report-label">Monthly Intelligence Report</div>
+  <h1 class="report-title">Beibei Amigos & Amici Trilingual Montessori</h1>
+  <p class="report-subtitle">February 2026 · 12 AI Agents · All Channels · Real-Time Data</p>
+  <div class="topbar-meta">
+    <div class="meta-item"><span class="dot"></span> Generated Feb 17, 2026 · 08:00 MST</div>
+    <div class="meta-item">📊 50+ Metrics Tracked</div>
+    <div class="meta-item">⚠️ 3 Critical Issues</div>
+    <div class="meta-item">💰 $660+/mo Savings Identified</div>
+    <div class="meta-item">🤖 12 Agents Active</div>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════ CONTENT ═══════════════════════════════════════ -->
+<main class="main">
+<div class="content">
+
+<!-- ══════════════════════ 1. EXECUTIVE SUMMARY ══════════════════════ -->
+<section class="section" id="executive">
+  <div class="section-header">
+    <div class="section-icon icon-purple">📊</div>
+    <h2 class="section-title">Executive Summary</h2>
+    <span class="section-agent severity-badge sev-critical">CRITICAL STATUS</span>
+  </div>
+
+  <div class="card-grid">
+    <div class="metric-card red">
+      <div class="metric-label">Total Ad Spend (7d)</div>
+      <div class="metric-value danger">$571</div>
+      <div class="metric-sub">Feb 10 – Feb 17, 2026</div>
+    </div>
+    <div class="metric-card red">
+      <div class="metric-label">Total Conversions</div>
+      <div class="metric-value danger">1</div>
+      <div class="metric-sub">Target: 10+/week</div>
+    </div>
+    <div class="metric-card red">
+      <div class="metric-label">Blended CPA</div>
+      <div class="metric-value danger">$571</div>
+      <div class="metric-sub">Target: $50 · <span style="color:var(--red)">1,142% over</span></div>
+    </div>
+    <div class="metric-card yellow">
+      <div class="metric-label">Beibei Sessions (7d)</div>
+      <div class="metric-value warning">373</div>
+      <div class="metric-sub">↓22.1% week-over-week</div>
+    </div>
+    <div class="metric-card red">
+      <div class="metric-label">Amici Sessions (7d)</div>
+      <div class="metric-value danger">361</div>
+      <div class="metric-sub">↓35.8% week-over-week</div>
+    </div>
+    <div class="metric-card green">
+      <div class="metric-label">Tours Booked (7d)</div>
+      <div class="metric-value success">4</div>
+      <div class="metric-sub">Beibei: 3 · Amici: 1</div>
+    </div>
+    <div class="metric-card cyan">
+      <div class="metric-label">Savings Identified</div>
+      <div class="metric-value" style="color:var(--cyan);">$660+</div>
+      <div class="metric-sub">Per month, immediate actions</div>
+    </div>
+    <div class="metric-card purple">
+      <div class="metric-label">Wasted Spend</div>
+      <div class="metric-value" style="color:var(--orange);">$155</div>
+      <div class="metric-sub">64% of Search budget this week</div>
+    </div>
+  </div>
+
+  <!-- Key Wins -->
+  <div class="win-box"><span class="win-icon">🏆</span> <strong>Organic Rankings:</strong> Beibei holds <strong>#1</strong> for "mandarin preschool phoenix" and "trilingual preschool phoenix" · Amici holds <strong>#1</strong> for "trilingual montessori school" and <strong>#1.8</strong> for "escuela de inmersión en español"</div>
+  <div class="win-box"><span class="win-icon">🏆</span> <strong>Brand Keyword Found:</strong> "amici trilingual montessori" (PHRASE) converts at <strong>$9.80 CPA</strong> — 5.7× better than campaign average. One winning keyword hidden in a broken campaign.</div>
+  <div class="win-box"><span class="win-icon">🏆</span> <strong>Content Power:</strong> Amici blog generating <strong>9,895 impressions/week</strong> at $0 additional cost. Top-of-funnel engine is working — needs local conversion optimization.</div>
+  <div class="win-box"><span class="win-icon">🏆</span> <strong>Chatbot Intelligence:</strong> <strong>27 parents</strong> asked about Montessori vs Traditional in past 90 days — the #1 conversion barrier has been identified. One content page would answer 60% of all questions.</div>
+
+  <!-- Critical Issues -->
+  <div class="divider"></div>
+  <div style="margin-bottom: 10px;"><strong style="font-size:13px; color: var(--red);">🚨 Critical Issues Requiring Immediate Action</strong></div>
+  <div class="alert critical">
+    <span class="alert-icon">🔴</span>
+    <div class="alert-body">
+      <div class="alert-title">CRITICAL: $571 CPA — 1,142% Above Target</div>
+      <div class="alert-text">$571 spent this week for 1 conversion. Blended CPA is $571 vs $50 target. Three campaigns burning budget with zero conversions. Wasted keyword spend alone: $155/week ($620/mo).</div>
+      <div class="alert-action">→ Assigned to: Annunci · Target fix date: Feb 18</div>
+    </div>
+  </div>
+  <div class="alert critical">
+    <span class="alert-icon">🔴</span>
+    <div class="alert-body">
+      <div class="alert-title">CRITICAL: Amici GA4 Not Tracking Conversions</div>
+      <div class="alert-text">The <code style="color:var(--cyan)">tour_booking</code> event fires correctly but is NOT marked as a GA4 Key Event. This means Google's PMax smart bidding is completely blind to Amici's actual conversions — it cannot optimize toward the goal it exists for.</div>
+      <div class="alert-action">→ Fix: GA4 Admin → Events → Mark as Key Event · Deadline: Today</div>
+    </div>
+  </div>
+  <div class="alert critical">
+    <span class="alert-icon">🔴</span>
+    <div class="alert-body">
+      <div class="alert-title">CRITICAL: Brand Keyword Ranking Collapse</div>
+      <div class="alert-text">"amici montessori" dropped from position 1.1 → 6.0 this week (5-position decline). "amigos preschool" collapsed from position 6 → 26.6 (20-position drop) during spring enrollment season.</div>
+      <div class="alert-action">→ Assigned to: Architetto + Spia · Investigate by Feb 18</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ 2. GOOGLE ADS ══════════════════════ -->
+<section class="section" id="ads">
+  <div class="section-header">
+    <div class="section-icon icon-red">🎯</div>
+    <h2 class="section-title">Google Ads Performance</h2>
+    <span class="section-agent agent-chip">Agent: Annunci</span>
+  </div>
+
+  <div class="highlight-box">
+    <div class="hb-title">⚡ Week Summary: Feb 10–17, 2026</div>
+    <div class="hb-text">$571 total spend · 1 conversion · $571 blended CPA (target $50) · 587 clicks · 55,909 impressions · 1.05% CTR. The only converting keyword is "amici trilingual montessori" PHRASE at <strong style="color:var(--green)">$9.80 CPA</strong>. Everything else is burning cash.</div>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <div style="font-size:12px; font-weight:600; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:10px;">By School</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>School</th><th>Spend</th><th>Conv.</th><th>CPA</th></tr></thead>
+          <tbody>
+            <tr><td class="text-primary">Amici</td><td class="text-orange">$308.60</td><td class="text-green">1</td><td class="text-red">$308.60</td></tr>
+            <tr><td class="text-primary">Beibei</td><td class="text-orange">$262.42</td><td class="text-red">0</td><td class="text-muted">—</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div>
+      <div style="font-size:12px; font-weight:600; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:10px;">By Campaign Type</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Type</th><th>Spend</th><th>Conv.</th><th>CPA</th></tr></thead>
+          <tbody>
+            <tr><td class="text-primary">PMax</td><td class="text-orange">$329.12</td><td class="text-red">0</td><td class="text-muted">∞</td></tr>
+            <tr><td class="text-primary">Search</td><td class="text-orange">$241.89</td><td class="text-green">1</td><td class="text-yellow">$241.89</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Keyword Forensics -->
+  <div style="font-size:13px; font-weight:600; color: var(--text-primary); margin: 20px 0 10px; display:flex; align-items:center; gap:8px;">🗡️ Keyword Performance Breakdown <span class="severity-badge sev-critical">Forensic Analysis</span></div>
+
+  <div class="table-wrap" style="margin-bottom:16px;">
+    <table>
+      <thead>
+        <tr>
+          <th>Keyword</th>
+          <th>Match</th>
+          <th>School</th>
+          <th>Quality Score</th>
+          <th>7d Spend</th>
+          <th>Conv.</th>
+          <th>CPA</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-primary"><strong>amici trilingual montessori</strong></td>
+          <td><span class="severity-badge sev-win">PHRASE</span></td>
+          <td class="text-cyan">Amici</td>
+          <td>
+            <div class="qs-bar">
+              <div class="qs-track"><div class="qs-fill qs-10"></div></div>
+              <span class="text-green">10/10</span>
+            </div>
+          </td>
+          <td class="text-green">$9.80</td>
+          <td class="text-green">1</td>
+          <td class="text-green">$9.80</td>
+          <td><span class="severity-badge sev-win">✅ WINNER</span></td>
+        </tr>
+        <tr>
+          <td class="text-primary">preschool</td>
+          <td><span class="severity-badge sev-critical">BROAD</span></td>
+          <td class="text-purple">Beibei</td>
+          <td>
+            <div class="qs-bar">
+              <div class="qs-track"><div class="qs-fill qs-3"></div></div>
+              <span class="text-red">3/10</span>
+            </div>
+          </td>
+          <td class="text-red">$73.54</td>
+          <td class="text-red">0</td>
+          <td class="text-muted">∞</td>
+          <td><span class="severity-badge sev-critical">PAUSE NOW</span></td>
+        </tr>
+        <tr>
+          <td class="text-primary">nursery school</td>
+          <td><span class="severity-badge sev-critical">BROAD</span></td>
+          <td class="text-purple">Beibei</td>
+          <td>
+            <div class="qs-bar">
+              <div class="qs-track"><div class="qs-fill qs-0"></div></div>
+              <span class="text-red">0/10</span>
+            </div>
+          </td>
+          <td class="text-red">$27.77</td>
+          <td class="text-red">0</td>
+          <td class="text-muted">∞</td>
+          <td><span class="severity-badge sev-critical">PAUSE NOW</span></td>
+        </tr>
+        <tr>
+          <td class="text-primary">daycare near me</td>
+          <td><span class="severity-badge sev-critical">BROAD</span></td>
+          <td class="text-cyan">Amici</td>
+          <td>
+            <div class="qs-bar">
+              <div class="qs-track"><div class="qs-fill qs-4"></div></div>
+              <span class="text-orange">4/10</span>
+            </div>
+          </td>
+          <td class="text-red">$27.75</td>
+          <td class="text-red">0</td>
+          <td class="text-muted">∞</td>
+          <td><span class="severity-badge sev-critical">PAUSE NOW</span></td>
+        </tr>
+        <tr>
+          <td class="text-primary">montessori preschool</td>
+          <td><span class="severity-badge sev-high">BROAD</span></td>
+          <td class="text-cyan">Amici</td>
+          <td>
+            <div class="qs-bar">
+              <div class="qs-track"><div class="qs-fill qs-7"></div></div>
+              <span class="text-yellow">7/10</span>
+            </div>
+          </td>
+          <td class="text-orange">$9.02</td>
+          <td class="text-red">0</td>
+          <td class="text-muted">∞</td>
+          <td><span class="severity-badge sev-high">→ EXACT ONLY</span></td>
+        </tr>
+        <tr>
+          <td class="text-primary">bilingual schools near me</td>
+          <td><span class="severity-badge sev-critical">BROAD</span></td>
+          <td class="text-cyan">Amici</td>
+          <td>
+            <div class="qs-bar">
+              <div class="qs-track"><div class="qs-fill qs-0"></div></div>
+              <span class="text-red">0/10</span>
+            </div>
+          </td>
+          <td class="text-red">$8.12</td>
+          <td class="text-red">0</td>
+          <td class="text-muted">∞</td>
+          <td><span class="severity-badge sev-critical">PAUSE NOW</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Asset Group Analysis -->
+  <div style="font-size:13px; font-weight:600; color: var(--text-primary); margin: 20px 0 10px; display:flex; align-items:center; gap:8px;">🖼️ Asset Group Performance</div>
+
+  <div class="alert critical">
+    <span class="alert-icon">🔴</span>
+    <div class="alert-body">
+      <div class="alert-title">Amici PMax "Free/ESA" Group — $159/week · 0 Conversions · Blocking 4 New Groups</div>
+      <div class="alert-text">The "Free/ESA" asset group absorbed $159/week (100% of Amici PMax budget) while generating zero conversions. Four new age-segmented asset groups (Infant · Toddler · Preschool · K-2) received <strong>$0 spend each</strong> — Google cannot test them while the dominant group survives. Fix: pause Free/ESA group to force budget reallocation.</div>
+      <div class="alert-action">Best headline in group: "Give your child the gift of languages... ESA Funded" — CTR 4.26%. Keep in new group.</div>
+    </div>
+  </div>
+
+  <div class="alert warning">
+    <span class="alert-icon">⚠️</span>
+    <div class="alert-body">
+      <div class="alert-title">Beibei YouTube Video — $39/week at 0.39% CTR (Standard: 1–2%)</div>
+      <div class="alert-text">YouTube video spending $39.39 at 0.39% CTR across 5,425 impressions. Either the first 3-second hook isn't landing or placement targeting is too broad. Recommendation: test a 15-second bumper focused on Mandarin + Spanish immersion hook.</div>
+    </div>
+  </div>
+
+  <!-- Google Ads Action Items -->
+  <div style="font-size:13px; font-weight:600; color: var(--text-primary); margin: 20px 0 10px;">🎯 8 Immediate Actions — Estimated Savings: <span style="color:var(--green)">$660+/month</span></div>
+
+  <div class="action-list">
+    <div class="action-item">
+      <div class="action-num">1</div>
+      <div class="action-body">
+        <div class="action-title">PAUSE "preschool" + "nursery school" BROAD keywords</div>
+        <div class="action-detail">QS 3/10 and QS 0/10 — Google is penalizing these. Combined waste: $101.31 this week. Zero conversions. Wrong audience for a trilingual Montessori school.</div>
+        <div class="action-meta">
+          <span class="action-tag tag-agent">Annunci</span>
+          <span class="action-tag tag-save">💰 $400-450/mo saved</span>
+          <span class="action-tag tag-date">Target: Feb 18</span>
+          <span class="severity-badge sev-critical" style="font-size:10px;">No learning reset risk</span>
+        </div>
+      </div>
+    </div>
+    <div class="action-item">
+      <div class="action-num">2</div>
+      <div class="action-body">
+        <div class="action-title">PAUSE "daycare near me" BROAD keyword (Amici Search)</div>
+        <div class="action-detail">QS 4/10, $27.75 spent, 0 conversions. Daycare seekers are not Montessori/trilingual families. Wrong intent, diluting campaign quality.</div>
+        <div class="action-meta">
+          <span class="action-tag tag-agent">Annunci</span>
+          <span class="action-tag tag-save">💰 $110/mo saved</span>
+          <span class="action-tag tag-date">Target: Feb 18</span>
+        </div>
+      </div>
+    </div>
+    <div class="action-item">
+      <div class="action-num">3</div>
+      <div class="action-body">
+        <div class="action-title">ADD EXACT MATCH [amici trilingual montessori] to Amici Search</div>
+        <div class="action-detail">Our only converting keyword at $9.80 CPA. PHRASE match is good; EXACT gives better bid control and protects the winner. This is the budget we want to scale.</div>
+        <div class="action-meta">
+          <span class="action-tag tag-agent">Annunci</span>
+          <span class="action-tag" style="background:var(--cyan-glow); color:var(--cyan);">📈 CPA $9.80 → $5-8 potential</span>
+          <span class="action-tag tag-date">Target: Feb 18</span>
+        </div>
+      </div>
+    </div>
+    <div class="action-item">
+      <div class="action-num">4</div>
+      <div class="action-body">
+        <div class="action-title">PAUSE Amici PMax "Free/ESA" asset group</div>
+        <div class="action-detail">$159/week, 0 conversions. This group is starving 4 new age-segmented groups (Infant, Toddler, Preschool, K-2) that received $0 budget. Pausing forces Google to distribute to new groups.</div>
+        <div class="action-meta">
+          <span class="action-tag tag-agent">Annunci</span>
+          <span class="action-tag tag-save">💰 $636/mo redirected to converting groups</span>
+          <span class="action-tag tag-date">Target: Feb 18</span>
+        </div>
+      </div>
+    </div>
+    <div class="action-item">
+      <div class="action-num">5</div>
+      <div class="action-body">
+        <div class="action-title">REPLACE dead 0% CTR headline in Amici PMax Free/ESA group</div>
+        <div class="action-detail">Replace "The best start for your child at amici. We offer a combination..." (0% CTR) with "Trilingual Preschool in Ahwatukee — ESA Funded Spots Available"</div>
+        <div class="action-meta">
+          <span class="action-tag tag-agent">Annunci</span>
+          <span class="action-tag" style="background:var(--cyan-glow); color:var(--cyan);">📈 Expected CTR improvement</span>
+          <span class="action-tag tag-date">Target: Feb 18</span>
+        </div>
+      </div>
+    </div>
+    <div class="action-item">
+      <div class="action-num">6</div>
+      <div class="action-body">
+        <div class="action-title">ADD 6 negative keywords to Beibei + Amici Search campaigns</div>
+        <div class="action-detail">Add: <code style="color:var(--cyan)">free · jobs · activities · online · summer camp · daycare</code>. Broad match keywords trigger irrelevant searches (job seekers, activity finders, online-school seekers). Negatives reduce waste without pausing campaigns.</div>
+        <div class="action-meta">
+          <span class="action-tag tag-agent">Annunci</span>
+          <span class="action-tag tag-save">💰 20-30% click quality improvement</span>
+          <span class="action-tag tag-date">Target: Feb 18</span>
+        </div>
+      </div>
+    </div>
+    <div class="action-item">
+      <div class="action-num">7</div>
+      <div class="action-body">
+        <div class="action-title">REDUCE Amici PMax budget 15% while new asset groups test</div>
+        <div class="action-detail">Zero conversions for 7 consecutive days. Reduce burn rate ~$27/day while new age-segmented groups get initial data. A 15% reduction won't trigger learning reset.</div>
+        <div class="action-meta">
+          <span class="action-tag tag-agent">Annunci</span>
+          <span class="action-tag tag-save">💰 $120/mo saved during testing</span>
+          <span class="action-tag tag-date">Target: Feb 19</span>
+        </div>
+      </div>
+    </div>
+    <div class="action-item">
+      <div class="action-num">8</div>
+      <div class="action-body">
+        <div class="action-title">ADD 5th Long Headline to Beibei PMax | JUN 2025</div>
+        <div class="action-detail">Currently has 4 of Google's minimum 5 long headlines. Proposed addition: "Phoenix's Premier Trilingual Montessori — Spanish, Mandarin & English from Day One"</div>
+        <div class="action-meta">
+          <span class="action-tag tag-agent">Annunci</span>
+          <span class="action-tag" style="background:var(--cyan-glow); color:var(--cyan);">📈 Meets Google minimum, improves quality</span>
+          <span class="action-tag tag-date">Target: Feb 18</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ 3. SEO INTELLIGENCE ══════════════════════ -->
+<section class="section" id="seo">
+  <div class="section-header">
+    <div class="section-icon icon-purple">🔍</div>
+    <h2 class="section-title">SEO Intelligence</h2>
+    <span class="section-agent agent-chip">Agent: Spia</span>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <div style="font-size:12px; font-weight:600; color:var(--purple-light); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:10px;">🟣 Beibei Amigos · GSC Metrics</div>
+      <div class="mini-grid">
+        <div class="mini-stat"><div class="ms-val">34</div><div class="ms-lab">Clicks (7d)</div></div>
+        <div class="mini-stat"><div class="ms-val">701</div><div class="ms-lab">Impressions</div></div>
+        <div class="mini-stat"><div class="ms-val">4.85%</div><div class="ms-lab">CTR</div></div>
+        <div class="mini-stat"><div class="ms-val">11.1</div><div class="ms-lab">Avg Position</div></div>
+        <div class="mini-stat"><div class="ms-val">0.904s</div><div class="ms-lab">TTFB ⚠️</div></div>
+        <div class="mini-stat"><div class="ms-val">#1</div><div class="ms-lab">Top Keyword Rank</div></div>
+      </div>
+    </div>
+    <div>
+      <div style="font-size:12px; font-weight:600; color:var(--cyan); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:10px;">🔵 Amici Trilingual · GSC Metrics</div>
+      <div class="mini-grid">
+        <div class="mini-stat"><div class="ms-val">42</div><div class="ms-lab">Clicks (7d)</div></div>
+        <div class="mini-stat"><div class="ms-val">9,895</div><div class="ms-lab">Impressions ✅</div></div>
+        <div class="mini-stat"><div class="ms-val">0.42%</div><div class="ms-lab">CTR ⚠️</div></div>
+        <div class="mini-stat"><div class="ms-val">10.2</div><div class="ms-lab">Avg Position</div></div>
+        <div class="mini-stat"><div class="ms-val">0.19s</div><div class="ms-lab">TTFB ✅</div></div>
+        <div class="mini-stat"><div class="ms-val">#1</div><div class="ms-lab">Trilingual Rank</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="table-wrap" style="margin-bottom:16px;">
+    <table>
+      <thead>
+        <tr>
+          <th>Keyword</th>
+          <th>School</th>
+          <th>Current Position</th>
+          <th>Prior Week</th>
+          <th>Change</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-primary">amici trilingual montessori</td>
+          <td class="text-cyan">Amici</td>
+          <td class="text-green">#1.0</td>
+          <td class="text-muted">#1.0</td>
+          <td class="text-green">→</td>
+          <td><span class="severity-badge sev-win">✅ HOLDING</span></td>
+        </tr>
+        <tr>
+          <td class="text-primary">trilingual montessori school</td>
+          <td class="text-cyan">Amici</td>
+          <td class="text-green">#1.0</td>
+          <td class="text-muted">—</td>
+          <td class="text-green">✅</td>
+          <td><span class="severity-badge sev-win">✅ LOCKED</span></td>
+        </tr>
+        <tr>
+          <td class="text-primary">escuela de inmersión en español</td>
+          <td class="text-cyan">Amici</td>
+          <td class="text-green">#1.8</td>
+          <td class="text-muted">—</td>
+          <td class="text-green">✅</td>
+          <td><span class="severity-badge sev-win">✅ SPANISH MARKET</span></td>
+        </tr>
+        <tr>
+          <td class="text-primary">mandarin preschool phoenix</td>
+          <td class="text-purple">Beibei</td>
+          <td class="text-green">#1</td>
+          <td class="text-muted">#1</td>
+          <td class="text-green">→</td>
+          <td><span class="severity-badge sev-win">✅ HOLDING</span></td>
+        </tr>
+        <tr>
+          <td class="text-primary">trilingual preschool phoenix</td>
+          <td class="text-purple">Beibei</td>
+          <td class="text-green">#1</td>
+          <td class="text-muted">#1</td>
+          <td class="text-green">→</td>
+          <td><span class="severity-badge sev-win">✅ HOLDING</span></td>
+        </tr>
+        <tr>
+          <td class="text-primary">beibei amigos</td>
+          <td class="text-purple">Beibei</td>
+          <td class="text-yellow">#2.92</td>
+          <td class="text-muted">#1.0</td>
+          <td class="text-yellow">↓ -1.92</td>
+          <td><span class="severity-badge sev-medium">⚠️ MONITOR</span></td>
+        </tr>
+        <tr>
+          <td class="text-primary">amigos preschool</td>
+          <td class="text-purple">Beibei</td>
+          <td class="text-red">#26.6</td>
+          <td class="text-muted">#6.0</td>
+          <td class="text-red">↓ -20.6 🚨</td>
+          <td><span class="severity-badge sev-critical">🔴 COLLAPSED</span></td>
+        </tr>
+        <tr>
+          <td class="text-primary">amici montessori</td>
+          <td class="text-cyan">Amici</td>
+          <td class="text-red">#6.0</td>
+          <td class="text-muted">#1.1</td>
+          <td class="text-red">↓ -4.9 🚨</td>
+          <td><span class="severity-badge sev-critical">🔴 BRAND RISK</span></td>
+        </tr>
+        <tr>
+          <td class="text-primary">ahwatukee preschool</td>
+          <td class="text-cyan">Amici</td>
+          <td class="text-yellow">#10.3</td>
+          <td class="text-muted">—</td>
+          <td class="text-cyan">New!</td>
+          <td><span class="severity-badge sev-win">🆕 OPPORTUNITY</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="alert warning">
+    <span class="alert-icon">⚠️</span>
+    <div class="alert-body">
+      <div class="alert-title">Beibei /about/ Page: 86 Impressions at Position 3.2 — Zero Clicks</div>
+      <div class="alert-text">This page ranks in the top 3 positions but earns zero clicks. The meta description is likely missing, truncated, or so generic that no one clicks it. At position 3.2, a 5% CTR would generate ~4 clicks/week from this page alone.</div>
+      <div class="alert-action">→ Rewrite meta: "Phoenix Trilingual Montessori Preschool | Ages 1–5 | Schedule a Tour Today"</div>
+    </div>
+  </div>
+
+  <div class="alert warning">
+    <span class="alert-icon">⚠️</span>
+    <div class="alert-body">
+      <div class="alert-title">Amici CTR Crisis: 9,895 Impressions → 42 Clicks (0.42%)</div>
+      <div class="alert-text">The blog is generating massive awareness (top-of-funnel is working!) but blog CTAs are missing. Adding "Schedule a Tour" CTAs to the top 3 blog posts could reach 1.5% CTR — yielding ~150 additional monthly clicks at $0 cost.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ 4. LOCAL SEO & MAPS ══════════════════════ -->
+<section class="section" id="local">
+  <div class="section-header">
+    <div class="section-icon icon-cyan">📍</div>
+    <h2 class="section-title">Local SEO & Google Maps</h2>
+    <span class="section-agent agent-chip">Agent: Zona</span>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <div style="font-size:12px; font-weight:600; color:var(--purple-light); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:10px;">Beibei Amigos — North Phoenix (85024)</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Keyword</th><th>Organic Rank</th><th>Change</th></tr></thead>
+          <tbody>
+            <tr><td class="text-primary">preschool near me</td><td class="text-yellow">#6</td><td class="text-green">⬆️ +1</td></tr>
+            <tr><td class="text-primary">montessori near me</td><td class="text-orange">#3</td><td class="text-red">⬇️ -2 🚨</td></tr>
+            <tr><td class="text-primary">mandarin preschool phoenix</td><td class="text-green">#1</td><td class="text-green">→</td></tr>
+            <tr><td class="text-primary">trilingual preschool phoenix</td><td class="text-green">#1</td><td class="text-green">→</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div>
+      <div style="font-size:12px; font-weight:600; color:var(--cyan); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:10px;">Amici Trilingual — Ahwatukee (85048)</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Keyword</th><th>Organic Rank</th><th>Yelp Rank</th></tr></thead>
+          <tbody>
+            <tr><td class="text-primary">preschool near me</td><td class="text-orange">#9</td><td class="text-yellow">#6</td></tr>
+            <tr><td class="text-primary">montessori near me</td><td class="text-green">#3</td><td class="text-green">#1</td></tr>
+            <tr><td class="text-primary">ahwatukee preschool</td><td class="text-red">Not Ranking</td><td class="text-muted">—</td></tr>
+            <tr><td class="text-primary">preschool ahwatukee</td><td class="text-red">Invisible 🚨</td><td class="text-muted">—</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-bottom:16px;">
+    <div style="font-size:12px; font-weight:600; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:10px;">GeoGrid Visual — Beibei "preschool near me" (North Phoenix)</div>
+    <div style="display:flex; gap:24px; flex-wrap:wrap; align-items:flex-start;">
+      <div>
+        <div class="geogrid-visual">
+          <div class="grid-cell cell-10plus">10+</div><div class="grid-cell cell-10plus">10+</div><div class="grid-cell cell-10plus">10+</div><div class="grid-cell cell-10plus">10+</div><div class="grid-cell cell-10plus">10+</div>
+          <div class="grid-cell cell-10plus">10+</div><div class="grid-cell cell-8">8</div><div class="grid-cell cell-7">7</div><div class="grid-cell cell-8">8</div><div class="grid-cell cell-10plus">10+</div>
+          <div class="grid-cell cell-7">7</div><div class="grid-cell cell-6">6</div><div class="grid-cell cell-6 cell-center">6 ★</div><div class="grid-cell cell-6">6</div><div class="grid-cell cell-7">7</div>
+          <div class="grid-cell cell-8">8</div><div class="grid-cell cell-7">7</div><div class="grid-cell cell-8">8</div><div class="grid-cell cell-9">9</div><div class="grid-cell cell-10plus">10+</div>
+          <div class="grid-cell cell-10plus">10+</div><div class="grid-cell cell-9">9</div><div class="grid-cell cell-10plus">10+</div><div class="grid-cell cell-10plus">10+</div><div class="grid-cell cell-10plus">10+</div>
+        </div>
+        <div style="font-size:11px; color:var(--text-muted); margin-top:6px;">★ = School location (Rank #6 at own zip)</div>
+      </div>
+      <div>
+        <div style="font-size:12px; color:var(--text-secondary); line-height:1.8;">
+          <div>🟢 Ranks #6 in own immediate area</div>
+          <div>⚠️ Falls to #8–10 in adjacent neighborhoods</div>
+          <div>🔴 Invisible in north/south extremes</div>
+          <div style="margin-top:8px; padding:8px 12px; background:var(--red-bg); border-radius:6px; border:1px solid var(--red-border);">
+            <strong style="color:var(--red); font-size:12px;">SERP Gap: Invisible for "preschool scottsdale"</strong><br>
+            <span style="font-size:11px; color:var(--text-muted);">Scottsdale parents can't find Beibei. Need Scottsdale landmark content.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="alert critical">
+    <span class="alert-icon">🔴</span>
+    <div class="alert-body">
+      <div class="alert-title">Amici Invisible for "preschool ahwatukee" — Its OWN Neighborhood</div>
+      <div class="alert-text">Amici is located in Ahwatukee but cannot be found when someone searches for a preschool there by name. Ahwatukee Preschool.org and Primrose School dominate this local pack. This is the highest-priority local gap.</div>
+      <div class="alert-action">→ Action: Push for 10+ new Ahwatukee-specific Google reviews. Add location signals to homepage meta.</div>
+    </div>
+  </div>
+
+  <!-- Community Pages -->
+  <div class="win-box"><span class="win-icon">🏆</span> <strong>Community Pages:</strong> Beibei has 19 community neighborhood pages (all returning HTTP 200 ✅) · Amici has 4 community pages · All healthy. These pages are key to local ranking expansion.</div>
+</section>
+
+<!-- ══════════════════════ 5. WEBSITE HEALTH ══════════════════════ -->
+<section class="section" id="web">
+  <div class="section-header">
+    <div class="section-icon icon-yellow">🏗️</div>
+    <h2 class="section-title">Website Health</h2>
+    <span class="section-agent agent-chip">Agent: Architetto</span>
+  </div>
+
+  <div class="card-grid">
+    <div class="metric-card green">
+      <div class="metric-label">URLs Monitored</div>
+      <div class="metric-value">7</div>
+      <div class="metric-sub">6/7 healthy ✅</div>
+    </div>
+    <div class="metric-card red">
+      <div class="metric-label">Critical Issues</div>
+      <div class="metric-value danger">1</div>
+      <div class="metric-sub">Amici pre-enroll form broken</div>
+    </div>
+    <div class="metric-card yellow">
+      <div class="metric-label">Beibei TTFB</div>
+      <div class="metric-value warning">0.904s</div>
+      <div class="metric-sub">Target: &lt;0.8s ⚠️</div>
+    </div>
+    <div class="metric-card green">
+      <div class="metric-label">Amici TTFB</div>
+      <div class="metric-value success">0.19s</div>
+      <div class="metric-sub">Excellent ✅</div>
+    </div>
+    <div class="metric-card yellow">
+      <div class="metric-label">Beibei Bounce Rate</div>
+      <div class="metric-value warning">72.9%</div>
+      <div class="metric-sub">Below 70% target ⚠️</div>
+    </div>
+    <div class="metric-card red">
+      <div class="metric-label">Amici Bounce Rate</div>
+      <div class="metric-value danger">76.7%</div>
+      <div class="metric-sub">Above 75% threshold 🔴</div>
+    </div>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Issue</th><th>Site</th><th>Impact</th><th>Priority</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="text-primary">Pre-enrollment form broken/not loading</td>
+          <td class="text-cyan">Amici</td>
+          <td style="color:var(--red)">Blocking conversions</td>
+          <td><span class="severity-badge sev-critical">CRITICAL</span></td>
+        </tr>
+        <tr>
+          <td class="text-primary">Amici tour_booking not a GA4 Key Event</td>
+          <td class="text-cyan">Amici</td>
+          <td style="color:var(--red)">PMax bidding blind</td>
+          <td><span class="severity-badge sev-critical">CRITICAL</span></td>
+        </tr>
+        <tr>
+          <td class="text-primary">Beibei TTFB 0.904s (above 0.8s target)</td>
+          <td class="text-purple">Beibei</td>
+          <td style="color:var(--yellow)">Core Web Vitals hit</td>
+          <td><span class="severity-badge sev-high">HIGH</span></td>
+        </tr>
+        <tr>
+          <td class="text-primary">LocalBusiness schema missing</td>
+          <td class="text-primary">Both</td>
+          <td style="color:var(--yellow)">Missing rich results</td>
+          <td><span class="severity-badge sev-high">HIGH</span></td>
+        </tr>
+        <tr>
+          <td class="text-primary">Beibei /about/ meta description broken/missing</td>
+          <td class="text-purple">Beibei</td>
+          <td style="color:var(--yellow)">0 clicks despite pos 3.2</td>
+          <td><span class="severity-badge sev-high">HIGH</span></td>
+        </tr>
+        <tr>
+          <td class="text-primary">No CTA above fold on landing pages</td>
+          <td class="text-primary">Both</td>
+          <td style="color:var(--yellow)">High bounce rate</td>
+          <td><span class="severity-badge sev-medium">MEDIUM</span></td>
+        </tr>
+        <tr>
+          <td class="text-primary">Legacy sitemap entry /home (crawl error)</td>
+          <td class="text-purple">Beibei</td>
+          <td style="color:var(--text-muted)">Minor crawl waste</td>
+          <td><span class="severity-badge sev-low">LOW</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ══════════════════════ 6. GOOGLE ANALYTICS ══════════════════════ -->
+<section class="section" id="analytics">
+  <div class="section-header">
+    <div class="section-icon icon-cyan">📈</div>
+    <h2 class="section-title">Google Analytics</h2>
+    <span class="section-agent agent-chip">Agent: Bussola</span>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <div style="font-size:12px; font-weight:600; color:var(--purple-light); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:10px;">🟣 Beibei Amigos</div>
+      <div class="table-wrap">
+        <table>
+          <tbody>
+            <tr><td class="text-primary">Sessions (7d)</td><td class="text-yellow">373 <span style="color:var(--red); font-size:11px;">↓22.1%</span></td></tr>
+            <tr><td class="text-primary">Users</td><td>308</td></tr>
+            <tr><td class="text-primary">Tours Booked</td><td class="text-green"><strong>3</strong> ✅</td></tr>
+            <tr><td class="text-primary">Conversion Rate</td><td class="text-yellow">0.80%</td></tr>
+            <tr><td class="text-primary">Bounce Rate</td><td class="text-yellow">72.9%</td></tr>
+            <tr><td class="text-primary">Avg Session Duration</td><td>115 seconds</td></tr>
+            <tr><td class="text-primary">Paid Conversions</td><td class="text-red">0 ⚠️</td></tr>
+            <tr><td class="text-primary">Organic Conversions</td><td class="text-green">2</td></tr>
+            <tr><td class="text-primary">Key Events Firing</td><td class="text-green">✅ book_tour (3) · phone_click · mail_click</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div>
+      <div style="font-size:12px; font-weight:600; color:var(--cyan); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:10px;">🔵 Amici Trilingual</div>
+      <div class="table-wrap">
+        <table>
+          <tbody>
+            <tr><td class="text-primary">Sessions (7d)</td><td class="text-red">361 <span style="color:var(--red); font-size:11px;">↓35.8%</span></td></tr>
+            <tr><td class="text-primary">Users</td><td>280</td></tr>
+            <tr><td class="text-primary">Tours Booked</td><td class="text-yellow"><strong>1</strong></td></tr>
+            <tr><td class="text-primary">Conversion Rate</td><td class="text-red">0.28%</td></tr>
+            <tr><td class="text-primary">Bounce Rate</td><td class="text-red">76.7% 🚨</td></tr>
+            <tr><td class="text-primary">Avg Session Duration</td><td>73 seconds</td></tr>
+            <tr><td class="text-primary">Paid Conversions</td><td class="text-red">0 ⚠️</td></tr>
+            <tr><td class="text-primary">tour_booking Key Event</td><td class="text-red">❌ NOT MARKED — FIX TODAY</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div style="font-size:12px; font-weight:600; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.06em; margin:16px 0 8px;">Traffic Channel Breakdown</div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Channel</th><th>Beibei Sessions</th><th>Beibei Conv.</th><th>Amici Sessions</th><th>Amici Conv.</th></tr></thead>
+      <tbody>
+        <tr><td class="text-primary">Cross-network (PMax)</td><td>99</td><td class="text-red">0 ⚠️</td><td>191</td><td class="text-red">0 ⚠️</td></tr>
+        <tr><td class="text-primary">Paid Social</td><td>95</td><td class="text-red">0 ⚠️</td><td>36</td><td class="text-red">0 ⚠️</td></tr>
+        <tr><td class="text-primary">Organic Search</td><td>38</td><td class="text-green">2</td><td>61</td><td class="text-muted">—</td></tr>
+        <tr><td class="text-primary">Direct</td><td>64</td><td class="text-muted">—</td><td>20</td><td class="text-muted">—</td></tr>
+        <tr><td class="text-primary">Paid Search</td><td>15</td><td class="text-red">0 ⚠️</td><td>18</td><td class="text-green">1</td></tr>
+        <tr><td class="text-primary">Referral</td><td>42</td><td class="text-muted">—</td><td>6</td><td class="text-muted">—</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="alert critical">
+    <span class="alert-icon">🔴</span>
+    <div class="alert-body">
+      <div class="alert-title">CRITICAL: All Paid Channels Delivering ZERO Conversions for Beibei</div>
+      <div class="alert-text">Cross-network (99 sessions) + Paid Social (95 sessions) + Paid Search (15 sessions) = 209 paid sessions, 0 conversions. Total Beibei paid spend this week: $262. Organic search (38 sessions) converted 2× better than all paid combined.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ 7. CONTENT & BLOG ══════════════════════ -->
+<section class="section" id="content">
+  <div class="section-header">
+    <div class="section-icon icon-purple">✍️</div>
+    <h2 class="section-title">Content & Blog</h2>
+    <span class="section-agent agent-chip">Agent: Penna</span>
+  </div>
+
+  <div class="win-box"><span class="win-icon">🏆</span> <strong>Amici Blog Impact:</strong> Generating <strong>9,895 impressions/week</strong> from blog content alone — top-of-funnel awareness at scale. Articles about immersion education are attracting parents nationally. The pipeline is full; conversion optimization is next.</div>
+
+  <div style="font-size:13px; font-weight:600; color: var(--text-primary); margin: 16px 0 10px;">📝 Priority Content Queue (Driven by Chatbot Intelligence)</div>
+
+  <div class="action-list">
+    <div class="action-item">
+      <div class="action-num">1</div>
+      <div class="action-body">
+        <div class="action-title">Blog: "Montessori vs. Traditional Preschool: Which is Right for My Child?" (Phoenix)</div>
+        <div class="action-detail">The #1 chatbot question — asked 27 times across 90 days. Parents are in active research mode and can't find a clear answer. A local Phoenix/Ahwatukee version mentioning both schools would rank AND convert.</div>
+        <div class="action-meta">
+          <span class="action-tag tag-agent">Penna</span>
+          <span class="action-tag" style="background:var(--cyan-glow); color:var(--cyan);">📊 27 chatbot asks · High intent</span>
+          <span class="action-tag tag-date">Target: Feb 24</span>
+        </div>
+      </div>
+    </div>
+    <div class="action-item">
+      <div class="action-num">2</div>
+      <div class="action-body">
+        <div class="action-title">Blog: "Why Mandarin + Spanish Before Age 5 Changes Everything"</div>
+        <div class="action-detail">18 chatbot asks about "what languages do you teach?" — parents arrive from search not knowing the schools are trilingual. A top-of-funnel article answering this builds both traffic and brand clarity.</div>
+        <div class="action-meta">
+          <span class="action-tag tag-agent">Penna</span>
+          <span class="action-tag" style="background:var(--cyan-glow); color:var(--cyan);">📊 18 chatbot asks</span>
+          <span class="action-tag tag-date">Target: Feb 28</span>
+        </div>
+      </div>
+    </div>
+    <div class="action-item">
+      <div class="action-num">3</div>
+      <div class="action-body">
+        <div class="action-title">Enrich community pages with local landmarks (both schools)</div>
+        <div class="action-detail">Beibei: 19 community pages need Desert Ridge, Cave Creek Corridor, Happy Valley neighborhood content. Amici: 4 community pages need Ahwatukee Foothills, South Mountain, Chandler content. Improves local map pack relevance.</div>
+        <div class="action-meta">
+          <span class="action-tag tag-agent">Penna + Zona</span>
+          <span class="action-tag" style="background:var(--cyan-glow); color:var(--cyan);">📍 Local SEO boost</span>
+          <span class="action-tag tag-date">Target: March 1</span>
+        </div>
+      </div>
+    </div>
+    <div class="action-item">
+      <div class="action-num">4</div>
+      <div class="action-body">
+        <div class="action-title">Add "Schedule a Tour" CTAs to top 3 Amici blog posts</div>
+        <div class="action-detail">Current blog CTR: 0.42% (42 clicks / 9,895 impressions). Adding location-relevant CTAs and tour links at top of high-traffic blog posts could triple click volume from existing traffic — no new content needed.</div>
+        <div class="action-meta">
+          <span class="action-tag tag-agent">Architetto + Penna</span>
+          <span class="action-tag tag-save">📈 +100 monthly clicks potential</span>
+          <span class="action-tag tag-date">Target: Feb 20</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ 8. SOCIAL MEDIA ══════════════════════ -->
+<section class="section" id="social">
+  <div class="section-header">
+    <div class="section-icon icon-yellow">📱</div>
+    <h2 class="section-title">Social Media</h2>
+    <span class="section-agent agent-chip">Agent: Piazza</span>
+  </div>
+
+  <div class="alert info">
+    <span class="alert-icon">ℹ️</span>
+    <div class="alert-body">
+      <div class="alert-title">Piazza Agent — Pending Activation (Full Agency Tier)</div>
+      <div class="alert-text">Social media monitoring and management is planned for the Full Agency tier. Piazza will track Instagram, Facebook, and TikTok performance, competitive social analysis, and content scheduling. Meta/Facebook Business API credentials are currently being set up.</div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:8px;">
+    <div style="font-size:13px; font-weight:600; color:var(--text-primary); margin-bottom:10px;">Priority Intelligence Task (Pre-Launch)</div>
+    <div class="action-item" style="margin-bottom:0; border:none; padding:0;">
+      <div class="action-num">1</div>
+      <div class="action-body">
+        <div class="action-title">Analyze Hola Hello Ni Hao's social strategy</div>
+        <div class="action-detail">Hola Hello Ni Hao holds #2 position for "trilingual preschool phoenix" — the keyword Beibei and Amici want to own. Their social presence and content strategy need to be mapped before Full Agency launch so Piazza can build a counter-strategy from day one.</div>
+        <div class="action-meta">
+          <span class="action-tag tag-agent">Piazza</span>
+          <span class="action-tag tag-date">Target: Pre-launch</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ 9. GOOGLE BUSINESS PROFILE ══════════════════════ -->
+<section class="section" id="gbp">
+  <div class="section-header">
+    <div class="section-icon icon-yellow">⭐</div>
+    <h2 class="section-title">Google Business Profile</h2>
+    <span class="section-agent agent-chip">Agent: Stella</span>
+  </div>
+
+  <div class="two-col">
+    <div class="card">
+      <div style="font-size:12px; font-weight:600; color:var(--purple-light); margin-bottom:10px;">🟣 Beibei Amigos GBP</div>
+      <div class="table-wrap" style="margin-bottom:0;">
+        <table>
+          <tbody>
+            <tr><td class="text-primary">Profile Status</td><td class="text-green">✅ Active</td></tr>
+            <tr><td class="text-primary">Full Audit</td><td class="text-yellow">In Progress</td></tr>
+            <tr><td class="text-primary">Review Responses</td><td class="text-yellow">⚠️ Need attention</td></tr>
+            <tr><td class="text-primary">NAP Citations</td><td class="text-green">✅ Clean</td></tr>
+            <tr><td class="text-primary">Photos</td><td class="text-yellow">Needs refresh</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="card">
+      <div style="font-size:12px; font-weight:600; color:var(--cyan); margin-bottom:10px;">🔵 Amici Trilingual GBP</div>
+      <div class="table-wrap" style="margin-bottom:0;">
+        <table>
+          <tbody>
+            <tr><td class="text-primary">Profile Status</td><td class="text-green">✅ Active</td></tr>
+            <tr><td class="text-primary">Full Audit</td><td class="text-red">❌ Pending — High Priority</td></tr>
+            <tr><td class="text-primary">Review Responses</td><td class="text-yellow">⚠️ Need attention</td></tr>
+            <tr><td class="text-primary">NAP Citations</td><td class="text-green">✅ Clean</td></tr>
+            <tr><td class="text-primary">Ahwatukee Reviews</td><td class="text-red">🔴 Push Needed</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="alert critical">
+    <span class="alert-icon">🔴</span>
+    <div class="alert-body">
+      <div class="alert-title">Ahwatukee Review Push Needed — Amici Invisible in Own Neighborhood</div>
+      <div class="alert-text">Amici cannot be found for "preschool ahwatukee" in Google Maps local pack. The primary fix is review volume and recency from Ahwatukee-area parents. Target: 10 new Ahwatukee-specific reviews in February. Review velocity signals local relevance to Google's local algorithm.</div>
+      <div class="alert-action">→ Action: Create targeted review request campaign for current Ahwatukee parents · Deadline: Feb 28</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ 10. CHATBOT INTELLIGENCE ══════════════════════ -->
+<section class="section" id="chatbot">
+  <div class="section-header">
+    <div class="section-icon icon-cyan">🤖</div>
+    <h2 class="section-title">Chatbot Intelligence</h2>
+    <span class="section-agent agent-chip">Agent: Benvenuta</span>
+  </div>
+
+  <div class="highlight-box">
+    <div class="hb-title">🧠 100 Conversations Analyzed · Oct 2025 – Feb 2026</div>
+    <div class="hb-text">Benvenuta has analyzed every parent conversation over 4 months and identified the exact questions that block enrollment. <strong>The #1 question asked (27 times): Montessori vs. Traditional.</strong> One content page would have answered 60%+ of all chatbot interactions. This is the highest-ROI content investment identified.</div>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rank</th><th>Question Theme</th><th>Times Asked</th><th>% of Total</th><th>Action Required</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="text-muted">#1</td>
+          <td class="text-primary"><strong>Montessori vs. Traditional Program</strong></td>
+          <td class="text-red"><strong>27</strong></td>
+          <td>32%</td>
+          <td><span class="severity-badge sev-critical">Build Compare Page NOW</span></td>
+        </tr>
+        <tr>
+          <td class="text-muted">#2</td>
+          <td class="text-primary">Languages / immersion (what do you teach?)</td>
+          <td class="text-orange"><strong>18</strong></td>
+          <td>18%</td>
+          <td><span class="severity-badge sev-high">Blog + Homepage clarification</span></td>
+        </tr>
+        <tr>
+          <td class="text-muted">#3</td>
+          <td class="text-primary">Tuition / Pricing (by age + days)</td>
+          <td class="text-yellow"><strong>9</strong></td>
+          <td>9%</td>
+          <td><span class="severity-badge sev-high">Build Tuition Calculator</span></td>
+        </tr>
+        <tr>
+          <td class="text-muted">#4</td>
+          <td class="text-primary">Ages / enrollment (infants, 6 months?)</td>
+          <td>8</td>
+          <td>8%</td>
+          <td><span class="severity-badge sev-medium">Homepage age callout</span></td>
+        </tr>
+        <tr>
+          <td class="text-muted">#5</td>
+          <td class="text-primary">Hours / half-day vs. full-day schedule</td>
+          <td>5</td>
+          <td>5%</td>
+          <td><span class="severity-badge sev-medium">Daily Life page</span></td>
+        </tr>
+        <tr>
+          <td class="text-muted">#6</td>
+          <td class="text-primary">Meals / lunch / snack policy</td>
+          <td>4</td>
+          <td>4%</td>
+          <td><span class="severity-badge sev-low">FAQ section</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div style="font-size:13px; font-weight:600; color: var(--text-primary); margin: 16px 0 10px;">🔥 Hot Leads Identified by Benvenuta</div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Date</th><th>School</th><th>Signal</th><th>Behavior</th><th>Action</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>Oct 13, 2025</td>
+          <td class="text-cyan">Amici</td>
+          <td><span class="severity-badge sev-critical">🔥 HOT</span></td>
+          <td>Clicked "book a tour" directly + asked tuition 4× — high friction</td>
+          <td>Verify tour booked; fix tuition bot</td>
+        </tr>
+        <tr>
+          <td>Dec 14, 2025</td>
+          <td class="text-purple">Beibei</td>
+          <td><span class="severity-badge sev-critical">🔥 HOT</span></td>
+          <td>"I want help deciding what program is best" — active evaluator</td>
+          <td>Program quiz email</td>
+        </tr>
+        <tr>
+          <td>Nov 12, 2025</td>
+          <td class="text-purple">Beibei</td>
+          <td><span class="severity-badge sev-critical">🔥 HOT</span></td>
+          <td>Asked price → revealed 3yo, never been in school. First-time parent.</td>
+          <td>First-time parent nurture sequence</td>
+        </tr>
+        <tr>
+          <td>Jan 29, 2026</td>
+          <td class="text-purple">Beibei</td>
+          <td><span class="severity-badge sev-high">WARM</span></td>
+          <td>Specific tuition ask: 3-year-old, 2 days/week. Got answer, didn't convert.</td>
+          <td>Email follow-up with tour invite</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ══════════════════════ 11. COMPETITOR WATCH ══════════════════════ -->
+<section class="section" id="competitors">
+  <div class="section-header">
+    <div class="section-icon icon-red">⚔️</div>
+    <h2 class="section-title">Competitor Watch</h2>
+    <span class="section-agent agent-chip">Agent: Spia + Zona</span>
+  </div>
+
+  <div class="competitor-card">
+    <span class="threat-level threat-high">HIGH THREAT</span>
+    <div style="flex:1;">
+      <div style="font-size:14px; font-weight:600; color:var(--text-primary); margin-bottom:4px;">Hola Hello Ni Hao</div>
+      <div style="font-size:12px; color:var(--text-secondary); margin-bottom:8px;">Trilingual preschool · Phoenix area · Founded by former ALP parent</div>
+      <div style="font-size:12px; color:var(--text-secondary); line-height:1.7;">
+        <strong style="color:var(--red)">Current threat level: CRITICAL WATCH.</strong> Holds <strong>#2 position for "trilingual preschool phoenix"</strong> — the signature keyword of both schools. Founded by a parent who attended a trilingual language program, copied the trilingual model directly. Growing online presence. Must be monitored weekly for review velocity, content publishing, and paid ad activity.
+      </div>
+      <div style="margin-top:8px; font-size:11px; color:var(--text-muted);">→ Action: Piazza to map social strategy pre-launch. Penna to ensure Beibei/Amici own all long-tail trilingual keywords before HHN does.</div>
+    </div>
+  </div>
+
+  <div class="competitor-card">
+    <span class="threat-level threat-high">HIGH THREAT</span>
+    <div style="flex:1;">
+      <div style="font-size:14px; font-weight:600; color:var(--text-primary); margin-bottom:4px;">Ahwatukee Preschool.org (Mountain View Lutheran)</div>
+      <div style="font-size:12px; color:var(--text-secondary); margin-bottom:8px;">Local preschool · Ahwatukee · Dominates Amici's neighborhood</div>
+      <div style="font-size:12px; color:var(--text-secondary); line-height:1.7;">
+        Ranks ahead of Amici for "preschool near me" in Ahwatukee (#8 vs Amici #9). Combined with Amici being invisible for "preschool ahwatukee," this represents the largest local gap. Strong review velocity and established local presence.
+      </div>
+      <div style="margin-top:8px; font-size:11px; color:var(--text-muted);">→ Action: Ahwatukee review push + community page enrichment targeting Amici's neighborhood.</div>
+    </div>
+  </div>
+
+  <div class="competitor-card">
+    <span class="threat-level threat-medium">MEDIUM THREAT</span>
+    <div style="flex:1;">
+      <div style="font-size:14px; font-weight:600; color:var(--text-primary); margin-bottom:4px;">Inspire Kids Montessori & Adobe Montessori</div>
+      <div style="font-size:12px; color:var(--text-secondary); margin-bottom:8px;">Montessori schools · Chandler/South Phoenix area</div>
+      <div style="font-size:12px; color:var(--text-secondary); line-height:1.7;">
+        Outranking Amici for "montessori chandler" and "montessori near me" (#1 and #2 respectively vs Amici #3). Inspire Kids holds #1 for "montessori near me" in Ahwatukee — directly competitive with Amici's target keyword. However, neither offers trilingual programs, which is Amici's core differentiator.
+      </div>
+      <div style="margin-top:8px; font-size:11px; color:var(--text-muted);">→ Action: Ensure all Amici "Montessori + Trilingual" content clearly differentiates from single-language Montessori competitors.</div>
+    </div>
+  </div>
+
+  <div class="competitor-card">
+    <span class="threat-level threat-medium">MEDIUM THREAT</span>
+    <div style="flex:1;">
+      <div style="font-size:14px; font-weight:600; color:var(--text-primary); margin-bottom:4px;">Ahwatukee Foothills Montessori (AFM)</div>
+      <div style="font-size:12px; color:var(--text-secondary); margin-bottom:8px;">Montessori · Ahwatukee · Established local presence</div>
+      <div style="font-size:12px; color:var(--text-secondary); line-height:1.7;">
+        Ranks #2 for "montessori near me" in Ahwatukee. Has strong Yelp, GreatSchools, and AMSHQ directory presence — winning the directory game. Amici beats AFM on Yelp (#1 Yelp for "montessori Ahwatukee").
+      </div>
+      <div style="margin-top:8px; font-size:11px; color:var(--text-muted);">→ Action: Claim and optimize Winnie, GreatSchools, and Care.com profiles for Amici to match AFM's directory strategy.</div>
+    </div>
+  </div>
+
+  <div class="competitor-card">
+    <span class="threat-level threat-low">LOW THREAT</span>
+    <div style="flex:1;">
+      <div style="font-size:14px; font-weight:600; color:var(--text-primary); margin-bottom:4px;">Primrose School of Ahwatukee</div>
+      <div style="font-size:12px; color:var(--text-secondary); margin-bottom:8px;">National franchise · High visibility, different target audience</div>
+      <div style="font-size:12px; color:var(--text-secondary); line-height:1.7;">
+        Ranks #2 for "preschool near me" in Ahwatukee. National franchise with significant ad budget. Different value proposition — not trilingual/Montessori. Parents choosing Amici are specifically seeking the immersion experience, not the Primrose experience.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ 12. ACTION ITEMS SUMMARY ══════════════════════ -->
+<section class="section" id="actions">
+  <div class="section-header">
+    <div class="section-icon icon-green">✅</div>
+    <h2 class="section-title">Prioritized Action Items</h2>
+    <span class="section-agent agent-chip">All Agents</span>
+  </div>
+
+  <div class="highlight-box" style="margin-bottom:20px;">
+    <div class="hb-title">Total: 18 Action Items · $660+/mo in Identified Savings · 3 Critical Fixes</div>
+    <div class="hb-text">Actions are prioritized by revenue impact. Critical items block conversion tracking or burn budget at 10× target CPA. Complete in order. Most critical items require 30 minutes or less.</div>
+  </div>
+
+  <!-- CRITICAL -->
+  <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+    <span class="severity-badge sev-critical" style="font-size:12px; padding:4px 10px;">🔴 CRITICAL — Act Today</span>
+  </div>
+
+  <div class="table-wrap" style="margin-bottom:20px;">
+    <table>
+      <thead><tr><th>#</th><th>Action</th><th>Agent</th><th>Impact</th><th>Deadline</th><th>Est. Savings</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="text-muted">C1</td>
+          <td class="text-primary">Mark Amici <code style="color:var(--cyan)">tour_booking</code> as GA4 Key Event</td>
+          <td><span class="action-tag tag-agent">Architetto</span></td>
+          <td style="color:var(--red)">Unlock PMax bidding intelligence</td>
+          <td class="text-red"><strong>Feb 17</strong></td>
+          <td class="text-green">$191/wk in recovered PMax optimization</td>
+        </tr>
+        <tr>
+          <td class="text-muted">C2</td>
+          <td class="text-primary">PAUSE "preschool" BROAD + "nursery school" BROAD (Beibei)</td>
+          <td><span class="action-tag tag-agent">Annunci</span></td>
+          <td style="color:var(--red)">Stop $101/wk bleed · QS 3 & 0</td>
+          <td class="text-red"><strong>Feb 18</strong></td>
+          <td class="text-green">$404-450/mo</td>
+        </tr>
+        <tr>
+          <td class="text-muted">C3</td>
+          <td class="text-primary">PAUSE "daycare near me" BROAD (Amici) + "bilingual schools" BROAD</td>
+          <td><span class="action-tag tag-agent">Annunci</span></td>
+          <td style="color:var(--red)">Stop $35.87/wk bleed · QS 0 & 4</td>
+          <td class="text-red"><strong>Feb 18</strong></td>
+          <td class="text-green">$143/mo</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- HIGH -->
+  <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+    <span class="severity-badge sev-high" style="font-size:12px; padding:4px 10px;">🟠 HIGH — This Week</span>
+  </div>
+
+  <div class="table-wrap" style="margin-bottom:20px;">
+    <table>
+      <thead><tr><th>#</th><th>Action</th><th>Agent</th><th>Impact</th><th>Deadline</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="text-muted">H1</td>
+          <td class="text-primary">ADD EXACT [amici trilingual montessori] to Search + protect budget</td>
+          <td><span class="action-tag tag-agent">Annunci</span></td>
+          <td style="color:var(--orange)">Scale $9.80 CPA winner</td>
+          <td>Feb 18</td>
+        </tr>
+        <tr>
+          <td class="text-muted">H2</td>
+          <td class="text-primary">PAUSE Amici PMax "Free/ESA" asset group</td>
+          <td><span class="action-tag tag-agent">Annunci</span></td>
+          <td style="color:var(--orange)">Activate 4 new age-segmented groups</td>
+          <td>Feb 18</td>
+        </tr>
+        <tr>
+          <td class="text-muted">H3</td>
+          <td class="text-primary">Fix Amici brand ranking — audit homepage title + internal links</td>
+          <td><span class="action-tag tag-agent">Architetto</span></td>
+          <td style="color:var(--orange)">"amici montessori" pos 1.1→6.0 recovery</td>
+          <td>Feb 18</td>
+        </tr>
+        <tr>
+          <td class="text-muted">H4</td>
+          <td class="text-primary">Investigate "amigos preschool" 20-position collapse (Beibei)</td>
+          <td><span class="action-tag tag-agent">Spia + Architetto</span></td>
+          <td style="color:var(--orange)">Recover mid-funnel keyword</td>
+          <td>Feb 18</td>
+        </tr>
+        <tr>
+          <td class="text-muted">H5</td>
+          <td class="text-primary">Rewrite Beibei /about/ meta description (pos 3.2 · 86 impr · 0 clicks)</td>
+          <td><span class="action-tag tag-agent">Architetto</span></td>
+          <td style="color:var(--orange)">+10-15 clicks/week from existing rank</td>
+          <td>Feb 18</td>
+        </tr>
+        <tr>
+          <td class="text-muted">H6</td>
+          <td class="text-primary">Fix Amici pre-enrollment page broken form</td>
+          <td><span class="action-tag tag-agent">Architetto</span></td>
+          <td style="color:var(--orange)">Restore conversion path</td>
+          <td>Feb 18</td>
+        </tr>
+        <tr>
+          <td class="text-muted">H7</td>
+          <td class="text-primary">Add 6 negative keywords to Search campaigns (both)</td>
+          <td><span class="action-tag tag-agent">Annunci</span></td>
+          <td style="color:var(--orange)">Reduce wasted clicks 20-30%</td>
+          <td>Feb 18</td>
+        </tr>
+        <tr>
+          <td class="text-muted">H8</td>
+          <td class="text-primary">Build "Compare Programs" page (27 chatbot asks unanswered)</td>
+          <td><span class="action-tag tag-agent">Architetto + Penna</span></td>
+          <td style="color:var(--orange)">Answer #1 conversion barrier</td>
+          <td>Feb 24</td>
+        </tr>
+        <tr>
+          <td class="text-muted">H9</td>
+          <td class="text-primary">Add tour CTAs to Amici's 3 top blog posts (9,895 impr/wk)</td>
+          <td><span class="action-tag tag-agent">Penna + Architetto</span></td>
+          <td style="color:var(--orange)">+100 monthly clicks, $0 cost</td>
+          <td>Feb 20</td>
+        </tr>
+        <tr>
+          <td class="text-muted">H10</td>
+          <td class="text-primary">Ahwatukee review push (10 new reviews target)</td>
+          <td><span class="action-tag tag-agent">Stella</span></td>
+          <td style="color:var(--orange)">Unlock "preschool ahwatukee" ranking</td>
+          <td>Feb 28</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- MEDIUM -->
+  <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+    <span class="severity-badge sev-medium" style="font-size:12px; padding:4px 10px;">🟡 MEDIUM — This Month</span>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>#</th><th>Action</th><th>Agent</th><th>Impact</th><th>Deadline</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="text-muted">M1</td>
+          <td class="text-primary">Reduce Beibei TTFB from 0.904s to &lt;0.8s (WP caching / CDN)</td>
+          <td><span class="action-tag tag-agent">Architetto</span></td>
+          <td>Core Web Vitals improvement</td>
+          <td>Feb 25</td>
+        </tr>
+        <tr>
+          <td class="text-muted">M2</td>
+          <td class="text-primary">Add LocalBusiness schema markup to both sites</td>
+          <td><span class="action-tag tag-agent">Architetto</span></td>
+          <td>Rich results eligibility</td>
+          <td>Feb 25</td>
+        </tr>
+        <tr>
+          <td class="text-muted">M3</td>
+          <td class="text-primary">Write blog: "Montessori vs Traditional Preschool Phoenix"</td>
+          <td><span class="action-tag tag-agent">Penna</span></td>
+          <td>Top chatbot question → organic traffic</td>
+          <td>Feb 24</td>
+        </tr>
+        <tr>
+          <td class="text-muted">M4</td>
+          <td class="text-primary">Write blog: "Why Mandarin + Spanish Before Age 5"</td>
+          <td><span class="action-tag tag-agent">Penna</span></td>
+          <td>Address #2 chatbot question</td>
+          <td>Feb 28</td>
+        </tr>
+        <tr>
+          <td class="text-muted">M5</td>
+          <td class="text-primary">Enrich community pages with local landmarks (Beibei 19 + Amici 4)</td>
+          <td><span class="action-tag tag-agent">Penna + Zona</span></td>
+          <td>Local map pack expansion</td>
+          <td>Mar 1</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ══════════════════════ 13. AGENCY COMPARISON ══════════════════════ -->
+<section class="section" id="comparison">
+  <div class="section-header">
+    <div class="section-icon icon-purple">🆚</div>
+    <h2 class="section-title">Traditional Agency vs. Parlami.ai</h2>
+    <span class="section-agent agent-chip">Case Study</span>
+  </div>
+
+  <div class="highlight-box" style="border:1px solid rgba(239,68,68,0.3); background: linear-gradient(135deg, rgba(239,68,68,0.05), rgba(124,58,237,0.08));">
+    <div class="hb-title" style="color:var(--text-primary);">Real Comparison — January 2026 Agency Report vs. February 17 Parlami Briefing</div>
+    <div class="hb-text">The agency billed $1,000+ for their January report. This is what they delivered — compared to what Parlami produced in a single automated morning briefing.</div>
+  </div>
+
+  <div class="two-col" style="margin-bottom:20px;">
+    <!-- Agency Column -->
+    <div>
+      <div style="background: var(--red-bg); border: 1px solid var(--red-border); border-radius:10px; padding:16px;">
+        <div style="font-family:'Space Grotesk',sans-serif; font-size:15px; font-weight:700; color:var(--red); margin-bottom:12px;">❌ Traditional Agency Report</div>
+        <div style="font-size:12px; color:var(--text-secondary); line-height:2;">
+          <div>📄 Frequency: <strong>1× per month</strong></div>
+          <div>📊 Metrics reported: <strong>2</strong> (conversions, page views)</div>
+          <div>💰 Spend disclosed: <strong>Never</strong></div>
+          <div>🎯 Keyword-level data: <strong>None</strong></div>
+          <div>⭐ Quality Scores: <strong>None</strong></div>
+          <div>🏆 Competitor analysis: <strong>None</strong></div>
+          <div>📍 Local SEO data: <strong>None</strong></div>
+          <div>🤖 Chatbot insights: <strong>None</strong></div>
+          <div>✅ Recommendations: <strong>3 vague suggestions</strong></div>
+          <div>🚨 Issues identified: <strong>0</strong></div>
+        </div>
+        <div style="margin-top:12px; padding:10px; background:rgba(0,0,0,0.2); border-radius:6px; font-size:11px; color:var(--text-muted); font-style:italic;">
+          Actual language from report: "Sustained presence in the market," "strong foundation for demand generation," "healthy visibility"
+        </div>
+      </div>
+    </div>
+    <!-- Parlami Column -->
+    <div>
+      <div style="background: var(--green-bg); border: 1px solid var(--green-border); border-radius:10px; padding:16px;">
+        <div style="font-family:'Space Grotesk',sans-serif; font-size:15px; font-weight:700; color:var(--green); margin-bottom:12px;">✅ Parlami.ai Intelligence Report</div>
+        <div style="font-size:12px; color:var(--text-secondary); line-height:2;">
+          <div>📄 Frequency: <strong>Daily briefings + real-time alerts</strong></div>
+          <div>📊 Metrics reported: <strong>50+</strong> (keyword QS, CTR, CPA, bounce, rank…)</div>
+          <div>💰 Spend disclosed: <strong>Every dollar to keyword level</strong></div>
+          <div>🎯 Keyword-level data: <strong>Full forensic breakdown</strong></div>
+          <div>⭐ Quality Scores: <strong>Tracked for every keyword</strong></div>
+          <div>🏆 Competitor analysis: <strong>Named · Position tracked · Threat level</strong></div>
+          <div>📍 Local SEO data: <strong>GeoGrid · Map Pack · Citations</strong></div>
+          <div>🤖 Chatbot insights: <strong>100 conversations analyzed · Leads identified</strong></div>
+          <div>✅ Recommendations: <strong>18 specific actions with $ impact</strong></div>
+          <div>🚨 Issues identified: <strong>3 critical · 10 high · 5 medium</strong></div>
+        </div>
+        <div style="margin-top:12px; padding:10px; background:rgba(0,0,0,0.2); border-radius:6px; font-size:11px; color:var(--green);">
+          💰 $660+/month in identified savings. Found in one briefing.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="compare-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th style="text-align:center;">❌ Traditional Agency</th>
+          <th style="text-align:center;">✅ Parlami.ai</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-primary">Report frequency</td>
+          <td style="text-align:center; color:var(--red);">1× per month</td>
+          <td style="text-align:center; color:var(--green);">Daily + real-time alerts</td>
+        </tr>
+        <tr>
+          <td class="text-primary">Data depth</td>
+          <td style="text-align:center; color:var(--red);">2 metrics</td>
+          <td style="text-align:center; color:var(--green);">50+ metrics tracked</td>
+        </tr>
+        <tr>
+          <td class="text-primary">Spend transparency</td>
+          <td style="text-align:center; color:var(--red);">Not disclosed</td>
+          <td style="text-align:center; color:var(--green);">Every dollar → keyword level</td>
+        </tr>
+        <tr>
+          <td class="text-primary">Tracking issues found</td>
+          <td style="text-align:center; color:var(--red);">"Confirm tracking" (vague)</td>
+          <td style="text-align:center; color:var(--green);">Found missing Key Event, wrong GTM, zero Amici tracking (day 1)</td>
+        </tr>
+        <tr>
+          <td class="text-primary">Keyword-level data</td>
+          <td style="text-align:center; color:var(--red);">None</td>
+          <td style="text-align:center; color:var(--green);">Full QS, CTR, CPA per keyword</td>
+        </tr>
+        <tr>
+          <td class="text-primary">Competitor intelligence</td>
+          <td style="text-align:center; color:var(--red);">None</td>
+          <td style="text-align:center; color:var(--green);">Named competitors, threat levels, position tracking</td>
+        </tr>
+        <tr>
+          <td class="text-primary">Local SEO / Maps</td>
+          <td style="text-align:center; color:var(--red);">None</td>
+          <td style="text-align:center; color:var(--green);">GeoGrid, Map Pack ranks, NAP audit</td>
+        </tr>
+        <tr>
+          <td class="text-primary">Chatbot intelligence</td>
+          <td style="text-align:center; color:var(--red);">None</td>
+          <td style="text-align:center; color:var(--green);">100 conversations → leads, gaps, top questions</td>
+        </tr>
+        <tr>
+          <td class="text-primary">Recommendations quality</td>
+          <td style="text-align:center; color:var(--red);">3 vague suggestions</td>
+          <td style="text-align:center; color:var(--green);">18 specific actions with $ impact + deadlines</td>
+        </tr>
+        <tr>
+          <td class="text-primary">Savings identified</td>
+          <td style="text-align:center; color:var(--red);">$0 identified</td>
+          <td style="text-align:center; color:var(--green);">$660+/month in one briefing</td>
+        </tr>
+        <tr>
+          <td class="text-primary">Execution</td>
+          <td style="text-align:center; color:var(--red);">You figure it out</td>
+          <td style="text-align:center; color:var(--green);">Agents execute on approval</td>
+        </tr>
+        <tr>
+          <td class="text-primary">Cost</td>
+          <td style="text-align:center; color:var(--red);">$1,000+/month (1 PDF)</td>
+          <td style="text-align:center; color:var(--green);">Starting at $997/month (12 AI agents)</td>
+        </tr>
+        <tr>
+          <td class="text-primary">Time to value</td>
+          <td style="text-align:center; color:var(--red);">30 days for 1 report</td>
+          <td style="text-align:center; color:var(--green);">Insights within hours of setup</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="alert success" style="margin-top:20px;">
+    <span class="alert-icon">💡</span>
+    <div class="alert-body">
+      <div class="alert-title">The Bottom Line</div>
+      <div class="alert-text">The agency's entire monthly output fits in a single paragraph of data. Parlami delivers more actionable intelligence before breakfast than a traditional agency delivers in a billing cycle. Their report spent more words explaining what the data "means for Beibei Amigos" than on actual data. When your marketing report needs a section explaining what it means — it means they have nothing to show you.</div>
+    </div>
+  </div>
+</section>
+
+</div>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:13px; font-weight:600; background: linear-gradient(90deg, var(--purple-light), var(--cyan)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:4px;">Generated by Parlami.ai — 12 AI Agents Working 24/7</div>
+    <div style="font-size:11px; color:var(--text-muted);">Report date: February 17, 2026 · Data period: Feb 10–17, 2026 · Generated at 08:00 MST</div>
+    <div style="font-size:11px; color:var(--text-muted); margin-top:2px;">Beibei Amigos Language Preschool + Amici Trilingual Montessori · All channels · Real data</div>
+  </div>
+  <div class="footer-agents">
+    <span class="agent-chip">Annunci</span>
+    <span class="agent-chip">Spia</span>
+    <span class="agent-chip">Zona</span>
+    <span class="agent-chip">Architetto</span>
+    <span class="agent-chip">Bussola</span>
+    <span class="agent-chip">Penna</span>
+    <span class="agent-chip">Piazza</span>
+    <span class="agent-chip">Stella</span>
+    <span class="agent-chip">Benvenuta</span>
+    <span class="agent-chip">Marco</span>
+    <span class="agent-chip">Lettera</span>
+    <span class="agent-chip">Faccia</span>
+  </div>
+</footer>
+
+</body>
+</html>
