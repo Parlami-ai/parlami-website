@@ -35,13 +35,9 @@
         .hero{background:linear-gradient(135deg,#1a1a2e,#16213e);padding:150px 20px 150px;min-height:1100px;display:flex;align-items:center;position:relative;overflow:hidden}
         .hero::before{content:"";position:absolute;width:500px;height:500px;background:rgba(139,92,246,.1);border-radius:50%;top:-250px;right:-250px}
         .hero::after{content:"";position:absolute;width:400px;height:400px;background:rgba(34,211,238,.1);border-radius:50%;bottom:-200px;left:-200px}
-        .hero-container{max-width:1600px;margin:0 auto;display:grid;grid-template-columns:1fr 1.2fr;gap:60px;align-items:center;position:relative;z-index:1;width:100%}
         .hero-content{text-align:left}
         .hero h1{font-size:52px;margin-bottom:20px;font-weight:700;line-height:1.2}
         .hero p{font-size:24px;color:rgba(255,255,255,.8);margin-bottom:40px;font-weight:500}
-        .hero-iframe{background:rgba(255,255,255,.05);padding:65px;border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.1);max-width:800px;width:100%;margin:0 auto;overflow:visible;position:relative}
-        .hero-iframe::before{content:"Live Demo";position:absolute;top:-18px;left:30px;background:#22d3ee;color:#1a1c2e;padding:8px 25px;border-radius:25px;font-size:18px;font-weight:700;z-index:1}
-        .hero-iframe iframe{border-radius:10px;width:100%;height:920px;max-height:90vh;display:block;min-height:920px}
         .cta-buttons{display:flex;gap:20px;flex-wrap:wrap}
 
         /* Feature Cards (shared) */
@@ -152,17 +148,12 @@
         .footer-bottom{text-align:center;padding-top:30px;border-top:1px solid #333;color:#666}
 
         /* Responsive */
-        @media(max-width:1400px){.hero-container{max-width:1200px}.hero-iframe{max-width:600px}}
-        @media(max-width:1200px){.hero-iframe{max-width:500px}.hero-iframe iframe{height:600px}}
-        @media(max-width:1024px){.hero-container{grid-template-columns:1fr;text-align:center}.hero-content{text-align:center}.hero-iframe{max-width:600px}}
         @media(max-width:768px){
             .nav-links{display:none}
             .hero{min-height:auto;padding:120px 20px 60px}
             .hero h1{font-size:36px}
             .hero p{font-size:18px}
             .cta-buttons{justify-content:center}
-            .hero-iframe{max-width:100%;padding:15px}
-            .hero-iframe iframe{height:500px;min-height:500px}
             .features-grid,.team-grid,.contact-container{grid-template-columns:1fr}
             .mockup-stats{grid-template-columns:repeat(2,1fr)}
             .footer-content{grid-template-columns:1fr;text-align:center}
@@ -171,7 +162,6 @@
             .wf-steps::before{left:20px}
             .section-title{font-size:32px}
         }
-        @media(max-width:480px){.hero-iframe iframe{height:400px;min-height:400px}}
     </style>
 </head>
 <body>
@@ -191,22 +181,14 @@
     </header>
 
     <!-- Hero -->
-    <section class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <h1>Your AI Marketing Team<br><span style="color:#8b5cf6">Works While You Sleep</span></h1>
-                <p>12 AI specialists monitor your ads, SEO, reviews, social media, and website 24/7 — while you focus on education. Save thousands vs. a traditional agency.</p>
-                <div class="cta-buttons">
-                    <a href="#contact" class="cta-primary">Get Your AI Team →</a>
-                    <a href="#team" class="cta-secondary">Meet the Team</a>
-                </div>
-                <div style="margin-top:30px">
-                    <h3 style="font-size:32px;margin-bottom:8px">See It In Action</h3>
-                    <p style="font-size:18px;color:rgba(255,255,255,.8)">Try our live chatbot from Beibei Amigos Language Preschool. Our AI-powered assistant answers parent questions instantly — no searching through pages or waiting for email replies.</p>
-                </div>
-            </div>
-            <div class="hero-iframe">
-                <iframe src="https://beibeiamigosgpt.onrender.com" width="100%" height="700" style="border:none;border-radius:10px" title="Beibei Amigos Assistant"></iframe>
+    <section class="hero" style="min-height:auto;padding:150px 20px 60px">
+        <div style="max-width:900px;margin:0 auto;text-align:center;position:relative;z-index:1">
+            <div style="margin-bottom:20px"><span class="ai-badge">🤖 AI-Powered Marketing Specialists</span></div>
+            <h1 style="font-size:56px;margin-bottom:20px;font-weight:700;line-height:1.2">Your AI Marketing Team<br><span style="color:#8b5cf6">Works While You Sleep</span></h1>
+            <p style="font-size:22px;color:rgba(255,255,255,.85);margin-bottom:40px;max-width:750px;margin-left:auto;margin-right:auto">12 AI specialists monitor your ads, SEO, reviews, social media, and website 24/7 — while you focus on education. Save thousands vs. a traditional agency.</p>
+            <div class="cta-buttons" style="justify-content:center">
+                <a href="#contact" class="cta-primary">Get Your AI Team →</a>
+                <a href="#team" class="cta-secondary">Meet the Team ↓</a>
             </div>
         </div>
     </section>
