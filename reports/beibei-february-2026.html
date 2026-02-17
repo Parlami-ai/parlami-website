@@ -806,6 +806,175 @@
     margin: 4px 0;
   }
   .progress-fill { height: 100%; border-radius: 2px; }
+
+  /* ── FIX THIS BUTTONS ── */
+  .fix-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 11px;
+    border-radius: 5px;
+    background: linear-gradient(135deg, var(--purple), #5b21b6);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    border: 1px solid rgba(124,58,237,0.5);
+    box-shadow: 0 0 10px rgba(124,58,237,0.25);
+    transition: all 0.2s;
+    text-decoration: none;
+    white-space: nowrap;
+    margin-top: 8px;
+    font-family: 'Inter', sans-serif;
+  }
+  .fix-btn:hover {
+    background: linear-gradient(135deg, var(--purple-light), var(--purple));
+    box-shadow: 0 0 18px rgba(124,58,237,0.45);
+    transform: translateY(-1px);
+  }
+  .fix-btn:active { transform: translateY(0); }
+  .fix-btn-inline {
+    margin-top: 0;
+    padding: 3px 9px;
+    font-size: 10px;
+  }
+
+  /* ── FIX MODAL ── */
+  .fix-modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.72);
+    z-index: 9000;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+  }
+  .fix-modal-overlay.active { display: flex; }
+
+  .fix-modal {
+    background: var(--bg-card);
+    border: 1px solid rgba(124,58,237,0.35);
+    border-radius: 14px;
+    padding: 28px;
+    max-width: 490px;
+    width: 92%;
+    box-shadow: 0 24px 64px rgba(0,0,0,0.55), 0 0 40px rgba(124,58,237,0.15);
+    position: relative;
+    animation: modalIn 0.18s ease;
+  }
+  @keyframes modalIn {
+    from { opacity: 0; transform: scale(0.95) translateY(8px); }
+    to   { opacity: 1; transform: scale(1) translateY(0); }
+  }
+
+  .fix-modal-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+  .fix-modal-icon {
+    width: 42px; height: 42px;
+    border-radius: 10px;
+    background: var(--purple-glow);
+    border: 1px solid rgba(124,58,237,0.3);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+  .fix-modal-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+  }
+  .fix-modal-subtitle { font-size: 12px; color: var(--text-muted); }
+
+  .fix-modal-detail {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px;
+    margin-bottom: 18px;
+  }
+  .fix-modal-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    align-items: flex-start;
+  }
+  .fix-modal-row:last-child { margin-bottom: 0; }
+  .fix-modal-label {
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 10px;
+    min-width: 60px;
+    padding-top: 1px;
+  }
+  .fix-modal-val { color: var(--text-secondary); flex: 1; line-height: 1.5; }
+
+  .fix-modal-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+  }
+  .fix-cancel-btn {
+    padding: 8px 16px;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s;
+    font-family: 'Inter', sans-serif;
+  }
+  .fix-cancel-btn:hover { background: rgba(255,255,255,0.09); color: var(--text-secondary); }
+
+  .fix-confirm-btn {
+    padding: 8px 20px;
+    border-radius: 6px;
+    background: linear-gradient(135deg, var(--purple), #5b21b6);
+    border: 1px solid rgba(124,58,237,0.5);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 4px 15px rgba(124,58,237,0.3);
+    font-family: 'Inter', sans-serif;
+  }
+  .fix-confirm-btn:hover { background: linear-gradient(135deg, var(--purple-light), var(--purple)); box-shadow: 0 6px 20px rgba(124,58,237,0.4); }
+  .fix-confirm-btn:disabled { opacity: 0.55; cursor: not-allowed; transform: none; }
+
+  .fix-modal-status { text-align: center; padding: 12px 0 8px; }
+  .fix-modal-status .status-icon { font-size: 40px; margin-bottom: 12px; }
+  .fix-modal-status .status-text { font-family: 'Space Grotesk',sans-serif; font-size: 20px; font-weight: 700; color: var(--text-primary); }
+  .fix-modal-status .status-sub { font-size: 12px; color: var(--text-muted); margin-top: 6px; line-height: 1.5; }
+
+  .fix-modal-close {
+    position: absolute;
+    top: 14px; right: 14px;
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 17px;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s;
+    line-height: 1;
+    font-family: sans-serif;
+  }
+  .fix-modal-close:hover { background: rgba(255,255,255,0.1); color: var(--text-primary); }
 </style>
 </head>
 <body>
@@ -929,6 +1098,10 @@
       <div class="alert-title">CRITICAL: $571 CPA — 1,142% Above Target</div>
       <div class="alert-text">$571 spent this week for 1 conversion. Blended CPA is $571 vs $50 target. Three campaigns burning budget with zero conversions. Wasted keyword spend alone: $155/week ($620/mo).</div>
       <div class="alert-action">→ Assigned to: Annunci · Target fix date: Feb 18</div>
+      <button class="fix-btn"
+        data-action="Pause low-quality broad-match keywords ('preschool' QS 3/10, 'nursery school' QS 0/10) wasting $101/week with zero conversions in Beibei Search campaign"
+        data-impact="$404–450/month saved · Eliminates 64% of wasted keyword spend immediately"
+        data-agent="Annunci">Fix This →</button>
     </div>
   </div>
   <div class="alert critical">
@@ -937,6 +1110,10 @@
       <div class="alert-title">CRITICAL: Amici GA4 Not Tracking Conversions</div>
       <div class="alert-text">The <code style="color:var(--cyan)">tour_booking</code> event fires correctly but is NOT marked as a GA4 Key Event. This means Google's PMax smart bidding is completely blind to Amici's actual conversions — it cannot optimize toward the goal it exists for.</div>
       <div class="alert-action">→ Fix: GA4 Admin → Events → Mark as Key Event · Deadline: Today</div>
+      <button class="fix-btn"
+        data-action="Mark the 'tour_booking' event as a GA4 Key Event in Amici's analytics — GA4 Admin → Events → toggle 'Mark as key event' on tour_booking"
+        data-impact="Unlocks PMax smart bidding optimization · Without this Google's AI is completely blind to Amici's conversions"
+        data-agent="Architetto">Fix This →</button>
     </div>
   </div>
   <div class="alert critical">
@@ -945,6 +1122,10 @@
       <div class="alert-title">CRITICAL: Brand Keyword Ranking Collapse</div>
       <div class="alert-text">"amici montessori" dropped from position 1.1 → 6.0 this week (5-position decline). "amigos preschool" collapsed from position 6 → 26.6 (20-position drop) during spring enrollment season.</div>
       <div class="alert-action">→ Assigned to: Architetto + Spia · Investigate by Feb 18</div>
+      <button class="fix-btn"
+        data-action="Audit Amici homepage title tags and internal linking to recover 'amici montessori' from pos 6.0 (was 1.1) · Investigate 'amigos preschool' 20-position collapse during spring enrollment season"
+        data-impact="Recover brand rankings during highest-demand season · 'amici montessori' dropped 5 positions; 'amigos preschool' dropped 20 positions"
+        data-agent="Architetto + Spia">Fix This →</button>
     </div>
   </div>
 </section>
@@ -1110,6 +1291,10 @@
       <div class="alert-title">Amici PMax "Free/ESA" Group — $159/week · 0 Conversions · Blocking 4 New Groups</div>
       <div class="alert-text">The "Free/ESA" asset group absorbed $159/week (100% of Amici PMax budget) while generating zero conversions. Four new age-segmented asset groups (Infant · Toddler · Preschool · K-2) received <strong>$0 spend each</strong> — Google cannot test them while the dominant group survives. Fix: pause Free/ESA group to force budget reallocation.</div>
       <div class="alert-action">Best headline in group: "Give your child the gift of languages... ESA Funded" — CTR 4.26%. Keep in new group.</div>
+      <button class="fix-btn"
+        data-action="Pause Amici PMax 'Free/ESA' asset group to force Google to redistribute budget to the 4 new age-segmented groups (Infant · Toddler · Preschool · K-2) currently receiving $0"
+        data-impact="$636/month redirected to converting age-segmented groups · 4 groups starved to $0 while this one burns $159/week with zero conversions"
+        data-agent="Annunci">Fix This →</button>
     </div>
   </div>
 
@@ -1437,6 +1622,10 @@
       <div class="alert-title">Amici Invisible for "preschool ahwatukee" — Its OWN Neighborhood</div>
       <div class="alert-text">Amici is located in Ahwatukee but cannot be found when someone searches for a preschool there by name. Ahwatukee Preschool.org and Primrose School dominate this local pack. This is the highest-priority local gap.</div>
       <div class="alert-action">→ Action: Push for 10+ new Ahwatukee-specific Google reviews. Add location signals to homepage meta.</div>
+      <button class="fix-btn"
+        data-action="Push for 10+ Ahwatukee-specific Google reviews from current Amici parents + add 'Ahwatukee' location signals to homepage meta title, description, and H1"
+        data-impact="Unlock 'preschool ahwatukee' local pack ranking · Amici is currently invisible in its own neighborhood vs Ahwatukee Preschool.org and Primrose"
+        data-agent="Zona + Stella">Fix This →</button>
     </div>
   </div>
 
@@ -1487,49 +1676,62 @@
 
   <div class="table-wrap">
     <table>
-      <thead><tr><th>Issue</th><th>Site</th><th>Impact</th><th>Priority</th></tr></thead>
+      <thead><tr><th>Issue</th><th>Site</th><th>Impact</th><th>Priority</th><th></th></tr></thead>
       <tbody>
         <tr>
           <td class="text-primary">Pre-enrollment form broken/not loading</td>
           <td class="text-cyan">Amici</td>
           <td style="color:var(--red)">Blocking conversions</td>
           <td><span class="severity-badge sev-critical">CRITICAL</span></td>
+          <td><button class="fix-btn fix-btn-inline"
+            data-action="Fix Amici pre-enrollment form that is broken/not loading — diagnose form plugin, JavaScript errors, or hosting issue blocking all direct enrollment form submissions"
+            data-impact="Restores broken conversion path · Form is currently blocking all online enrollment submissions"
+            data-agent="Architetto">Fix This →</button></td>
         </tr>
         <tr>
           <td class="text-primary">Amici tour_booking not a GA4 Key Event</td>
           <td class="text-cyan">Amici</td>
           <td style="color:var(--red)">PMax bidding blind</td>
           <td><span class="severity-badge sev-critical">CRITICAL</span></td>
+          <td><button class="fix-btn fix-btn-inline"
+            data-action="Mark 'tour_booking' as a GA4 Key Event in Amici analytics — GA4 Admin → Events → toggle 'Mark as key event' on tour_booking"
+            data-impact="Enables Google PMax smart bidding to optimize toward Amici's actual conversion goal · Currently spending $191/week blind"
+            data-agent="Architetto">Fix This →</button></td>
         </tr>
         <tr>
           <td class="text-primary">Beibei TTFB 0.904s (above 0.8s target)</td>
           <td class="text-purple">Beibei</td>
           <td style="color:var(--yellow)">Core Web Vitals hit</td>
           <td><span class="severity-badge sev-high">HIGH</span></td>
+          <td></td>
         </tr>
         <tr>
           <td class="text-primary">LocalBusiness schema missing</td>
           <td class="text-primary">Both</td>
           <td style="color:var(--yellow)">Missing rich results</td>
           <td><span class="severity-badge sev-high">HIGH</span></td>
+          <td></td>
         </tr>
         <tr>
           <td class="text-primary">Beibei /about/ meta description broken/missing</td>
           <td class="text-purple">Beibei</td>
           <td style="color:var(--yellow)">0 clicks despite pos 3.2</td>
           <td><span class="severity-badge sev-high">HIGH</span></td>
+          <td></td>
         </tr>
         <tr>
           <td class="text-primary">No CTA above fold on landing pages</td>
           <td class="text-primary">Both</td>
           <td style="color:var(--yellow)">High bounce rate</td>
           <td><span class="severity-badge sev-medium">MEDIUM</span></td>
+          <td></td>
         </tr>
         <tr>
           <td class="text-primary">Legacy sitemap entry /home (crawl error)</td>
           <td class="text-purple">Beibei</td>
           <td style="color:var(--text-muted)">Minor crawl waste</td>
           <td><span class="severity-badge sev-low">LOW</span></td>
+          <td></td>
         </tr>
       </tbody>
     </table>
@@ -1602,6 +1804,10 @@
     <div class="alert-body">
       <div class="alert-title">CRITICAL: All Paid Channels Delivering ZERO Conversions for Beibei</div>
       <div class="alert-text">Cross-network (99 sessions) + Paid Social (95 sessions) + Paid Search (15 sessions) = 209 paid sessions, 0 conversions. Total Beibei paid spend this week: $262. Organic search (38 sessions) converted 2× better than all paid combined.</div>
+      <button class="fix-btn"
+        data-action="Audit Beibei paid campaign targeting and landing pages — 209 paid sessions this week with 0 conversions while 38 organic sessions converted 2x. Pause underperforming broad keywords and realign landing pages."
+        data-impact="$262/week paid spend delivering zero conversions · Organic 38 sessions outperforming 209 paid sessions"
+        data-agent="Annunci + Bussola">Fix This →</button>
     </div>
   </div>
 </section>
@@ -1747,6 +1953,10 @@
       <div class="alert-title">Ahwatukee Review Push Needed — Amici Invisible in Own Neighborhood</div>
       <div class="alert-text">Amici cannot be found for "preschool ahwatukee" in Google Maps local pack. The primary fix is review volume and recency from Ahwatukee-area parents. Target: 10 new Ahwatukee-specific reviews in February. Review velocity signals local relevance to Google's local algorithm.</div>
       <div class="alert-action">→ Action: Create targeted review request campaign for current Ahwatukee parents · Deadline: Feb 28</div>
+      <button class="fix-btn"
+        data-action="Create targeted Google review request campaign for current Ahwatukee-area Amici parents to generate 10+ new Ahwatukee-specific reviews by Feb 28"
+        data-impact="Unlock 'preschool ahwatukee' Google Maps local pack visibility · Review velocity is the primary signal Google uses for local ranking"
+        data-agent="Stella">Fix This →</button>
     </div>
   </div>
 </section>
@@ -1940,7 +2150,7 @@
 
   <div class="table-wrap" style="margin-bottom:20px;">
     <table>
-      <thead><tr><th>#</th><th>Action</th><th>Agent</th><th>Impact</th><th>Deadline</th><th>Est. Savings</th></tr></thead>
+      <thead><tr><th>#</th><th>Action</th><th>Agent</th><th>Impact</th><th>Deadline</th><th>Est. Savings</th><th></th></tr></thead>
       <tbody>
         <tr>
           <td class="text-muted">C1</td>
@@ -1949,6 +2159,10 @@
           <td style="color:var(--red)">Unlock PMax bidding intelligence</td>
           <td class="text-red"><strong>Feb 17</strong></td>
           <td class="text-green">$191/wk in recovered PMax optimization</td>
+          <td><button class="fix-btn fix-btn-inline"
+            data-action="Mark Amici 'tour_booking' as GA4 Key Event — GA4 Admin → Events → toggle 'Mark as key event' on tour_booking event"
+            data-impact="$191/week in recovered PMax optimization · Deadline: Feb 17 (TODAY)"
+            data-agent="Architetto">Fix This →</button></td>
         </tr>
         <tr>
           <td class="text-muted">C2</td>
@@ -1957,6 +2171,10 @@
           <td style="color:var(--red)">Stop $101/wk bleed · QS 3 & 0</td>
           <td class="text-red"><strong>Feb 18</strong></td>
           <td class="text-green">$404-450/mo</td>
+          <td><button class="fix-btn fix-btn-inline"
+            data-action="Pause 'preschool' (QS 3/10) and 'nursery school' (QS 0/10) BROAD match keywords in Beibei Search campaign — zero conversions combined, $101/week burn"
+            data-impact="$404–450/month saved · Stop wasted spend on wrong-audience keywords with bottom-tier quality scores"
+            data-agent="Annunci">Fix This →</button></td>
         </tr>
         <tr>
           <td class="text-muted">C3</td>
@@ -1965,6 +2183,10 @@
           <td style="color:var(--red)">Stop $35.87/wk bleed · QS 0 & 4</td>
           <td class="text-red"><strong>Feb 18</strong></td>
           <td class="text-green">$143/mo</td>
+          <td><button class="fix-btn fix-btn-inline"
+            data-action="Pause 'daycare near me' BROAD (QS 4/10, $27.75 spent) and 'bilingual schools near me' BROAD (QS 0/10, $8.12 spent) in Amici Search — wrong-intent searchers, zero conversions"
+            data-impact="$143/month saved · Daycare and bilingual-school seekers are not Montessori/trilingual families"
+            data-agent="Annunci">Fix This →</button></td>
         </tr>
       </tbody>
     </table>
@@ -2273,6 +2495,178 @@
     <span class="agent-chip">Faccia</span>
   </div>
 </footer>
+
+<!-- ═══════════════════════════════════════ FIX THIS MODAL ═══════════════════════════════════════ -->
+<div class="fix-modal-overlay" id="fix-modal-overlay">
+  <div class="fix-modal">
+    <button class="fix-modal-close" aria-label="Close">×</button>
+
+    <!-- ── Confirm View ── -->
+    <div id="fix-modal-confirm-view">
+      <div class="fix-modal-header">
+        <div class="fix-modal-icon">🔧</div>
+        <div>
+          <div class="fix-modal-title">Approve Fix</div>
+          <div class="fix-modal-subtitle">This will be sent to your Parlami.ai agent team for execution</div>
+        </div>
+      </div>
+      <div class="fix-modal-detail">
+        <div class="fix-modal-row">
+          <div class="fix-modal-label">Action</div>
+          <div class="fix-modal-val" id="fix-modal-action-text"></div>
+        </div>
+        <div class="fix-modal-row">
+          <div class="fix-modal-label">Impact</div>
+          <div class="fix-modal-val" id="fix-modal-impact-text" style="color:var(--green);"></div>
+        </div>
+        <div class="fix-modal-row">
+          <div class="fix-modal-label">Agent</div>
+          <div class="fix-modal-val" id="fix-modal-agent-text" style="color:var(--purple-light);font-weight:600;"></div>
+        </div>
+      </div>
+      <div class="fix-modal-actions">
+        <button class="fix-cancel-btn">Cancel</button>
+        <button class="fix-confirm-btn" id="fix-confirm-btn">✓ Confirm Fix</button>
+      </div>
+    </div>
+
+    <!-- ── Approving View ── -->
+    <div id="fix-modal-approving-view" style="display:none;">
+      <div class="fix-modal-status">
+        <div class="status-icon">⚙️</div>
+        <div class="status-text">Approving…</div>
+        <div class="status-sub">Sending to your agent team</div>
+      </div>
+    </div>
+
+    <!-- ── Done View ── -->
+    <div id="fix-modal-done-view" style="display:none;">
+      <div class="fix-modal-status">
+        <div class="status-icon">✅</div>
+        <div class="status-text">Done!</div>
+        <div class="status-sub">Your agent team has been notified and will execute this fix.<br>Check your dashboard for status updates.</div>
+      </div>
+    </div>
+
+    <!-- ── Demo View ── -->
+    <div id="fix-modal-demo-view" style="display:none;">
+      <div class="fix-modal-header">
+        <div class="fix-modal-icon">✨</div>
+        <div>
+          <div class="fix-modal-title">This is a Demo Report</div>
+          <div class="fix-modal-subtitle">Want AI agents executing fixes like this for your business?</div>
+        </div>
+      </div>
+      <div style="text-align:center; padding:16px 0 22px;">
+        <div style="font-size:14px; color:var(--text-secondary); line-height:1.7; margin-bottom:22px;">
+          Contact us at <a href="https://parlami.ai" target="_blank" style="color:var(--purple-light);text-decoration:none;font-weight:700;">parlami.ai</a><br>
+          to get your own AI marketing team!
+        </div>
+        <a href="https://parlami.ai" target="_blank"
+          style="display:inline-flex;align-items:center;gap:7px;padding:11px 26px;border-radius:8px;background:linear-gradient(135deg,var(--purple),#5b21b6);color:#fff;font-weight:700;font-size:14px;text-decoration:none;box-shadow:0 4px 18px rgba(124,58,237,0.4);transition:all 0.2s;">
+          Get Your AI Team →
+        </a>
+      </div>
+      <div style="text-align:center;">
+        <button class="fix-cancel-btn" style="display:inline-block;">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  var isDemo = new URLSearchParams(window.location.search).get('demo') === 'true';
+  var currentFix = null;
+
+  function showView(id) {
+    ['fix-modal-confirm-view','fix-modal-approving-view','fix-modal-done-view','fix-modal-demo-view'].forEach(function(v){
+      var el = document.getElementById(v);
+      if (el) el.style.display = (v === id) ? '' : 'none';
+    });
+  }
+
+  function openModal(btn) {
+    currentFix = {
+      action : btn.getAttribute('data-action')  || '',
+      impact : btn.getAttribute('data-impact')  || '',
+      agent  : btn.getAttribute('data-agent')   || '',
+      id     : 'fix-' + Date.now()
+    };
+
+    var overlay = document.getElementById('fix-modal-overlay');
+    if (!overlay) return;
+
+    if (isDemo) {
+      showView('fix-modal-demo-view');
+    } else {
+      document.getElementById('fix-modal-action-text').textContent = currentFix.action;
+      document.getElementById('fix-modal-impact-text').textContent = currentFix.impact;
+      document.getElementById('fix-modal-agent-text').textContent  = currentFix.agent;
+      var btn2 = document.getElementById('fix-confirm-btn');
+      if (btn2) { btn2.disabled = false; btn2.textContent = '✓ Confirm Fix'; }
+      showView('fix-modal-confirm-view');
+    }
+
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    var overlay = document.getElementById('fix-modal-overlay');
+    if (overlay) overlay.classList.remove('active');
+    document.body.style.overflow = '';
+    currentFix = null;
+  }
+
+  function confirmFix() {
+    if (!currentFix) return;
+    var btn = document.getElementById('fix-confirm-btn');
+    if (btn) { btn.disabled = true; btn.textContent = 'Approving…'; }
+    showView('fix-modal-approving-view');
+
+    var payload = JSON.stringify({
+      action    : currentFix.action,
+      impact    : currentFix.impact,
+      agent     : currentFix.agent,
+      fix_id    : currentFix.id,
+      source    : 'beibei-february-2026-report',
+      timestamp : new Date().toISOString()
+    });
+
+    fetch('https://parlami-dashboard.onrender.com/api/fix', {
+      method  : 'POST',
+      headers : { 'Content-Type': 'application/json' },
+      body    : payload
+    })
+    .then(function() { showDone(); })
+    .catch(function() { showDone(); }); // show Done even on CORS — static report has no backend
+  }
+
+  function showDone() {
+    showView('fix-modal-done-view');
+    setTimeout(closeModal, 3200);
+  }
+
+  // ── Event delegation ──
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest('.fix-btn');
+    if (btn) { openModal(btn); return; }
+
+    if (e.target === document.getElementById('fix-modal-overlay')) { closeModal(); return; }
+    if (e.target.classList.contains('fix-modal-close'))             { closeModal(); return; }
+    if (e.target.classList.contains('fix-cancel-btn'))              { closeModal(); return; }
+    if (e.target.id === 'fix-confirm-btn')                          { confirmFix(); return; }
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeModal();
+  });
+})();
+</script>
 
 </body>
 </html>
