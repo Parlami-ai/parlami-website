@@ -921,7 +921,7 @@
         var dots=document.getElementById('rotatorDots');
         for(var i=0;i<slides;i++){(function(n){var b=document.createElement('button');b.setAttribute('aria-label','Agent '+(n+1));b.addEventListener('click',function(){go(n);pauseThenResume();});dots.appendChild(b);})(i);}
         function go(n){idx=(n+slides)%slides;track.style.transform='translateX(-'+(idx*100)+'%)';for(var i=0;i<slides;i++){dots.children[i].className=i===idx?'active':'';}}
-        function start(){stop();timer=setInterval(function(){go(idx+1);},5000);}
+        function start(){stop();timer=setInterval(function(){go(idx+1);},6000);}
         function stop(){if(timer){clearInterval(timer);timer=null;}}
         function pauseThenResume(){stop();if(resume)clearTimeout(resume);resume=setTimeout(start,9000);}
         var section=document.getElementById('agent-rotator');
