@@ -377,7 +377,7 @@
                     <div class="rotator-viz"><svg viewBox="0 0 240 120" aria-hidden="true"><g stroke="rgba(255,255,255,.35)" stroke-width="1.5"><line x1="40" y1="20" x2="110" y2="60"/><line x1="40" y1="55" x2="110" y2="60"/><line x1="40" y1="90" x2="110" y2="60"/><line x1="200" y1="60" x2="130" y2="60"/></g><circle cx="40" cy="20" r="8" fill="#8b5cf6" class="vz-blink" style="animation-delay:0s"/><circle cx="40" cy="55" r="8" fill="#22d3ee" class="vz-blink" style="animation-delay:.5s"/><circle cx="40" cy="90" r="8" fill="#8b5cf6" class="vz-blink" style="animation-delay:1s"/><rect x="110" y="40" width="40" height="40" rx="8" fill="rgba(139,92,246,.25)" stroke="#8b5cf6"/><text x="130" y="66" text-anchor="middle" font-size="18" fill="#fff">L</text><g class="vz-pop"><rect x="170" y="42" width="58" height="36" rx="7" fill="rgba(34,211,238,.15)" stroke="#22d3ee"/><rect x="177" y="50" width="44" height="4" rx="2" fill="#22d3ee"/><rect x="177" y="59" width="34" height="4" rx="2" fill="rgba(255,255,255,.35)"/><rect x="177" y="68" width="40" height="4" rx="2" fill="rgba(255,255,255,.35)"/></g></svg></div>
                     <h3>Luciano</h3>
                     <span class="rotator-role">Orquestador del Equipo IA</span>
-                    <p>Dirige a todo tu equipo de IA y te entrega un solo resumen matutino en lenguaje claro — no quince reportes.</p>
+                    <p>Luciano te conoce a ti y a tu negocio — hablas con él directamente, a cualquier hora. Cada mañana te entrega tu resumen diario con sugerencias listas para aprobar. Nada cambia sin tu visto bueno.</p>
                 </div>
                 <div class="rotator-slide" role="group" aria-label="Faccia">
                     <div class="rotator-viz"><svg viewBox="0 0 240 120" aria-hidden="true"><g><rect x="30" y="60" width="24" height="40" rx="4" fill="#34d399" class="vz-grow" style="transform-origin:42px 100px"/><rect x="70" y="45" width="24" height="55" rx="4" fill="#34d399" class="vz-grow" style="transform-origin:82px 100px;animation-delay:.2s"/><rect x="110" y="75" width="24" height="25" rx="4" fill="#f87171" class="vz-alarm" style="transform-origin:122px 100px;animation-delay:.4s"/></g><g class="vz-pop" style="animation-delay:1.2s"><rect x="146" y="40" width="76" height="28" rx="14" fill="rgba(248,113,113,.15)" stroke="#f87171"/><text x="184" y="58" text-anchor="middle" font-size="13" fill="#f87171">Pause?</text></g><g class="vz-pop" style="animation-delay:2s"><circle cx="212" cy="90" r="12" fill="rgba(52,211,153,.2)" stroke="#34d399"/><path d="M206 90l4 4 8-8" stroke="#34d399" stroke-width="2.5" fill="none"/></g></svg></div>
@@ -894,20 +894,21 @@
             btn.disabled=false;btn.textContent='Agendar Mi Demo';
         });
     </script>
-
     <script>
     (function(){
         var track=document.getElementById('rotatorTrack');if(!track)return;
-        var slides=track.children.length,idx=0,timer=null;
+        var slides=track.children.length,idx=0,timer=null,resume=null;
+        if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){track.style.transition='none';}
         var dots=document.getElementById('rotatorDots');
-        for(var i=0;i<slides;i++){(function(n){var b=document.createElement('button');b.setAttribute('aria-label','Agent '+(n+1));b.addEventListener('click',function(){go(n);restart();});dots.appendChild(b);})(i);}
+        for(var i=0;i<slides;i++){(function(n){var b=document.createElement('button');b.setAttribute('aria-label','Agent '+(n+1));b.addEventListener('click',function(){go(n);pauseThenResume();});dots.appendChild(b);})(i);}
         function go(n){idx=(n+slides)%slides;track.style.transform='translateX(-'+(idx*100)+'%)';for(var i=0;i<slides;i++){dots.children[i].className=i===idx?'active':'';}}
-        function tick(){go(idx+1);}
-        function restart(){if(timer)clearInterval(timer);if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){timer=setInterval(tick,3000);}}
+        function start(){stop();timer=setInterval(function(){go(idx+1);},3000);}
+        function stop(){if(timer){clearInterval(timer);timer=null;}}
+        function pauseThenResume(){stop();if(resume)clearTimeout(resume);resume=setTimeout(start,9000);}
         var section=document.getElementById('agent-rotator');
-        section.addEventListener('mouseenter',function(){if(timer)clearInterval(timer);timer=null;});
-        section.addEventListener('mouseleave',restart);
-        go(0);restart();
+        section.addEventListener('pointerenter',function(e){if(e.pointerType==='mouse')pauseThenResume();});
+        section.addEventListener('pointerleave',function(e){if(e.pointerType==='mouse')start();});
+        go(0);start();
     })();
     </script>
 </body>
