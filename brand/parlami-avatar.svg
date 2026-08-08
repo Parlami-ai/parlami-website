@@ -1,16 +1,103 @@
 <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="pg" gradientUnits="userSpaceOnUse" x1="96" y1="430" x2="416" y2="120">
-      <stop offset="0" stop-color="#22d3ee"/>
-      <stop offset="1" stop-color="#8b5cf6"/>
-    </linearGradient>
-  </defs>
   <rect width="512" height="512" fill="#1a1a2e"/>
-  <path fill="url(#pg)" d="M 168 120 H 344 A 72 72 0 0 1 416 192 V 288 A 72 72 0 0 1 344 360 H 168 A 72 72 0 0 1 96 288 V 192 A 72 72 0 0 1 168 120 Z"/>
-  <path fill="url(#pg)" d="M 176 336 L 150 430 Q 146 444 160 436 L 272 364 Z"/>
-  <g stroke="#ffffff" stroke-width="38" stroke-linecap="round">
+  <g>
+<circle cx="135.9" cy="246.8" r="16.0" fill="#4da2f1"/>
+<circle cx="153.8" cy="319.4" r="16.0" fill="#3eb3f0"/>
+<circle cx="205.1" cy="148.9" r="16.0" fill="#608cf3"/>
+<circle cx="130.6" cy="166.1" r="16.0" fill="#5797f2"/>
+<circle cx="353.6" cy="318.4" r="16.0" fill="#5f8ef3"/>
+<circle cx="128.5" cy="203.8" r="16.0" fill="#34d399"/>
+<circle cx="215.0" cy="214.1" r="16.0" fill="#608df3"/>
+<circle cx="124.5" cy="287.1" r="16.0" fill="#34d399"/>
+<circle cx="167.3" cy="163.0" r="16.0" fill="#5a94f2"/>
+<circle cx="259.2" cy="157.4" r="16.0" fill="#7279f4"/>
+<circle cx="399.4" cy="219.1" r="16.0" fill="#7772f4"/>
+<circle cx="346.5" cy="151.2" r="16.0" fill="#8069f5"/>
+<circle cx="321.8" cy="343.4" r="16.0" fill="#5699f2"/>
+<circle cx="372.5" cy="286.9" r="16.0" fill="#6d7ef4"/>
+<circle cx="368.4" cy="201.3" r="16.0" fill="#7476f4"/>
+<circle cx="210.0" cy="341.5" r="16.0" fill="#4ba4f1"/>
+<circle cx="381.1" cy="251.5" r="16.0" fill="#6883f3"/>
+<circle cx="178.5" cy="214.5" r="16.0" fill="#4ea1f1"/>
+<circle cx="379.8" cy="162.3" r="16.0" fill="#8365f5"/>
+<circle cx="279.0" cy="338.4" r="16.0" fill="#509ff2"/>
+<circle cx="230.3" cy="178.7" r="15.9" fill="#9eadf7"/>
+<circle cx="305.3" cy="137.8" r="15.8" fill="#34d399"/>
+<circle cx="389.0" cy="320.1" r="15.7" fill="#6c7ff4"/>
+<circle cx="195.3" cy="182.2" r="15.2" fill="#5698f2"/>
+<circle cx="244.7" cy="337.2" r="15.0" fill="#509ef2"/>
+<circle cx="157.1" cy="277.8" r="14.5" fill="#3fb2f0"/>
+<circle cx="234.6" cy="134.4" r="13.6" fill="#6389f3"/>
+<circle cx="177.3" cy="344.8" r="13.2" fill="#45abf1"/>
+<circle cx="120.5" cy="320.8" r="13.1" fill="#36bdf0"/>
+<circle cx="355.8" cy="231.2" r="13.1" fill="#6785f3"/>
+<circle cx="278.6" cy="186.7" r="12.8" fill="#6686f3"/>
+<circle cx="175.9" cy="132.8" r="12.8" fill="#6587f3"/>
+<circle cx="146.0" cy="139.0" r="12.6" fill="#5994f2"/>
+<circle cx="403.0" cy="185.3" r="12.5" fill="#7674f4"/>
+<circle cx="109.3" cy="229.5" r="12.2" fill="#84cbf5"/>
+<circle cx="404.2" cy="271.4" r="11.5" fill="#34d399"/>
+<circle cx="352.8" cy="264.0" r="11.2" fill="#34d399"/>
+<circle cx="108.8" cy="261.9" r="11.1" fill="#40b1f0"/>
+<circle cx="157.5" cy="193.7" r="10.8" fill="#539bf2"/>
+<circle cx="352.9" cy="347.8" r="10.8" fill="#5a94f2"/>
+<circle cx="273.1" cy="131.7" r="10.7" fill="#6f7cf4"/>
+<circle cx="107.9" cy="183.5" r="9.6" fill="#559af2"/>
+<circle cx="163.6" cy="238.3" r="9.5" fill="#34d399"/>
+<circle cx="225.0" cy="315.3" r="9.5" fill="#34d399"/>
+<circle cx="138.7" cy="342.7" r="9.2" fill="#34d399"/>
+<circle cx="288.4" cy="160.6" r="9.1" fill="#7674f4"/>
+<circle cx="404.9" cy="294.5" r="8.8" fill="#9bb2f7"/>
+<circle cx="369.8" cy="136.0" r="8.7" fill="#7f6af5"/>
+<circle cx="151.5" cy="219.3" r="8.6" fill="#49a7f1"/>
+<circle cx="352.3" cy="177.7" r="8.2" fill="#a6a5f8"/>
+<circle cx="407.6" cy="244.5" r="8.2" fill="#34d399"/>
+<circle cx="374.1" cy="343.3" r="8.1" fill="#6686f3"/>
+<circle cx="285.9" cy="312.4" r="8.0" fill="#5599f2"/>
+<circle cx="333.1" cy="128.6" r="7.7" fill="#7575f4"/>
+<circle cx="103.1" cy="202.9" r="6.7" fill="#42aff0"/>
+<circle cx="347.0" cy="291.4" r="6.7" fill="#34d399"/>
+<circle cx="224.7" cy="240.6" r="6.7" fill="#5b93f2"/>
+<circle cx="354.1" cy="127.2" r="6.4" fill="#7d6cf5"/>
+<circle cx="255.6" cy="185.1" r="6.2" fill="#5f8ef3"/>
+<circle cx="155.0" cy="352.2" r="6.0" fill="#37bbf0"/>
+<circle cx="301.1" cy="324.9" r="6.0" fill="#94b9f7"/>
+<circle cx="226.0" cy="258.8" r="6.0" fill="#4fa0f1"/>
+<circle cx="285.6" cy="209.9" r="5.9" fill="#6983f3"/>
+<circle cx="286.2" cy="264.3" r="5.8" fill="#5b93f2"/>
+<circle cx="102.7" cy="299.0" r="5.8" fill="#39b9f0"/>
+<circle cx="225.7" cy="283.1" r="5.6" fill="#34d399"/>
+<circle cx="286.3" cy="282.9" r="5.5" fill="#529df2"/>
+<circle cx="178.9" cy="323.4" r="5.5" fill="#40b1f0"/>
+<circle cx="164.2" cy="255.9" r="5.4" fill="#4ba5f1"/>
+<circle cx="285.8" cy="223.9" r="5.4" fill="#638af3"/>
+<circle cx="255.2" cy="125.7" r="5.4" fill="#a7a3f8"/>
+<circle cx="299.3" cy="352.1" r="5.4" fill="#4da2f1"/>
+<circle cx="345.9" cy="193.1" r="5.4" fill="#717af4"/>
+<circle cx="226.6" cy="297.7" r="5.3" fill="#89c5f6"/>
+<circle cx="345.9" cy="209.8" r="5.2" fill="#7378f4"/>
+<circle cx="403.5" cy="164.2" r="5.2" fill="#34d399"/>
+<circle cx="196.5" cy="126.7" r="5.2" fill="#6e7df4"/>
+<circle cx="286.8" cy="296.1" r="5.0" fill="#5c91f2"/>
+<circle cx="125.8" cy="140.1" r="5.0" fill="#539bf2"/>
+<circle cx="285.7" cy="237.4" r="4.8" fill="#5e8ef3"/>
+<circle cx="376.2" cy="226.3" r="4.8" fill="#717af4"/>
+<circle cx="212.4" cy="125.6" r="4.8" fill="#6c7ff4"/>
+<circle cx="287.0" cy="249.4" r="4.7" fill="#6686f3"/>
+<circle cx="146.2" cy="297.4" r="4.6" fill="#45abf1"/>
+<circle cx="101.8" cy="281.8" r="4.6" fill="#34d399"/>
+<circle cx="387.2" cy="140.5" r="4.5" fill="#8a5ef6"/>
+<circle cx="259.7" cy="355.1" r="4.5" fill="#4aa6f1"/>
+<circle cx="206.0" cy="386.0" r="21.0" fill="#40b0f0"/>
+<circle cx="172.0" cy="414.0" r="13.5" fill="#33bfef"/>
+<circle cx="150.0" cy="436.0" r="8.0" fill="#24d0ee"/>
+<circle cx="424.0" cy="128.0" r="8.5" fill="#8365f5"/>
+<circle cx="441.0" cy="111.0" r="6.0" fill="#8b5cf6"/>
+<circle cx="448.0" cy="101.0" r="4.0" fill="#b495f9"/>
+<g stroke="#ffffff" stroke-width="38" stroke-linecap="round">
     <line x1="196" y1="298" x2="196" y2="252"/>
     <line x1="256" y1="298" x2="256" y2="216"/>
     <line x1="316" y1="298" x2="316" y2="180"/>
   </g>
+</g>
 </svg>
