@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stella — Reputation Manager | Parlami.ai AI Marketing Team</title>
+    <title>Stella — Reputation Specialist | Parlami.ai AI Marketing Team</title>
     <link rel="canonical" href="https://www.parlami.ai/team/stella.html">
+    <meta name="description" content="Stella watches your Google rating daily, flags drops and unanswered reviews, drafts replies for your approval, and mines your reviews for the words real customers use.">
     <link rel="icon" type="image/png" href="/favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -47,6 +48,31 @@
         .cta-primary:hover{background:#7c3aed;transform:translateY(-3px);box-shadow:0 10px 20px rgba(139,92,246,.3)}
         footer{background:#111;color:#999;text-align:center;padding:30px 20px;margin-top:60px}
         @media(max-width:768px){.nav-links{display:none}.agent-hero h1{font-size:32px}.collab-cards{grid-template-columns:1fr 1fr}}
+        .lede{font-size:19px!important;color:rgba(255,255,255,.92)!important}
+        .capgroup{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:22px 24px;margin-bottom:14px}
+        .capgroup h3{font-size:17px;color:#a78bfa;margin-bottom:10px;font-weight:700}
+        .capgroup ul{margin-bottom:0}
+        .capgroup ul li{padding:6px 0;font-size:15.5px}
+        .count-chip{display:inline-block;background:rgba(34,211,238,.12);color:#22d3ee;font-size:13px;font-weight:700;padding:4px 12px;border-radius:10px;margin-left:10px;vertical-align:middle}
+        .gate{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:15px}
+        .gate>div{border-radius:14px;padding:20px 22px}
+        .gate .auto{background:rgba(34,211,238,.07);border:1px solid rgba(34,211,238,.22)}
+        .gate .hold{background:rgba(139,92,246,.09);border:1px solid rgba(139,92,246,.3)}
+        .gate h4{font-size:15px;margin-bottom:10px;letter-spacing:.3px}
+        .gate .auto h4{color:#22d3ee}
+        .gate .hold h4{color:#a78bfa}
+        .gate ul li{padding:5px 0;font-size:15px}
+        .gate ul li::before{content:"•"}
+        .flow{display:flex;align-items:stretch;gap:10px;margin:18px 0;flex-wrap:wrap}
+        .flow-step{flex:1;min-width:170px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:16px}
+        .flow-step .fl{font-size:11px;letter-spacing:1px;color:#22d3ee;font-weight:700;text-transform:uppercase;margin-bottom:6px}
+        .flow-step .fb{font-size:14.5px;color:rgba(255,255,255,.85);line-height:1.55}
+        .sources{display:flex;flex-wrap:wrap;gap:9px;margin:14px 0 22px}
+        .sources span{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.13);border-radius:20px;padding:7px 15px;font-size:14px;color:rgba(255,255,255,.85)}
+        .straight{background:rgba(255,255,255,.04);border-left:3px solid #22d3ee;border-radius:0 12px 12px 0;padding:18px 22px;margin-top:14px}
+        .straight p{font-size:15.5px;margin-bottom:8px}
+        .straight p:last-child{margin-bottom:0}
+        @media(max-width:768px){.gate{grid-template-columns:1fr}.flow{flex-direction:column}}
     </style>
 </head>
 <body>
@@ -57,7 +83,7 @@
         <img src="/portraits/stella.webp" alt="Stella — AI Reputation Manager" loading="lazy">
         <h1>Stella</h1>
         <div class="title-it">Custode della Reputazione</div>
-        <div class="title-en">Reputation Manager</div>
+        <div class="title-en">Reputation Specialist</div>
         <span class="ai-label">AI AGENT — NOT A REAL PERSON</span>
     </section>
 
@@ -65,32 +91,113 @@
         <a href="../index.html#team" class="back-link">← Back to Full Team</a>
 
         <h2>What Stella Does For You</h2>
-        <p>Stella guards your online reputation like it's her own. She monitors Google reviews in real-time, alerts you the moment a new review appears, and drafts professional, personalized responses that make parents feel heard. A negative review at 11pm? Stella catches it before you wake up.</p>
+        <p class="lede">Stella watches your reputation the way a good manager would — noticing the rating slipping before it becomes a pattern, and never letting a review sit unanswered long enough to look like you don't care.</p>
+        <p>She also does something less obvious and quietly valuable: she reads your reviews for the exact words your customers use, and passes them to the agents writing your ads.</p>
 
-        <h2>Key Capabilities</h2>
-        <ul>
-            <li>Monitors new Google reviews in real-time — positive and negative</li>
-            <li>Drafts professional, personalized review responses for your approval</li>
-            <li>Tracks your star rating trends and review velocity over time</li>
-            <li>Manages and optimizes your Google Business Profile</li>
-            <li>Alerts immediately on negative reviews for fast damage control</li>
-            <li>Identifies common themes in reviews to improve your school</li>
-        </ul>
+        <h2>Everything Stella Can Do<span class="count-chip">7 nightly checks</span></h2>
+        <div class="capgroup">
+            <h3>Watching the rating</h3>
+            <ul>
+                <li>Checks your rating and review count daily</li>
+                <li>Flags when your average drops below a healthy floor</li>
+                <li>Flags a meaningful decline compared with the previous period, before it becomes a trend</li>
+                <li>Flags a stalled review pace — when new reviews slow to a trickle</li>
+            </ul>
+        </div>
+        <div class="capgroup">
+            <h3>Replies</h3>
+            <ul>
+                <li>Flags a backlog of unanswered reviews</li>
+                <li>Drafts a reply for each review, matched to its sentiment and using the reviewer's own first name</li>
+                <li>Only echoes a service word the reviewer themselves used — no invented specifics</li>
+                <li>Blocks any reply offering a discount, refund or incentive, which violates Google's rules</li>
+                <li>Blocks accusatory language on negative reviews, and strips the giveaway AI phrasing</li>
+                <li>Every draft waits for your approval — nothing is ever posted automatically</li>
+            </ul>
+        </div>
+        <div class="capgroup">
+            <h3>Getting more reviews</h3>
+            <ul>
+                <li>Recommends a review-request funnel when your rating or pace has headroom</li>
+                <li>Hosts a public feedback page: happy customers are sent to leave a public review, unhappy ones are routed to a private form that reaches you instead</li>
+                <li>Builds review-request messages with proper opt-out wording</li>
+            </ul>
+        </div>
+        <div class="capgroup">
+            <h3>Mining reviews for language</h3>
+            <ul>
+                <li>Extracts the practical words customers repeat, and passes them to Annunci as search-term candidates</li>
+                <li>Extracts the emotional language from your best reviews, and passes it to Faccia as ad-copy angles</li>
+                <li>Filters out your own brand terms so the signal stays clean</li>
+                <li>Does this with plain word analysis rather than a language model, so nothing is invented</li>
+            </ul>
+        </div>
+        <div class="capgroup">
+            <h3>Business profile posts</h3>
+            <ul>
+                <li>Drafts Google Business Profile posts across offer, story, product and event formats</li>
+                <li>Enforces real limits: length caps, no markdown, required justification, proper offer terms and dates</li>
+                <li>Reviews your monthly mix and warns when it drifts too far toward one post type</li>
+            </ul>
+        </div>
 
-        <h2>How Stella Communicates</h2>
-        <p>Stella is coordinated by <strong>Luciano</strong>, your AI marketing director. When she detects something important, she reports to Luciano, who triages the issue and alerts you with a clear recommendation and one-click approval.</p>
-        <p>Nothing happens without your approval. Stella recommends — you decide.</p>
+        <h2>What Stella Plugs Into</h2>
+        <p>Stella reads your public Google listing — rating, review count and review text — and works from your verified business profile.</p>
+        <div class="sources">
+            <span>Google Places</span>
+            <span>Google Business Profile</span>
+            <span>Your public listing</span>
+        </div>
 
-        <h2>Collaborates With</h2>
+        <h2>What Runs On Its Own — And What Waits For You</h2>
+        <div class="gate">
+            <div class="auto">
+                <h4>▶ Runs automatically</h4>
+                <ul>
+                <li>Daily rating and review-count check</li>
+                <li>All 7 reputation rules, nightly</li>
+                <li>Drafting review replies and profile posts for the queue</li>
+                <li>Mining review language for Annunci and Faccia</li>
+                </ul>
+            </div>
+            <div class="hold">
+                <h4>⏸ Waits for your approval</h4>
+                <ul>
+                <li>Every review reply</li>
+                <li>Every business-profile post</li>
+                <li>The review-request funnel</li>
+                <li>Stella posts nothing to Google and never edits your listing — approving records your decision, it does not publish</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>Where Stella Sits In The Swarm</h2>
+        <p>Your agents don't sit in a chat room talking to each other — they share one workspace. Every night, on a fixed schedule, each agent writes what it found onto a shared findings board and into a single approval queue. Every other agent can read that board, and so can you. A few agents also hand each other specific intelligence directly. The result is one queue of decisions instead of fifteen inboxes.</p>
+        <div class="flow">
+            <div class="flow-step"><div class="fl">Reads from</div><div class="fb">Your public Google listing and review text.</div></div>
+            <div class="flow-step"><div class="fl">Stella does</div><div class="fb">Tracks reputation, drafts replies and posts, and extracts customer vocabulary.</div></div>
+            <div class="flow-step"><div class="fl">Hands off to</div><div class="fb">Your approval queue, plus Annunci and Faccia — who get real customer language for your ads.</div></div>
+        </div>
+        <p>Stella is one of only three agents that deliberately address findings to a named peer. Her review-mining rules are explicitly routed: functional words go to Annunci as search terms, emotional words go to Faccia as ad-copy angles. It's a neat loop — your happiest customers end up writing your ads. Zona also leans on her, because reviews are the main lever on local map ranking.</p>
+
+        <h2>Works With</h2>
         <div class="collab-cards">
-            <a href="luciano.html" class="collab-card"><div class="c-emoji">☕</div><div class="c-name">Luciano</div><div class="c-why">Urgent review alerts</div></a>
-            <a href="zona.html" class="collab-card"><div class="c-emoji">📍</div><div class="c-name">Zona</div><div class="c-why">GMB optimization</div></a>
-            <a href="piazza.html" class="collab-card"><div class="c-emoji">📱</div><div class="c-name">Piazza</div><div class="c-why">Social reputation</div></a>
+            <a href="annunci.html" class="collab-card"><div class="c-emoji">📣</div><div class="c-name">Annunci</div><div class="c-why">Search-term candidates</div></a>
+            <a href="faccia.html" class="collab-card"><div class="c-emoji">👤</div><div class="c-name">Faccia</div><div class="c-why">Ad copy angles</div></a>
+            <a href="zona.html" class="collab-card"><div class="c-emoji">📍</div><div class="c-name">Zona</div><div class="c-why">Reviews drive map rank</div></a>
+            <a href="catena.html" class="collab-card"><div class="c-emoji">🔗</div><div class="c-name">Catena</div><div class="c-why">Listings &amp; citations</div></a>
+        </div>
+
+        <h2>Straight Talk</h2>
+        <div class="straight">
+            <p>Stella reads your listing and drafts responses — she does not post to Google. Publishing an approved reply is currently a human step.</p>
+            <p>Reading owner replies needs deeper Google Business Profile access, which is still pending Google's approval. Until it lands, the unanswered-review count can't be tracked automatically.</p>
+            <p>She needs your Google business listing linked to work at all.</p>
         </div>
 
         <div class="cta-box">
-            <h3>Get Stella Working For You</h3>
-            <p>Stella is part of your 15-agent AI marketing team — all included in every Parlami plan.</p>
+            <h3>Put Stella To Work</h3>
+            <p>Stella is included in Ads Engine ($997/mo) and up, as part of your AI marketing team — no per-agent pricing, no setup fee.</p>
             <a href="../index.html#contact" class="cta-primary">Get Your AI Team →</a>
         </div>
     </div>

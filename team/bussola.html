@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bussola — Data Analyst | Parlami.ai AI Marketing Team</title>
+    <title>Bussola — Google Analytics Analyst | Parlami.ai AI Marketing Team</title>
     <link rel="canonical" href="https://www.parlami.ai/team/bussola.html">
+    <meta name="description" content="Bussola checks what Facebook and Google claim against what your analytics actually recorded, and tells the other agents when the numbers can't be trusted.">
     <link rel="icon" type="image/png" href="/favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -47,6 +48,31 @@
         .cta-primary:hover{background:#7c3aed;transform:translateY(-3px);box-shadow:0 10px 20px rgba(139,92,246,.3)}
         footer{background:#111;color:#999;text-align:center;padding:30px 20px;margin-top:60px}
         @media(max-width:768px){.nav-links{display:none}.agent-hero h1{font-size:32px}.collab-cards{grid-template-columns:1fr 1fr}}
+        .lede{font-size:19px!important;color:rgba(255,255,255,.92)!important}
+        .capgroup{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:22px 24px;margin-bottom:14px}
+        .capgroup h3{font-size:17px;color:#a78bfa;margin-bottom:10px;font-weight:700}
+        .capgroup ul{margin-bottom:0}
+        .capgroup ul li{padding:6px 0;font-size:15.5px}
+        .count-chip{display:inline-block;background:rgba(34,211,238,.12);color:#22d3ee;font-size:13px;font-weight:700;padding:4px 12px;border-radius:10px;margin-left:10px;vertical-align:middle}
+        .gate{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:15px}
+        .gate>div{border-radius:14px;padding:20px 22px}
+        .gate .auto{background:rgba(34,211,238,.07);border:1px solid rgba(34,211,238,.22)}
+        .gate .hold{background:rgba(139,92,246,.09);border:1px solid rgba(139,92,246,.3)}
+        .gate h4{font-size:15px;margin-bottom:10px;letter-spacing:.3px}
+        .gate .auto h4{color:#22d3ee}
+        .gate .hold h4{color:#a78bfa}
+        .gate ul li{padding:5px 0;font-size:15px}
+        .gate ul li::before{content:"•"}
+        .flow{display:flex;align-items:stretch;gap:10px;margin:18px 0;flex-wrap:wrap}
+        .flow-step{flex:1;min-width:170px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:16px}
+        .flow-step .fl{font-size:11px;letter-spacing:1px;color:#22d3ee;font-weight:700;text-transform:uppercase;margin-bottom:6px}
+        .flow-step .fb{font-size:14.5px;color:rgba(255,255,255,.85);line-height:1.55}
+        .sources{display:flex;flex-wrap:wrap;gap:9px;margin:14px 0 22px}
+        .sources span{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.13);border-radius:20px;padding:7px 15px;font-size:14px;color:rgba(255,255,255,.85)}
+        .straight{background:rgba(255,255,255,.04);border-left:3px solid #22d3ee;border-radius:0 12px 12px 0;padding:18px 22px;margin-top:14px}
+        .straight p{font-size:15.5px;margin-bottom:8px}
+        .straight p:last-child{margin-bottom:0}
+        @media(max-width:768px){.gate{grid-template-columns:1fr}.flow{flex-direction:column}}
     </style>
 </head>
 <body>
@@ -57,7 +83,7 @@
         <img src="/portraits/bussola.webp" alt="Bussola — AI Data Analyst" loading="lazy">
         <h1>Bussola</h1>
         <div class="title-it">Analista di Dati</div>
-        <div class="title-en">Data Analyst</div>
+        <div class="title-en">Google Analytics Analyst</div>
         <span class="ai-label">AI AGENT — NOT A REAL PERSON</span>
     </section>
 
@@ -65,33 +91,98 @@
         <a href="../index.html#team" class="back-link">← Back to Full Team</a>
 
         <h2>What Bussola Does For You</h2>
-        <p>Bussola is your data compass — she navigates the ocean of Google Analytics 4 data to surface the insights that matter. From traffic trends to conversion funnels, she tells you exactly where your visitors come from, what they do on your site, and where the opportunities hide.</p>
+        <p class="lede">Every ad platform grades its own homework. Facebook counts a lead; Google counts a conversion; your analytics counts something else entirely. Bussola is the agent whose whole job is to sit between them and tell you which number to believe.</p>
+        <p>She is also the swarm's referee — the only agent with the authority to tell the ad agents to be quiet.</p>
 
-        <h2>Key Capabilities</h2>
-        <ul>
-            <li>Analyzes GA4 data for traffic trends, anomalies, and seasonal patterns</li>
-            <li>Tracks conversion funnels from first visit to enrollment inquiry</li>
-            <li>Identifies your top-performing pages, content, and traffic sources</li>
-            <li>Spots traffic drops instantly and diagnoses the cause</li>
-            <li>Generates weekly analytics reports with clear, actionable insights</li>
-            <li>Connects ad spend to actual conversions for true ROI tracking</li>
-        </ul>
+        <h2>Everything Bussola Can Do<span class="count-chip">7 nightly checks</span></h2>
+        <div class="capgroup">
+            <h3>Checking the platforms against reality</h3>
+            <ul>
+                <li>Compares what each ad platform reports against what your analytics actually recorded, channel by channel</li>
+                <li>Classifies the *direction* of a gap rather than jumping to a conclusion — it deliberately refuses to declare "your tracking is broken" just because two numbers differ</li>
+                <li>Flags channels where the divergence is big enough to matter</li>
+                <li>Puts Google, Meta and your analytics side by side without averaging them or picking a favourite — and explains the gaps that are structural rather than broken</li>
+            </ul>
+        </div>
+        <div class="capgroup">
+            <h3>Catching tracking failures</h3>
+            <ul>
+                <li>Raises a critical alert when real traffic arrives and records zero conversions — the silent killer</li>
+                <li>Flags analytics data that has gone stale</li>
+                <li>Flags a data source that quietly stopped reporting while everything else kept flowing</li>
+                <li>Flags an outsized share of "direct" traffic, which almost always means campaign tagging has been lost somewhere</li>
+            </ul>
+        </div>
+        <div class="capgroup">
+            <h3>Where the money is going</h3>
+            <ul>
+                <li>Flags any channel that took real spend or real traffic and produced no recorded conversions</li>
+                <li>Flags a paid channel whose cost per conversion is far worse than your blended average</li>
+            </ul>
+        </div>
+        <div class="capgroup">
+            <h3>Reading your traffic</h3>
+            <ul>
+                <li>A rolling four-week traffic picture by channel</li>
+                <li>A weekly funnel view labelled with how much to trust each stage</li>
+                <li>Page-level verdicts: which pages convert, which don't, and which simply don't have enough traffic to judge</li>
+            </ul>
+        </div>
 
-        <h2>How Bussola Communicates</h2>
-        <p>Bussola is coordinated by <strong>Luciano</strong>, your AI marketing director. When she detects something important, she reports to Luciano, who triages the issue and alerts you with a clear recommendation and one-click approval.</p>
-        <p>Nothing happens without your approval. Bussola recommends — you decide.</p>
+        <h2>What Bussola Plugs Into</h2>
+        <p>Bussola reads your Google Analytics 4 property directly, then pulls Annunci's Google Ads numbers and Faccia's Meta numbers alongside it for comparison.</p>
+        <div class="sources">
+            <span>Google Analytics 4</span>
+            <span>Annunci's Google Ads data</span>
+            <span>Faccia's Meta data</span>
+        </div>
 
-        <h2>Collaborates With</h2>
+        <h2>What Runs On Its Own — And What Waits For You</h2>
+        <div class="gate">
+            <div class="auto">
+                <h4>▶ Runs automatically</h4>
+                <ul>
+                <li>All 7 checks, nightly</li>
+                <li>Rating your measurement confidence for every channel</li>
+                <li>Signalling Annunci and Faccia when a channel's conversion data can't be verified</li>
+                </ul>
+            </div>
+            <div class="hold">
+                <h4>⏸ Waits for your approval</h4>
+                <ul>
+                <li>Nothing — and that is structural, not a setting</li>
+                <li>Bussola is read-only at the code level: she cannot propose a change, so there is nothing of hers to approve</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>Where Bussola Sits In The Swarm</h2>
+        <p>Your agents don't sit in a chat room talking to each other — they share one workspace. Every night, on a fixed schedule, each agent writes what it found onto a shared findings board and into a single approval queue. Every other agent can read that board, and so can you. A few agents also hand each other specific intelligence directly. The result is one queue of decisions instead of fifteen inboxes.</p>
+        <div class="flow">
+            <div class="flow-step"><div class="fl">Reads from</div><div class="fb">Your analytics property, plus the raw spend and conversion numbers from Annunci and Faccia.</div></div>
+            <div class="flow-step"><div class="fl">Bussola does</div><div class="fb">Reconciles the three against each other and rates how much confidence each channel deserves.</div></div>
+            <div class="flow-step"><div class="fl">Hands off to</div><div class="fb">Annunci and Faccia directly — as a gate on what they're allowed to tell you.</div></div>
+        </div>
+        <p>This is the clearest example of the agents genuinely affecting each other. Before Annunci or Faccia hands you conversion-based advice, they ask Bussola whether the conversion data for that channel holds up. If it doesn't, the advice is suppressed and labelled rather than presented as fact. It's deliberately built to fail safe: if Bussola can't reach a verdict, the other agents carry on rather than going silent.</p>
+
+        <h2>Works With</h2>
         <div class="collab-cards">
-            <a href="luciano.html" class="collab-card"><div class="c-emoji">☕</div><div class="c-name">Luciano</div><div class="c-why">Daily briefing data</div></a>
-            <a href="annunci.html" class="collab-card"><div class="c-emoji">📣</div><div class="c-name">Annunci</div><div class="c-why">Ad conversion data</div></a>
-            <a href="spia.html" class="collab-card"><div class="c-emoji">🔍</div><div class="c-name">Spia</div><div class="c-why">Organic traffic analysis</div></a>
-            <a href="architetto.html" class="collab-card"><div class="c-emoji">🏗️</div><div class="c-name">Architetto</div><div class="c-why">Page performance</div></a>
+            <a href="annunci.html" class="collab-card"><div class="c-emoji">📣</div><div class="c-name">Annunci</div><div class="c-why">Gates his conversion advice</div></a>
+            <a href="faccia.html" class="collab-card"><div class="c-emoji">👤</div><div class="c-name">Faccia</div><div class="c-why">Gates his lead advice</div></a>
+            <a href="portale.html" class="collab-card"><div class="c-emoji">🚪</div><div class="c-name">Portale</div><div class="c-why">Funnel &amp; form data</div></a>
+            <a href="architetto.html" class="collab-card"><div class="c-emoji">🏗️</div><div class="c-name">Architetto</div><div class="c-why">Tracking tag health</div></a>
+            <a href="luciano.html" class="collab-card"><div class="c-emoji">☕</div><div class="c-name">Luciano</div><div class="c-why">Feeds the briefing</div></a>
+        </div>
+
+        <h2>Straight Talk</h2>
+        <div class="straight">
+            <p>Bussola turns on with your Google connection. Without Analytics connected she has nothing to reconcile, and she'll say so plainly rather than showing you an empty chart.</p>
+            <p>She never invents a verdict. "Not enough data to tell" is a real answer she is allowed to give.</p>
         </div>
 
         <div class="cta-box">
-            <h3>Get Bussola Working For You</h3>
-            <p>Bussola is part of your 15-agent AI marketing team — all included in every Parlami plan.</p>
+            <h3>Put Bussola To Work</h3>
+            <p>Bussola is included in Ads Engine ($997/mo) and up, as part of your AI marketing team — no per-agent pricing, no setup fee.</p>
             <a href="../index.html#contact" class="cta-primary">Get Your AI Team →</a>
         </div>
     </div>
