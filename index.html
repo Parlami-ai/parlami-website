@@ -344,6 +344,28 @@
             .footer-content{grid-template-columns:1fr;text-align:center}
             .hero-stats{grid-template-columns:repeat(2,1fr)}
         }
+        .rotator-slide{display:block}
+        .rslide{display:grid;grid-template-columns:300px 1fr;gap:34px;align-items:start;text-align:left;max-width:860px;margin:0 auto}
+        .rslide-id{text-align:center}
+        .rslide-id img,.rslide-id .rmono{width:132px;height:132px;border-radius:50%;object-fit:cover;border:3px solid rgba(139,92,246,.55);margin:0 auto 14px;display:flex;align-items:center;justify-content:center;font-size:60px;background:rgba(139,92,246,.13)}
+        .rslide-id h3{font-size:1.9rem;margin:0}
+        .rslide-id .rotator-role{font-size:1.05rem;margin:6px 0 12px}
+        .rslide-id .rotator-viz{margin:16px auto 0;max-width:290px}
+        .rslide-body .rsum{color:rgba(255,255,255,.9);font-size:1.1rem;line-height:1.6;margin:0 0 16px;max-width:none}
+        .rchip{display:inline-block;background:rgba(34,211,238,.14);color:#22d3ee;font-size:12px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;padding:5px 13px;border-radius:10px;margin-bottom:14px}
+        .rcaps{list-style:none;padding:0;margin:0 0 16px;display:grid;grid-template-columns:1fr 1fr;gap:7px 20px}
+        .rcaps li{position:relative;padding-left:20px;color:rgba(255,255,255,.82);font-size:.94rem;line-height:1.45}
+        .rcaps li::before{content:"→";position:absolute;left:0;color:#8b5cf6;font-weight:700}
+        .rmore{display:inline-flex;align-items:center;gap:7px;color:#22d3ee;text-decoration:none;font-weight:600;font-size:.95rem}
+        .rmore:hover{color:#fff}
+        @media(max-width:860px){
+          .rslide{grid-template-columns:1fr;gap:22px;text-align:center}
+          .rslide-body{text-align:left}
+          .rcaps{grid-template-columns:1fr}
+          .rslide-id .rotator-viz{display:none}
+          .rslide-id img,.rslide-id .rmono{width:104px;height:104px;font-size:48px;margin-bottom:10px}
+          .rslide-id h3{font-size:1.7rem}
+        }
     </style>
 </head>
 <body>
@@ -388,99 +410,364 @@
             <div class="rotator-viewport">
                 <div class="rotator-track" id="rotatorTrack">
                 <div class="rotator-slide" role="group" aria-label="Luciano">
-                    <div class="rotator-viz"><img src="/portraits/luciano.webp" alt="Luciano — AI Swarm Orchestrator" loading="lazy" width="150" height="150" style="width:150px;height:150px;border-radius:50%;object-fit:cover;border:3px solid rgba(139,92,246,.6);display:block;margin:0 auto"></div>
-                    <h3>Luciano</h3>
-                    <span class="rotator-role">AI Swarm Orchestrator</span>
-                    <p>Luciano knows you and your business — you talk to him directly, any time. Every morning he delivers your daily brief with suggestions ready for approval. Nothing changes without your OK.</p>
+                    <div class="rslide">
+                        <div class="rslide-id">
+                            <img src="/portraits/luciano.webp" alt="Luciano — AI Swarm Orchestrator" loading="lazy" width="132" height="132">
+                            <h3>Luciano</h3>
+                            <span class="rotator-role">AI Swarm Orchestrator</span>
+                            
+                            
+                        </div>
+                        <div class="rslide-body">
+                            <span class="rchip">1 briefing a day</span>
+                            <p class="rsum">Reads everything the other fourteen found overnight and hands you one plain-English briefing.</p>
+                            <ul class="rcaps">
+                            <li>Names your best and worst ad by cost per lead</li>
+                            <li>Leads with the single most urgent open issue</li>
+                            <li>Sorts every finding into six decision areas</li>
+                            <li>Answers “why did my cost per lead jump?”</li>
+                            <li>Daily approval digest, weekly report, monthly PDF</li>
+                            <li>Learns your business through a knowledge desk</li>
+                            </ul>
+                            <a class="rmore" href="/team/luciano.html">See everything Luciano does →</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="rotator-slide" role="group" aria-label="Faccia">
-                    <div class="rotator-viz"><svg viewBox="0 0 240 120" aria-hidden="true"><g><rect x="30" y="60" width="24" height="40" rx="4" fill="#34d399" class="vz-grow" style="transform-origin:42px 100px"/><rect x="70" y="45" width="24" height="55" rx="4" fill="#34d399" class="vz-grow" style="transform-origin:82px 100px;animation-delay:.2s"/><rect x="110" y="75" width="24" height="25" rx="4" fill="#f87171" class="vz-alarm" style="transform-origin:122px 100px;animation-delay:.4s"/></g><g class="vz-pop" style="animation-delay:1.2s"><rect x="146" y="40" width="76" height="28" rx="14" fill="rgba(248,113,113,.15)" stroke="#f87171"/><text x="184" y="58" text-anchor="middle" font-size="13" fill="#f87171">Pause?</text></g><g class="vz-pop" style="animation-delay:2s"><circle cx="212" cy="90" r="12" fill="rgba(52,211,153,.2)" stroke="#34d399"/><path d="M206 90l4 4 8-8" stroke="#34d399" stroke-width="2.5" fill="none"/></g></svg></div>
-                    <h3>Faccia</h3>
-                    <span class="rotator-role">Facebook Ad Manager</span>
-                    <div class="rotator-logos"><span><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#1877F2"/><path d="M15.6 12.6h-2.4V20h-3v-7.4H8.4V10h1.8V8.4c0-1.9 1-3.2 3.2-3.2h2.1v2.6h-1.5c-.7 0-.8.3-.8.9V10h2.4l-.4 2.6z" fill="#fff"/></svg>Facebook</span><span><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="1.5" y="1.5" width="21" height="21" rx="6" fill="none" stroke="#E4405F" stroke-width="2.4"/><circle cx="12" cy="12" r="4.6" fill="none" stroke="#E4405F" stroke-width="2.4"/><circle cx="17.6" cy="6.4" r="1.6" fill="#E4405F"/></svg>Instagram</span></div>
-                    <p>Watches your Facebook and Instagram ads daily, flags the money-losers, and queues the fix for your approval.</p>
+                    <div class="rslide">
+                        <div class="rslide-id">
+                            <img src="/portraits/faccia.webp" alt="Faccia — Facebook and Instagram Ad Manager" loading="lazy" width="132" height="132">
+                            <h3>Faccia</h3>
+                            <span class="rotator-role">Facebook &amp; Instagram Ad Manager</span>
+                            <div class="rotator-logos"><span><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#1877F2"/><path d="M15.6 12.6h-2.4V20h-3v-7.4H8.4V10h1.8V8.4c0-1.9 1-3.2 3.2-3.2h2.1v2.6h-1.5c-.7 0-.8.3-.8.9V10h2.4l-.4 2.6z" fill="#fff"/></svg>Facebook</span><span><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="1.5" y="1.5" width="21" height="21" rx="6" fill="none" stroke="#E4405F" stroke-width="2.4"/><circle cx="12" cy="12" r="4.6" fill="none" stroke="#E4405F" stroke-width="2.4"/><circle cx="17.6" cy="6.4" r="1.6" fill="#E4405F"/></svg>Instagram</span></div>
+                            <div class="rotator-viz"><svg viewBox="0 0 240 120" aria-hidden="true"><g><rect x="30" y="60" width="24" height="40" rx="4" fill="#34d399" class="vz-grow" style="transform-origin:42px 100px"/><rect x="70" y="45" width="24" height="55" rx="4" fill="#34d399" class="vz-grow" style="transform-origin:82px 100px;animation-delay:.2s"/><rect x="110" y="75" width="24" height="25" rx="4" fill="#f87171" class="vz-alarm" style="transform-origin:122px 100px;animation-delay:.4s"/></g><g class="vz-pop" style="animation-delay:1.2s"><rect x="146" y="40" width="76" height="28" rx="14" fill="rgba(248,113,113,.15)" stroke="#f87171"/><text x="184" y="58" text-anchor="middle" font-size="13" fill="#f87171">Pause?</text></g><g class="vz-pop" style="animation-delay:2s"><circle cx="212" cy="90" r="12" fill="rgba(52,211,153,.2)" stroke="#34d399"/><path d="M206 90l4 4 8-8" stroke="#34d399" stroke-width="2.5" fill="none"/></g></svg></div>
+                        </div>
+                        <div class="rslide-body">
+                            <span class="rchip">19 nightly rules</span>
+                            <p class="rsum">Watches your Meta ads daily and knows the difference between failing and still learning.</p>
+                            <ul class="rcaps">
+                            <li>Catches creative fatigue before it drains budget</li>
+                            <li>Flags spend with zero leads to show for it</li>
+                            <li>Reads Meta's own rankings to say what's failing</li>
+                            <li>Finds placement and weekday waste</li>
+                            <li>Flags weak video hooks in the first 3 seconds</li>
+                            <li>Pulls in new leads every hour, day and night</li>
+                            </ul>
+                            <a class="rmore" href="/team/faccia.html">See everything Faccia does →</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="rotator-slide" role="group" aria-label="Annunci">
-                    <div class="rotator-viz"><svg viewBox="0 0 240 120" aria-hidden="true"><g font-size="12" fill="rgba(255,255,255,.35)"><rect x="26" y="18" width="188" height="20" rx="5" fill="rgba(255,255,255,.05)"/><text x="34" y="32">"best plumber near me"</text><text x="196" y="32" fill="#34d399">$42</text><rect x="26" y="48" width="188" height="20" rx="5" fill="rgba(248,113,113,.12)" class="vz-alarm"/><text x="34" y="62" fill="#fff">"free diy repair"</text><text x="190" y="62" fill="#f87171">$180</text><rect x="26" y="78" width="188" height="20" rx="5" fill="rgba(255,255,255,.05)"/><text x="34" y="92">"emergency service"</text><text x="196" y="92" fill="#34d399">$38</text></g><line x1="30" y1="58" x2="176" y2="58" stroke="#f87171" stroke-width="2" class="vz-strike"/><g class="vz-pop" style="animation-delay:1.6s"><rect x="140" y="98" width="86" height="18" rx="9" fill="rgba(139,92,246,.2)" stroke="#8b5cf6"/><text x="183" y="111" text-anchor="middle" font-size="11" fill="#c4b5fd">+ negative kw?</text></g></svg></div>
-                    <h3>Annunci</h3>
-                    <span class="rotator-role">Google Ads Manager</span>
-                    <div class="rotator-logos"><span><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="9.2" y="2.6" width="5.6" height="17" rx="2.8" transform="rotate(30 12 11)" fill="#FBBC04"/><rect x="9.2" y="2.6" width="5.6" height="17" rx="2.8" transform="rotate(-30 12 11)" fill="#4285F4"/><circle cx="5.4" cy="18.4" r="3" fill="#34A853"/></svg>Google Ads</span></div>
-                    <p>Finds the search terms burning your Google Ads budget with nothing to show — and drafts the negative keywords.</p>
+                    <div class="rslide">
+                        <div class="rslide-id">
+                            <img src="/portraits/annunci.webp" alt="Annunci — Google Ads Manager" loading="lazy" width="132" height="132">
+                            <h3>Annunci</h3>
+                            <span class="rotator-role">Google Ads Manager</span>
+                            <div class="rotator-logos"><span><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="9.2" y="2.6" width="5.6" height="17" rx="2.8" transform="rotate(30 12 11)" fill="#FBBC04"/><rect x="9.2" y="2.6" width="5.6" height="17" rx="2.8" transform="rotate(-30 12 11)" fill="#4285F4"/><circle cx="5.4" cy="18.4" r="3" fill="#34A853"/></svg>Google Ads</span></div>
+                            <div class="rotator-viz"><svg viewBox="0 0 240 120" aria-hidden="true"><g font-size="12" fill="rgba(255,255,255,.35)"><rect x="26" y="18" width="188" height="20" rx="5" fill="rgba(255,255,255,.05)"/><text x="34" y="32">"best plumber near me"</text><text x="196" y="32" fill="#34d399">$42</text><rect x="26" y="48" width="188" height="20" rx="5" fill="rgba(248,113,113,.12)" class="vz-alarm"/><text x="34" y="62" fill="#fff">"free diy repair"</text><text x="190" y="62" fill="#f87171">$180</text><rect x="26" y="78" width="188" height="20" rx="5" fill="rgba(255,255,255,.05)"/><text x="34" y="92">"emergency service"</text><text x="196" y="92" fill="#34d399">$38</text></g><line x1="30" y1="58" x2="176" y2="58" stroke="#f87171" stroke-width="2" class="vz-strike"/><g class="vz-pop" style="animation-delay:1.6s"><rect x="140" y="98" width="86" height="18" rx="9" fill="rgba(139,92,246,.2)" stroke="#8b5cf6"/><text x="183" y="111" text-anchor="middle" font-size="11" fill="#c4b5fd">+ negative kw?</text></g></svg></div>
+                        </div>
+                        <div class="rslide-body">
+                            <span class="rchip">61 nightly checks</span>
+                            <p class="rsum">The most thorough agent on the team — sixty-one separate checks on your account every night.</p>
+                            <ul class="rcaps">
+                            <li>Finds search terms burning money, drafts the negative</li>
+                            <li>Spots winners capped by budget</li>
+                            <li>Catches device, geo and time-of-day leaks</li>
+                            <li>Tests your landing pages for broken links and dead ends</li>
+                            <li>Detects silent changes Google made without asking</li>
+                            <li>Flags duplicate keywords competing against each other</li>
+                            </ul>
+                            <a class="rmore" href="/team/annunci.html">See everything Annunci does →</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="rotator-slide" role="group" aria-label="Bussola">
-                    <div class="rotator-viz"><svg viewBox="0 0 240 120" aria-hidden="true"><circle cx="120" cy="62" r="44" fill="rgba(139,92,246,.08)" stroke="rgba(255,255,255,.35)"/><circle cx="120" cy="62" r="3" fill="#fff"/><g class="vz-needle" style="transform-origin:120px 62px"><polygon points="120,26 126,62 120,70 114,62" fill="#22d3ee"/></g><text x="40" y="30" font-size="12" fill="rgba(255,255,255,.35)">platform says</text><text x="40" y="46" font-size="16" fill="#f87171">32</text><text x="158" y="30" font-size="12" fill="rgba(255,255,255,.35)">reality</text><text x="158" y="46" font-size="16" fill="#34d399">24</text><g class="vz-pop" style="animation-delay:1.8s"><rect x="76" y="100" width="88" height="16" rx="8" fill="rgba(34,211,238,.12)" stroke="#22d3ee"/><text x="120" y="112" text-anchor="middle" font-size="10" fill="#22d3ee">gap explained</text></g></svg></div>
-                    <h3>Bussola</h3>
-                    <span class="rotator-role">Google Analytics Analyst</span>
-                    <div class="rotator-logos"><span><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="16" y="2" width="6" height="20" rx="3" fill="#F9AB00"/><rect x="9" y="9" width="6" height="13" rx="3" fill="#E37400"/><circle cx="5" cy="19" r="3" fill="#E37400"/></svg>Google Analytics</span><span><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="9.2" y="2.6" width="5.6" height="17" rx="2.8" transform="rotate(30 12 11)" fill="#FBBC04"/><rect x="9.2" y="2.6" width="5.6" height="17" rx="2.8" transform="rotate(-30 12 11)" fill="#4285F4"/><circle cx="5.4" cy="18.4" r="3" fill="#34A853"/></svg>Google Ads</span></div>
-                    <p>Checks what the ad platforms claim against what your analytics actually recorded, so you know which numbers to trust.</p>
+                    <div class="rslide">
+                        <div class="rslide-id">
+                            <img src="/portraits/bussola.webp" alt="Bussola — Google Analytics Analyst" loading="lazy" width="132" height="132">
+                            <h3>Bussola</h3>
+                            <span class="rotator-role">Google Analytics Analyst</span>
+                            <div class="rotator-logos"><span><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="16" y="2" width="6" height="20" rx="3" fill="#F9AB00"/><rect x="9" y="9" width="6" height="13" rx="3" fill="#E37400"/><circle cx="5" cy="19" r="3" fill="#E37400"/></svg>Google Analytics</span><span><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="9.2" y="2.6" width="5.6" height="17" rx="2.8" transform="rotate(30 12 11)" fill="#FBBC04"/><rect x="9.2" y="2.6" width="5.6" height="17" rx="2.8" transform="rotate(-30 12 11)" fill="#4285F4"/><circle cx="5.4" cy="18.4" r="3" fill="#34A853"/></svg>Google Ads</span></div>
+                            <div class="rotator-viz"><svg viewBox="0 0 240 120" aria-hidden="true"><circle cx="120" cy="62" r="44" fill="rgba(139,92,246,.08)" stroke="rgba(255,255,255,.35)"/><circle cx="120" cy="62" r="3" fill="#fff"/><g class="vz-needle" style="transform-origin:120px 62px"><polygon points="120,26 126,62 120,70 114,62" fill="#22d3ee"/></g><text x="40" y="30" font-size="12" fill="rgba(255,255,255,.35)">platform says</text><text x="40" y="46" font-size="16" fill="#f87171">32</text><text x="158" y="30" font-size="12" fill="rgba(255,255,255,.35)">reality</text><text x="158" y="46" font-size="16" fill="#34d399">24</text><g class="vz-pop" style="animation-delay:1.8s"><rect x="76" y="100" width="88" height="16" rx="8" fill="rgba(34,211,238,.12)" stroke="#22d3ee"/><text x="120" y="112" text-anchor="middle" font-size="10" fill="#22d3ee">gap explained</text></g></svg></div>
+                        </div>
+                        <div class="rslide-body">
+                            <span class="rchip">7 nightly checks</span>
+                            <p class="rsum">Sits between the platforms and your analytics, and tells you which number to believe.</p>
+                            <ul class="rcaps">
+                            <li>Compares platform claims against what you recorded</li>
+                            <li>Critical alert when traffic records zero conversions</li>
+                            <li>Flags a data source that quietly stopped reporting</li>
+                            <li>Catches lost campaign tagging</li>
+                            <li>Finds channels taking spend with nothing to show</li>
+                            <li>Can silence the ad agents when tracking can't be trusted</li>
+                            </ul>
+                            <a class="rmore" href="/team/bussola.html">See everything Bussola does →</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="rotator-slide" role="group" aria-label="Lettera">
-                    <div class="rotator-viz"><svg viewBox="0 0 240 120" aria-hidden="true"><circle cx="36" cy="60" r="14" fill="rgba(139,92,246,.25)" stroke="#8b5cf6"/><path d="M30 60a6 6 0 1112 0M30 66h12" stroke="#c4b5fd" fill="none" stroke-width="2"/><line x1="56" y1="60" x2="184" y2="60" stroke-dasharray="4 5" stroke="rgba(255,255,255,.35)"/><g class="vz-fly"><rect x="0" y="-8" width="26" height="17" rx="3" fill="rgba(34,211,238,.2)" stroke="#22d3ee"/><path d="M0 -8l13 9 13-9" stroke="#22d3ee" fill="none"/></g><rect x="186" y="44" width="34" height="32" rx="6" fill="rgba(52,211,153,.15)" stroke="#34d399"/><text x="203" y="65" text-anchor="middle" font-size="14" fill="#34d399">✓</text><text x="120" y="100" text-anchor="middle" font-size="12" fill="#22d3ee" class="vz-blink">~60 seconds</text></svg></div>
-                    <h3>Lettera</h3>
-                    <span class="rotator-role">Instant Lead Follow-Up</span>
-                    <p>Follows up with every new lead within minutes, any hour — nobody goes cold over a weekend.</p>
+                    <div class="rslide">
+                        <div class="rslide-id">
+                            <img src="/portraits/lettera.webp" alt="Lettera — Instant Lead Follow-Up" loading="lazy" width="132" height="132">
+                            <h3>Lettera</h3>
+                            <span class="rotator-role">Instant Lead Follow-Up</span>
+                            
+                            <div class="rotator-viz"><svg viewBox="0 0 240 120" aria-hidden="true"><circle cx="36" cy="60" r="14" fill="rgba(139,92,246,.25)" stroke="#8b5cf6"/><path d="M30 60a6 6 0 1112 0M30 66h12" stroke="#c4b5fd" fill="none" stroke-width="2"/><line x1="56" y1="60" x2="184" y2="60" stroke-dasharray="4 5" stroke="rgba(255,255,255,.35)"/><g class="vz-fly"><rect x="0" y="-8" width="26" height="17" rx="3" fill="rgba(34,211,238,.2)" stroke="#22d3ee"/><path d="M0 -8l13 9 13-9" stroke="#22d3ee" fill="none"/></g><rect x="186" y="44" width="34" height="32" rx="6" fill="rgba(52,211,153,.15)" stroke="#34d399"/><text x="203" y="65" text-anchor="middle" font-size="14" fill="#34d399">✓</text><text x="120" y="100" text-anchor="middle" font-size="12" fill="#22d3ee" class="vz-blink">~60 seconds</text></svg></div>
+                        </div>
+                        <div class="rslide-body">
+                            <span class="rchip">5-step sequence</span>
+                            <p class="rsum">Picks up every new enquiry automatically so nobody goes cold over a weekend.</p>
+                            <ul class="rcaps">
+                            <li>Enrols every new lead the moment it arrives</li>
+                            <li>Five steps: now, next day, 3 days, a week, a fortnight</li>
+                            <li>Personalised with their name and your business</li>
+                            <li>Checks your unsubscribe list before every send</li>
+                            <li>Tracks delivered, opened, clicked and bounced</li>
+                            <li>Measures the real wait and names every breach</li>
+                            </ul>
+                            <a class="rmore" href="/team/lettera.html">See everything Lettera does →</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="rotator-slide" role="group" aria-label="Spia">
-                    <div class="rotator-viz"><svg viewBox="0 0 240 120" aria-hidden="true"><g stroke="rgba(255,255,255,.35)"><line x1="40" y1="100" x2="200" y2="100"/><line x1="40" y1="76" x2="200" y2="76"/><line x1="40" y1="52" x2="200" y2="52"/><line x1="40" y1="28" x2="200" y2="28"/></g><g font-size="10" fill="rgba(255,255,255,.35)"><text x="18" y="104">#9</text><text x="18" y="80">#6</text><text x="18" y="56">#4</text><text x="18" y="32">#1</text></g><circle r="7" fill="#22d3ee" class="vz-climb"/><g class="vz-pop" style="animation-delay:2s"><text x="176" y="22" font-size="12" fill="#34d399">▲ page one</text></g></svg></div>
-                    <h3>Spia</h3>
-                    <span class="rotator-role">SEO Rank Tracker</span>
-                    <div class="rotator-logos"><span><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="1.5" y="3.5" width="21" height="17" rx="3" fill="none" stroke="#458CF5" stroke-width="2.2"/><path d="M5 8h6M5 12h4" stroke="#9AA0A6" stroke-width="2" stroke-linecap="round"/><circle cx="15.5" cy="13.5" r="3.4" fill="none" stroke="#458CF5" stroke-width="2.2"/><path d="M17.9 15.9l2.6 2.6" stroke="#458CF5" stroke-width="2.2" stroke-linecap="round"/></svg>Search Console</span></div>
-                    <p>Tracks your real Google rankings daily and spots what's one push away from page one.</p>
+                    <div class="rslide">
+                        <div class="rslide-id">
+                            <img src="/portraits/spia.webp" alt="Spia — SEO Rank Tracker" loading="lazy" width="132" height="132">
+                            <h3>Spia</h3>
+                            <span class="rotator-role">SEO Rank Tracker</span>
+                            <div class="rotator-logos"><span><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="1.5" y="3.5" width="21" height="17" rx="3" fill="none" stroke="#458CF5" stroke-width="2.2"/><path d="M5 8h6M5 12h4" stroke="#9AA0A6" stroke-width="2" stroke-linecap="round"/><circle cx="15.5" cy="13.5" r="3.4" fill="none" stroke="#458CF5" stroke-width="2.2"/><path d="M17.9 15.9l2.6 2.6" stroke="#458CF5" stroke-width="2.2" stroke-linecap="round"/></svg>Search Console</span></div>
+                            <div class="rotator-viz"><svg viewBox="0 0 240 120" aria-hidden="true"><g stroke="rgba(255,255,255,.35)"><line x1="40" y1="100" x2="200" y2="100"/><line x1="40" y1="76" x2="200" y2="76"/><line x1="40" y1="52" x2="200" y2="52"/><line x1="40" y1="28" x2="200" y2="28"/></g><g font-size="10" fill="rgba(255,255,255,.35)"><text x="18" y="104">#9</text><text x="18" y="80">#6</text><text x="18" y="56">#4</text><text x="18" y="32">#1</text></g><circle r="7" fill="#22d3ee" class="vz-climb"/><g class="vz-pop" style="animation-delay:2s"><text x="176" y="22" font-size="12" fill="#34d399">▲ page one</text></g></svg></div>
+                        </div>
+                        <div class="rslide-body">
+                            <span class="rchip">7 rules + 53 page checks</span>
+                            <p class="rsum">Tracks how people actually find you — then hands what she learns to five other agents.</p>
+                            <ul class="rcaps">
+                            <li>Flags rankings that slipped and searches on the rise</li>
+                            <li>Finds keywords one push from page one</li>
+                            <li>Critical alert if someone outranks your own brand</li>
+                            <li>Runs a 53-point audit on every page</li>
+                            <li>Tracks visits from ChatGPT, Perplexity and Gemini</li>
+                            <li>Discovers who is really competing with you</li>
+                            </ul>
+                            <a class="rmore" href="/team/spia.html">See everything Spia does →</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="rotator-slide" role="group" aria-label="Musa">
-                    <div class="rotator-viz"><svg viewBox="0 0 240 130" aria-hidden="true"><rect x="60" y="10" width="104" height="112" rx="6" fill="#fff" opacity=".95"/><rect x="68" y="18" width="88" height="78" rx="3" fill="#0e1030"/><rect x="68" y="18" width="88" height="78" rx="3" fill="rgba(139,92,246,.35)" class="vz-paint"/><circle cx="138" cy="38" r="10" fill="#fbbf24" class="vz-pop" style="animation-delay:.8s"/><path d="M68 96l24-26 16 14 20-20 28 32z" fill="#8b5cf6" class="vz-pop" style="animation-delay:1.4s"/><path d="M68 96l16-16 12 10 14-12 18 18z" fill="#22d3ee" opacity=".8" class="vz-pop" style="animation-delay:1.9s"/><text x="112" y="112" text-anchor="middle" font-size="9.5" fill="#3b3b5c">new ad photo — you approve</text><g><circle cx="182" cy="34" r="7" fill="#8b5cf6" class="vz-blink"/><circle cx="182" cy="56" r="7" fill="#22d3ee" class="vz-blink" style="animation-delay:.5s"/><circle cx="182" cy="78" r="7" fill="#fbbf24" class="vz-blink" style="animation-delay:1s"/><circle cx="182" cy="100" r="7" fill="#34d399" class="vz-blink" style="animation-delay:1.5s"/></g></svg></div>
-                    <h3>Musa</h3>
-                    <span class="rotator-role">Ad Creator</span>
-                    <p>Spots the ad images your audience is tired of and drafts fresh creative — you approve before anything runs.</p>
+                    <div class="rslide">
+                        <div class="rslide-id">
+                            <div class="rmono" aria-hidden="true">🎨</div>
+                            <h3>Musa</h3>
+                            <span class="rotator-role">Ad Creative Studio</span>
+                            
+                            <div class="rotator-viz"><svg viewBox="0 0 240 130" aria-hidden="true"><rect x="60" y="10" width="104" height="112" rx="6" fill="#fff" opacity=".95"/><rect x="68" y="18" width="88" height="78" rx="3" fill="#0e1030"/><rect x="68" y="18" width="88" height="78" rx="3" fill="rgba(139,92,246,.35)" class="vz-paint"/><circle cx="138" cy="38" r="10" fill="#fbbf24" class="vz-pop" style="animation-delay:.8s"/><path d="M68 96l24-26 16 14 20-20 28 32z" fill="#8b5cf6" class="vz-pop" style="animation-delay:1.4s"/><path d="M68 96l16-16 12 10 14-12 18 18z" fill="#22d3ee" opacity=".8" class="vz-pop" style="animation-delay:1.9s"/><text x="112" y="112" text-anchor="middle" font-size="9.5" fill="#3b3b5c">new ad photo — you approve</text><g><circle cx="182" cy="34" r="7" fill="#8b5cf6" class="vz-blink"/><circle cx="182" cy="56" r="7" fill="#22d3ee" class="vz-blink" style="animation-delay:.5s"/><circle cx="182" cy="78" r="7" fill="#fbbf24" class="vz-blink" style="animation-delay:1s"/><circle cx="182" cy="100" r="7" fill="#34d399" class="vz-blink" style="animation-delay:1.5s"/></g></svg></div>
+                        </div>
+                        <div class="rslide-body">
+                            <span class="rchip">5 checks + studio</span>
+                            <p class="rsum">Studies the ads your competitors have run longest, then drafts fresh concepts in your voice.</p>
+                            <ul class="rcaps">
+                            <li>Cites the proven ads behind every concept</li>
+                            <li>Leads with your own best ad as the benchmark</li>
+                            <li>Discards anything too close to a competitor's copy</li>
+                            <li>Renders finished ad images in three formats</li>
+                            <li>Critical alert on unapproved assets running live</li>
+                            <li>Works out your real creative refresh cadence</li>
+                            </ul>
+                            <a class="rmore" href="/team/musa.html">See everything Musa does →</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="rotator-slide" role="group" aria-label="Regista">
-                    <div class="rotator-viz"><svg viewBox="0 0 240 130" aria-hidden="true"><rect x="36" y="14" width="168" height="94" rx="10" fill="#0b0c1e" stroke="rgba(255,255,255,.35)"/><rect x="44" y="20" width="30" height="14" rx="7" fill="rgba(251,191,36,.2)" stroke="#fbbf24"/><text x="59" y="31" text-anchor="middle" font-size="9" fill="#fbbf24">AD</text><g class="vz-scene1"><circle cx="90" cy="60" r="16" fill="#8b5cf6"/><rect x="114" y="50" width="60" height="7" rx="3.5" fill="#fff" opacity=".85"/><rect x="114" y="63" width="42" height="6" rx="3" fill="rgba(255,255,255,.35)"/></g><g class="vz-scene2"><rect x="76" y="44" width="88" height="30" rx="6" fill="rgba(34,211,238,.16)" stroke="#22d3ee"/><text x="120" y="63" text-anchor="middle" font-size="11" fill="#22d3ee">Book today →</text></g><rect x="48" y="94" width="144" height="5" rx="2.5" fill="rgba(255,255,255,.15)"/><rect x="48" y="94" width="144" height="5" rx="2.5" fill="#22d3ee" class="vz-progress"/><polygon points="52,84 52,76 59,80" fill="#fff" opacity=".8"/><text x="192" y="88" text-anchor="end" font-size="9" fill="rgba(255,255,255,.35)">0:15</text><g class="vz-pop" style="animation-delay:3.6s"><rect x="60" y="112" width="120" height="16" rx="8" fill="rgba(52,211,153,.12)" stroke="#34d399"/><text x="120" y="124" text-anchor="middle" font-size="9.5" fill="#34d399">new cut — for your approval</text></g></svg></div>
-                    <h3>Regista</h3>
-                    <span class="rotator-role">Video Ad Creator</span>
-                    <p>Knows when a video ad has run its course, and briefs the fresh cut — hook, script, and storyboard.</p>
+                    <div class="rslide">
+                        <div class="rslide-id">
+                            <div class="rmono" aria-hidden="true">🎬</div>
+                            <h3>Regista</h3>
+                            <span class="rotator-role">Video Ad Strategist</span>
+                            
+                            <div class="rotator-viz"><svg viewBox="0 0 240 130" aria-hidden="true"><rect x="36" y="14" width="168" height="94" rx="10" fill="#0b0c1e" stroke="rgba(255,255,255,.35)"/><rect x="44" y="20" width="30" height="14" rx="7" fill="rgba(251,191,36,.2)" stroke="#fbbf24"/><text x="59" y="31" text-anchor="middle" font-size="9" fill="#fbbf24">AD</text><g class="vz-scene1"><circle cx="90" cy="60" r="16" fill="#8b5cf6"/><rect x="114" y="50" width="60" height="7" rx="3.5" fill="#fff" opacity=".85"/><rect x="114" y="63" width="42" height="6" rx="3" fill="rgba(255,255,255,.35)"/></g><g class="vz-scene2"><rect x="76" y="44" width="88" height="30" rx="6" fill="rgba(34,211,238,.16)" stroke="#22d3ee"/><text x="120" y="63" text-anchor="middle" font-size="11" fill="#22d3ee">Book today →</text></g><rect x="48" y="94" width="144" height="5" rx="2.5" fill="rgba(255,255,255,.15)"/><rect x="48" y="94" width="144" height="5" rx="2.5" fill="#22d3ee" class="vz-progress"/><polygon points="52,84 52,76 59,80" fill="#fff" opacity=".8"/><text x="192" y="88" text-anchor="end" font-size="9" fill="rgba(255,255,255,.35)">0:15</text><g class="vz-pop" style="animation-delay:3.6s"><rect x="60" y="112" width="120" height="16" rx="8" fill="rgba(52,211,153,.12)" stroke="#34d399"/><text x="120" y="124" text-anchor="middle" font-size="9.5" fill="#34d399">new cut — for your approval</text></g></svg></div>
+                        </div>
+                        <div class="rslide-body">
+                            <span class="rchip">5 checks + hooks</span>
+                            <p class="rsum">Studies the video working in your market and briefs the fresh cut when yours runs its course.</p>
+                            <ul class="rcaps">
+                            <li>Transcribes competitor video to find the real hook</li>
+                            <li>Never reports a hook it can't prove was said</li>
+                            <li>Reads retention to say which second lost people</li>
+                            <li>Writes hook, voiceover and shot-by-shot storyboard</li>
+                            <li>Flags video with no captions — most play on mute</li>
+                            <li>Compares your short vs long video performance</li>
+                            </ul>
+                            <a class="rmore" href="/team/regista.html">See everything Regista does →</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="rotator-slide" role="group" aria-label="Penna">
-                    <div class="rotator-viz"><svg viewBox="0 0 240 130" aria-hidden="true"><rect x="52" y="10" width="136" height="112" rx="9" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.35)"/><rect x="64" y="22" width="86" height="8" rx="4" fill="#fff" opacity=".9" class="vz-write"/><rect x="64" y="38" width="112" height="30" rx="6" fill="rgba(139,92,246,.22)" stroke="#8b5cf6" class="vz-pop" style="animation-delay:.7s"/><path d="M72 62l12-13 9 8 11-11 8 16z" fill="#8b5cf6" class="vz-pop" style="animation-delay:.9s"/><circle cx="80" cy="47" r="4" fill="#8b5cf6" class="vz-pop" style="animation-delay:.9s"/><rect x="64" y="78" width="112" height="5" rx="2.5" fill="rgba(255,255,255,.35)" class="vz-write" style="animation-delay:1.5s"/><rect x="64" y="89" width="104" height="5" rx="2.5" fill="rgba(255,255,255,.35)" class="vz-write" style="animation-delay:2s"/><rect x="64" y="100" width="110" height="5" rx="2.5" fill="rgba(255,255,255,.35)" class="vz-write" style="animation-delay:2.5s"/><rect x="64" y="111" width="64" height="5" rx="2.5" fill="rgba(255,255,255,.35)" class="vz-write" style="animation-delay:3s"/><rect x="131" y="109" width="3" height="9" fill="#22d3ee" class="vz-cursor"/><g class="vz-pop" style="animation-delay:3.6s"><rect x="150" y="14" width="52" height="16" rx="8" fill="rgba(34,211,238,.14)" stroke="#22d3ee"/><text x="176" y="26" text-anchor="middle" font-size="9.5" fill="#22d3ee">draft ✓</text></g></svg></div>
-                    <h3>Penna</h3>
-                    <span class="rotator-role">Content Writer</span>
-                    <div class="rotator-logos"><span><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="1.5" y="3.5" width="21" height="17" rx="3" fill="none" stroke="#458CF5" stroke-width="2.2"/><path d="M5 8h6M5 12h4" stroke="#9AA0A6" stroke-width="2" stroke-linecap="round"/><circle cx="15.5" cy="13.5" r="3.4" fill="none" stroke="#458CF5" stroke-width="2.2"/><path d="M17.9 15.9l2.6 2.6" stroke="#458CF5" stroke-width="2.2" stroke-linecap="round"/></svg>Search Console</span></div>
-                    <p>Finds your decaying and thin pages and builds the brief to fix them — every one waits for your approval.</p>
+                    <div class="rslide">
+                        <div class="rslide-id">
+                            <img src="/portraits/penna.webp" alt="Penna — Content Strategist" loading="lazy" width="132" height="132">
+                            <h3>Penna</h3>
+                            <span class="rotator-role">Content Strategist</span>
+                            <div class="rotator-logos"><span><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="1.5" y="3.5" width="21" height="17" rx="3" fill="none" stroke="#458CF5" stroke-width="2.2"/><path d="M5 8h6M5 12h4" stroke="#9AA0A6" stroke-width="2" stroke-linecap="round"/><circle cx="15.5" cy="13.5" r="3.4" fill="none" stroke="#458CF5" stroke-width="2.2"/><path d="M17.9 15.9l2.6 2.6" stroke="#458CF5" stroke-width="2.2" stroke-linecap="round"/></svg>Search Console</span></div>
+                            <div class="rotator-viz"><svg viewBox="0 0 240 130" aria-hidden="true"><rect x="52" y="10" width="136" height="112" rx="9" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.35)"/><rect x="64" y="22" width="86" height="8" rx="4" fill="#fff" opacity=".9" class="vz-write"/><rect x="64" y="38" width="112" height="30" rx="6" fill="rgba(139,92,246,.22)" stroke="#8b5cf6" class="vz-pop" style="animation-delay:.7s"/><path d="M72 62l12-13 9 8 11-11 8 16z" fill="#8b5cf6" class="vz-pop" style="animation-delay:.9s"/><circle cx="80" cy="47" r="4" fill="#8b5cf6" class="vz-pop" style="animation-delay:.9s"/><rect x="64" y="78" width="112" height="5" rx="2.5" fill="rgba(255,255,255,.35)" class="vz-write" style="animation-delay:1.5s"/><rect x="64" y="89" width="104" height="5" rx="2.5" fill="rgba(255,255,255,.35)" class="vz-write" style="animation-delay:2s"/><rect x="64" y="100" width="110" height="5" rx="2.5" fill="rgba(255,255,255,.35)" class="vz-write" style="animation-delay:2.5s"/><rect x="64" y="111" width="64" height="5" rx="2.5" fill="rgba(255,255,255,.35)" class="vz-write" style="animation-delay:3s"/><rect x="131" y="109" width="3" height="9" fill="#22d3ee" class="vz-cursor"/><g class="vz-pop" style="animation-delay:3.6s"><rect x="150" y="14" width="52" height="16" rx="8" fill="rgba(34,211,238,.14)" stroke="#22d3ee"/><text x="176" y="26" text-anchor="middle" font-size="9.5" fill="#22d3ee">draft ✓</text></g></svg></div>
+                        </div>
+                        <div class="rslide-body">
+                            <span class="rchip">6 nightly checks</span>
+                            <p class="rsum">Spots the page quietly bleeding traffic, then builds the brief to fix it.</p>
+                            <ul class="rcaps">
+                            <li>Critical alert on a page that lost all its traffic</li>
+                            <li>Flags thin, stale and decaying content</li>
+                            <li>Finds pages ranking well that nobody clicks</li>
+                            <li>Builds a brief with keywords, headings and structure</li>
+                            <li>Formats answers so AI engines can quote you</li>
+                            <li>Places a ready-structured draft in your WordPress</li>
+                            </ul>
+                            <a class="rmore" href="/team/penna.html">See everything Penna does →</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="rotator-slide" role="group" aria-label="Architetto">
-                    <div class="rotator-viz"><svg viewBox="0 0 240 120" aria-hidden="true"><rect x="40" y="20" width="160" height="84" rx="8" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.35)"/><rect x="40" y="20" width="160" height="18" rx="8" fill="rgba(255,255,255,.08)"/><circle cx="52" cy="29" r="3" fill="#f87171"/><circle cx="62" cy="29" r="3" fill="#fbbf24"/><circle cx="72" cy="29" r="3" fill="#34d399"/><g class="vz-alarm"><rect x="56" y="50" width="128" height="20" rx="5" fill="rgba(248,113,113,.15)" stroke="#f87171"/><text x="120" y="64" text-anchor="middle" font-size="11" fill="#f87171">/contact — 500 error</text></g><g class="vz-pop" style="animation-delay:1.6s"><rect x="56" y="78" width="128" height="18" rx="9" fill="rgba(52,211,153,.12)" stroke="#34d399"/><text x="120" y="91" text-anchor="middle" font-size="10" fill="#34d399">fix built — approve to ship</text></g></svg></div>
-                    <h3>Architetto</h3>
-                    <span class="rotator-role">Website Health Monitor</span>
-                    <p>Crawls your site every night for breakage, slow pages, insecure content, and tracking that quietly stopped firing.</p>
+                    <div class="rslide">
+                        <div class="rslide-id">
+                            <img src="/portraits/architetto.webp" alt="Architetto — Website Health Monitor" loading="lazy" width="132" height="132">
+                            <h3>Architetto</h3>
+                            <span class="rotator-role">Website Health Monitor</span>
+                            
+                            <div class="rotator-viz"><svg viewBox="0 0 240 120" aria-hidden="true"><rect x="40" y="20" width="160" height="84" rx="8" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.35)"/><rect x="40" y="20" width="160" height="18" rx="8" fill="rgba(255,255,255,.08)"/><circle cx="52" cy="29" r="3" fill="#f87171"/><circle cx="62" cy="29" r="3" fill="#fbbf24"/><circle cx="72" cy="29" r="3" fill="#34d399"/><g class="vz-alarm"><rect x="56" y="50" width="128" height="20" rx="5" fill="rgba(248,113,113,.15)" stroke="#f87171"/><text x="120" y="64" text-anchor="middle" font-size="11" fill="#f87171">/contact — 500 error</text></g><g class="vz-pop" style="animation-delay:1.6s"><rect x="56" y="78" width="128" height="18" rx="9" fill="rgba(52,211,153,.12)" stroke="#34d399"/><text x="120" y="91" text-anchor="middle" font-size="10" fill="#34d399">fix built — approve to ship</text></g></svg></div>
+                        </div>
+                        <div class="rslide-body">
+                            <span class="rchip">Nightly crawl</span>
+                            <p class="rsum">Your tripwire — because ads pointing at a broken page burn money faster than bad targeting.</p>
+                            <ul class="rcaps">
+                            <li>Visits every published page, every night</li>
+                            <li>Critical alert on any page returning an error</li>
+                            <li>Measures real load time and flags slow pages</li>
+                            <li>Detects analytics tags that stopped firing</li>
+                            <li>Flags insecure content browsers now block</li>
+                            <li>Carries Spia's SEO audit on the same crawl</li>
+                            </ul>
+                            <a class="rmore" href="/team/architetto.html">See everything Architetto does →</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="rotator-slide" role="group" aria-label="Portale">
-                    <div class="rotator-viz"><svg viewBox="0 0 240 120" aria-hidden="true"><polygon points="60,22 180,22 150,62 90,62" fill="rgba(139,92,246,.18)" stroke="#8b5cf6"/><polygon points="90,62 150,62 132,100 108,100" fill="rgba(34,211,238,.14)" stroke="#22d3ee"/><circle r="4" fill="#fff" class="vz-drop1"/><circle r="4" fill="#fff" class="vz-drop2"/><circle r="4" fill="#f87171" class="vz-leak"/><text x="196" y="70" font-size="11" fill="#f87171" class="vz-blink">leak</text><text x="120" y="116" text-anchor="middle" font-size="10" fill="rgba(255,255,255,.35)">62% start · 9% finish</text></svg></div>
-                    <h3>Portale</h3>
-                    <span class="rotator-role">Funnel & Forms Analyst</span>
-                    <p>Finds exactly where visitors give up — dead forms and leaky pages — before you buy more traffic.</p>
+                    <div class="rslide">
+                        <div class="rslide-id">
+                            <div class="rmono" aria-hidden="true">🚪</div>
+                            <h3>Portale</h3>
+                            <span class="rotator-role">Funnel &amp; Forms Analyst</span>
+                            
+                            <div class="rotator-viz"><svg viewBox="0 0 240 120" aria-hidden="true"><polygon points="60,22 180,22 150,62 90,62" fill="rgba(139,92,246,.18)" stroke="#8b5cf6"/><polygon points="90,62 150,62 132,100 108,100" fill="rgba(34,211,238,.14)" stroke="#22d3ee"/><circle r="4" fill="#fff" class="vz-drop1"/><circle r="4" fill="#fff" class="vz-drop2"/><circle r="4" fill="#f87171" class="vz-leak"/><text x="196" y="70" font-size="11" fill="#f87171" class="vz-blink">leak</text><text x="120" y="116" text-anchor="middle" font-size="10" fill="rgba(255,255,255,.35)">62% start · 9% finish</text></svg></div>
+                        </div>
+                        <div class="rslide-body">
+                            <span class="rchip">10 leak checks</span>
+                            <p class="rsum">Finds the exact step where people give up — before you buy more traffic.</p>
+                            <ul class="rcaps">
+                            <li>Critical alert on a form getting traffic and no submissions</li>
+                            <li>Shows how far people get before abandoning</li>
+                            <li>Flags pages people land on and immediately leave</li>
+                            <li>Flags new leads nobody has contacted yet</li>
+                            <li>Catches booked tours with no recorded outcome</li>
+                            <li>Calls an A/B winner only with real evidence</li>
+                            </ul>
+                            <a class="rmore" href="/team/portale.html">See everything Portale does →</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="rotator-slide" role="group" aria-label="Zona">
-                    <div class="rotator-viz"><svg viewBox="0 0 240 120" aria-hidden="true"><g><rect x="62" y="16" width="34" height="24" rx="4" fill="rgba(52,211,153,.25)" stroke="#34d399" class="vz-blink" style="animation-delay:0.0s"/><rect x="102" y="16" width="34" height="24" rx="4" fill="rgba(52,211,153,.25)" stroke="#34d399" class="vz-blink" style="animation-delay:0.15s"/><rect x="142" y="16" width="34" height="24" rx="4" fill="rgba(52,211,153,.25)" stroke="#34d399" class="vz-blink" style="animation-delay:0.3s"/><rect x="62" y="46" width="34" height="24" rx="4" fill="rgba(52,211,153,.25)" stroke="#34d399" class="vz-blink" style="animation-delay:0.44999999999999996s"/><rect x="102" y="46" width="34" height="24" rx="4" fill="rgba(52,211,153,.25)" stroke="#34d399" class="vz-blink" style="animation-delay:0.6s"/><rect x="142" y="46" width="34" height="24" rx="4" fill="rgba(52,211,153,.25)" stroke="#34d399" class="vz-blink" style="animation-delay:0.75s"/><rect x="62" y="76" width="34" height="24" rx="4" fill="rgba(52,211,153,.25)" stroke="#34d399" class="vz-blink" style="animation-delay:0.8999999999999999s"/><rect x="102" y="76" width="34" height="24" rx="4" fill="rgba(52,211,153,.25)" stroke="#34d399" class="vz-blink" style="animation-delay:1.05s"/><rect x="142" y="76" width="34" height="24" rx="4" fill="rgba(248,113,113,.25)" stroke="#f87171" class="vz-alarm"/></g><text x="196" y="94" font-size="10" fill="#f87171">dead zone</text></svg></div>
-                    <h3>Zona</h3>
-                    <span class="rotator-role">Local Search Specialist</span>
-                    <p>Maps where you show up in local searches, block by block, and where you're invisible.</p>
+                    <div class="rslide">
+                        <div class="rslide-id">
+                            <img src="/portraits/zona.webp" alt="Zona — Local Search Specialist" loading="lazy" width="132" height="132">
+                            <h3>Zona</h3>
+                            <span class="rotator-role">Local Search Specialist</span>
+                            
+                            <div class="rotator-viz"><svg viewBox="0 0 240 120" aria-hidden="true"><g><rect x="62" y="16" width="34" height="24" rx="4" fill="rgba(52,211,153,.25)" stroke="#34d399" class="vz-blink" style="animation-delay:0.0s"/><rect x="102" y="16" width="34" height="24" rx="4" fill="rgba(52,211,153,.25)" stroke="#34d399" class="vz-blink" style="animation-delay:0.15s"/><rect x="142" y="16" width="34" height="24" rx="4" fill="rgba(52,211,153,.25)" stroke="#34d399" class="vz-blink" style="animation-delay:0.3s"/><rect x="62" y="46" width="34" height="24" rx="4" fill="rgba(52,211,153,.25)" stroke="#34d399" class="vz-blink" style="animation-delay:0.44999999999999996s"/><rect x="102" y="46" width="34" height="24" rx="4" fill="rgba(52,211,153,.25)" stroke="#34d399" class="vz-blink" style="animation-delay:0.6s"/><rect x="142" y="46" width="34" height="24" rx="4" fill="rgba(52,211,153,.25)" stroke="#34d399" class="vz-blink" style="animation-delay:0.75s"/><rect x="62" y="76" width="34" height="24" rx="4" fill="rgba(52,211,153,.25)" stroke="#34d399" class="vz-blink" style="animation-delay:0.8999999999999999s"/><rect x="102" y="76" width="34" height="24" rx="4" fill="rgba(52,211,153,.25)" stroke="#34d399" class="vz-blink" style="animation-delay:1.05s"/><rect x="142" y="76" width="34" height="24" rx="4" fill="rgba(248,113,113,.25)" stroke="#f87171" class="vz-alarm"/></g><text x="196" y="94" font-size="10" fill="#f87171">dead zone</text></svg></div>
+                        </div>
+                        <div class="rslide-body">
+                            <span class="rchip">Grid map + 6 checks</span>
+                            <p class="rsum">Maps where you appear in local search block by block — and where you're invisible.</p>
+                            <ul class="rcaps">
+                            <li>Scans a grid of points across your whole area</li>
+                            <li>Records your exact map rank at every point</li>
+                            <li>Names who beat you, with their reviews and rating</li>
+                            <li>Separates winnable ground from pure distance</li>
+                            <li>Flags searches one push from the map pack</li>
+                            <li>Tells you how far your visibility actually reaches</li>
+                            </ul>
+                            <a class="rmore" href="/team/zona.html">See everything Zona does →</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="rotator-slide" role="group" aria-label="Catena">
-                    <div class="rotator-viz"><svg viewBox="0 0 240 120" aria-hidden="true"><g fill="none" stroke-width="5"><ellipse cx="60" cy="60" rx="16" ry="10" stroke="#22d3ee"/><ellipse cx="92" cy="60" rx="16" ry="10" stroke="#8b5cf6"/><ellipse cx="124" cy="60" rx="16" ry="10" stroke="#22d3ee"/><ellipse cx="156" cy="60" rx="16" ry="10" stroke="#f87171" class="vz-cut"/><ellipse cx="188" cy="60" rx="16" ry="10" stroke="#8b5cf6"/></g><g class="vz-pop" style="animation-delay:1.6s"><text x="156" y="34" text-anchor="middle" font-size="11" fill="#f87171">toxic — review?</text></g><text x="120" y="106" text-anchor="middle" font-size="10" fill="rgba(255,255,255,.35)">your backlink chain, audited</text></svg></div>
-                    <h3>Catena</h3>
-                    <span class="rotator-role">Backlink Auditor</span>
-                    <p>Audits who links to your site, flags toxic domains for your review, and finds the listings you're missing.</p>
+                    <div class="rslide">
+                        <div class="rslide-id">
+                            <div class="rmono" aria-hidden="true">🔗</div>
+                            <h3>Catena</h3>
+                            <span class="rotator-role">Backlink &amp; Citation Auditor</span>
+                            
+                            <div class="rotator-viz"><svg viewBox="0 0 240 120" aria-hidden="true"><g fill="none" stroke-width="5"><ellipse cx="60" cy="60" rx="16" ry="10" stroke="#22d3ee"/><ellipse cx="92" cy="60" rx="16" ry="10" stroke="#8b5cf6"/><ellipse cx="124" cy="60" rx="16" ry="10" stroke="#22d3ee"/><ellipse cx="156" cy="60" rx="16" ry="10" stroke="#f87171" class="vz-cut"/><ellipse cx="188" cy="60" rx="16" ry="10" stroke="#8b5cf6"/></g><g class="vz-pop" style="animation-delay:1.6s"><text x="156" y="34" text-anchor="middle" font-size="11" fill="#f87171">toxic — review?</text></g><text x="120" y="106" text-anchor="middle" font-size="10" fill="rgba(255,255,255,.35)">your backlink chain, audited</text></svg></div>
+                        </div>
+                        <div class="rslide-body">
+                            <span class="rchip">10 nightly checks</span>
+                            <p class="rsum">Audits who links to you and whether your details match everywhere they appear.</p>
+                            <ul class="rcaps">
+                            <li>Tracks new and lost referring domains</li>
+                            <li>Flags toxic and spammy domains for your review</li>
+                            <li>Catches over-optimised anchor text</li>
+                            <li>Finds name, address and phone mismatches</li>
+                            <li>Flags missing tier-one listings</li>
+                            <li>Pre-fills submissions with identical details</li>
+                            </ul>
+                            <a class="rmore" href="/team/catena.html">See everything Catena does →</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="rotator-slide" role="group" aria-label="Stella">
-                    <div class="rotator-viz"><svg viewBox="0 0 240 120" aria-hidden="true"><g font-size="26"><text x="46" y="46" fill="#fbbf24">★</text><text x="76" y="46" fill="#fbbf24">★</text><text x="106" y="46" fill="#fbbf24">★</text><text x="136" y="46" fill="#fbbf24">★</text><text x="166" y="46" fill="rgba(255,255,255,.35)" class="vz-alarm">★</text></g><g class="vz-pop" style="animation-delay:1s"><rect x="48" y="62" width="144" height="34" rx="10" fill="rgba(34,211,238,.12)" stroke="#22d3ee"/><rect x="58" y="72" width="96" height="4" rx="2" fill="#22d3ee" class="vz-write"/><rect x="58" y="82" width="70" height="4" rx="2" fill="rgba(255,255,255,.35)" class="vz-write" style="animation-delay:.4s"/></g><text x="120" y="112" text-anchor="middle" font-size="10" fill="rgba(255,255,255,.35)">reply drafted — you approve</text></svg></div>
-                    <h3>Stella</h3>
-                    <span class="rotator-role">Reputation Specialist</span>
-                    <p>Watches your reviews and relationships — and drafts the replies for your approval.</p>
+                    <div class="rslide">
+                        <div class="rslide-id">
+                            <img src="/portraits/stella.webp" alt="Stella — Reputation Specialist" loading="lazy" width="132" height="132">
+                            <h3>Stella</h3>
+                            <span class="rotator-role">Reputation Specialist</span>
+                            
+                            <div class="rotator-viz"><svg viewBox="0 0 240 120" aria-hidden="true"><g font-size="26"><text x="46" y="46" fill="#fbbf24">★</text><text x="76" y="46" fill="#fbbf24">★</text><text x="106" y="46" fill="#fbbf24">★</text><text x="136" y="46" fill="#fbbf24">★</text><text x="166" y="46" fill="rgba(255,255,255,.35)" class="vz-alarm">★</text></g><g class="vz-pop" style="animation-delay:1s"><rect x="48" y="62" width="144" height="34" rx="10" fill="rgba(34,211,238,.12)" stroke="#22d3ee"/><rect x="58" y="72" width="96" height="4" rx="2" fill="#22d3ee" class="vz-write"/><rect x="58" y="82" width="70" height="4" rx="2" fill="rgba(255,255,255,.35)" class="vz-write" style="animation-delay:.4s"/></g><text x="120" y="112" text-anchor="middle" font-size="10" fill="rgba(255,255,255,.35)">reply drafted — you approve</text></svg></div>
+                        </div>
+                        <div class="rslide-body">
+                            <span class="rchip">7 nightly checks</span>
+                            <p class="rsum">Watches your rating the way a good manager would — and mines reviews for your ad copy.</p>
+                            <ul class="rcaps">
+                            <li>Flags rating drops before they become a trend</li>
+                            <li>Catches a stalled review pace</li>
+                            <li>Drafts a reply matched to each review's tone</li>
+                            <li>Blocks any reply offering a discount or refund</li>
+                            <li>Sends unhappy customers to you, not to Google</li>
+                            <li>Feeds real customer words to Annunci and Faccia</li>
+                            </ul>
+                            <a class="rmore" href="/team/stella.html">See everything Stella does →</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="rotator-slide" role="group" aria-label="Piazza">
-                    <div class="rotator-viz"><svg viewBox="0 0 240 120" aria-hidden="true"><g><rect x="40" y="30" width="18" height="18" rx="4" fill="rgba(139,92,246,.3)" stroke="#8b5cf6"/><rect x="64" y="30" width="18" height="18" rx="4" fill="rgba(139,92,246,.3)" stroke="#8b5cf6"/><rect x="88" y="30" width="18" height="18" rx="4" fill="rgba(139,92,246,.3)" stroke="#8b5cf6"/><rect x="112" y="30" width="18" height="18" rx="4" fill="rgba(139,92,246,.3)" stroke="#8b5cf6"/><rect x="136" y="30" width="18" height="18" rx="4" fill="rgba(255,255,255,.05)" stroke="#f87171" class="vz-alarm" style="animation-delay:0.0s"/><rect x="160" y="30" width="18" height="18" rx="4" fill="rgba(255,255,255,.05)" stroke="#f87171" class="vz-alarm" style="animation-delay:0.2s"/><rect x="184" y="30" width="18" height="18" rx="4" fill="rgba(255,255,255,.05)" stroke="#f87171" class="vz-alarm" style="animation-delay:0.4s"/></g><text x="172" y="64" text-anchor="middle" font-size="10" fill="#f87171">12 quiet days</text><g class="vz-pop" style="animation-delay:1.6s"><rect x="52" y="76" width="136" height="24" rx="12" fill="rgba(52,211,153,.12)" stroke="#34d399"/><text x="120" y="92" text-anchor="middle" font-size="10" fill="#34d399">best post: photos, 3-to-1</text></g></svg></div>
-                    <h3>Piazza</h3>
-                    <span class="rotator-role">Social Media Manager</span>
-                    <p>Keeps your posting honest: flags quiet weeks and tells you what actually earned attention.</p>
+                    <div class="rslide">
+                        <div class="rslide-id">
+                            <img src="/portraits/piazza.webp" alt="Piazza — Social Media Manager" loading="lazy" width="132" height="132">
+                            <h3>Piazza</h3>
+                            <span class="rotator-role">Social Media Manager</span>
+                            
+                            <div class="rotator-viz"><svg viewBox="0 0 240 120" aria-hidden="true"><g><rect x="40" y="30" width="18" height="18" rx="4" fill="rgba(139,92,246,.3)" stroke="#8b5cf6"/><rect x="64" y="30" width="18" height="18" rx="4" fill="rgba(139,92,246,.3)" stroke="#8b5cf6"/><rect x="88" y="30" width="18" height="18" rx="4" fill="rgba(139,92,246,.3)" stroke="#8b5cf6"/><rect x="112" y="30" width="18" height="18" rx="4" fill="rgba(139,92,246,.3)" stroke="#8b5cf6"/><rect x="136" y="30" width="18" height="18" rx="4" fill="rgba(255,255,255,.05)" stroke="#f87171" class="vz-alarm" style="animation-delay:0.0s"/><rect x="160" y="30" width="18" height="18" rx="4" fill="rgba(255,255,255,.05)" stroke="#f87171" class="vz-alarm" style="animation-delay:0.2s"/><rect x="184" y="30" width="18" height="18" rx="4" fill="rgba(255,255,255,.05)" stroke="#f87171" class="vz-alarm" style="animation-delay:0.4s"/></g><text x="172" y="64" text-anchor="middle" font-size="10" fill="#f87171">12 quiet days</text><g class="vz-pop" style="animation-delay:1.6s"><rect x="52" y="76" width="136" height="24" rx="12" fill="rgba(52,211,153,.12)" stroke="#34d399"/><text x="120" y="92" text-anchor="middle" font-size="10" fill="#34d399">best post: photos, 3-to-1</text></g></svg></div>
+                        </div>
+                        <div class="rslide-body">
+                            <span class="rchip">5 checks + studio</span>
+                            <p class="rsum">Keeps your posting honest and drafts the next round in your voice, per platform.</p>
+                            <ul class="rcaps">
+                            <li>Drafts for Instagram, Facebook, LinkedIn and X</li>
+                            <li>Applies each platform's real length and hashtag limits</li>
+                            <li>Generates a matching image on request</li>
+                            <li>Flags quiet weeks and an empty schedule</li>
+                            <li>Tells you which post actually earned attention</li>
+                            <li>Fingerprints the exact wording you approved</li>
+                            </ul>
+                            <a class="rmore" href="/team/piazza.html">See everything Piazza does →</a>
+                        </div>
+                    </div>
                 </div>
                 </div>
             </div>
@@ -945,9 +1232,9 @@
         var dots=document.getElementById('rotatorDots');
         for(var i=0;i<slides;i++){(function(n){var b=document.createElement('button');b.setAttribute('aria-label','Agent '+(n+1));b.addEventListener('click',function(){go(n);pauseThenResume();});dots.appendChild(b);})(i);}
         function go(n){idx=(n+slides)%slides;track.style.transform='translateX(-'+(idx*100)+'%)';for(var i=0;i<slides;i++){dots.children[i].className=i===idx?'active':'';}}
-        function start(){stop();timer=setInterval(function(){go(idx+1);},6000);}
+        function start(){stop();timer=setInterval(function(){go(idx+1);},11000);}
         function stop(){if(timer){clearInterval(timer);timer=null;}}
-        function pauseThenResume(){stop();if(resume)clearTimeout(resume);resume=setTimeout(start,9000);}
+        function pauseThenResume(){stop();if(resume)clearTimeout(resume);resume=setTimeout(start,15000);}
         var section=document.getElementById('agent-rotator');
         section.addEventListener('pointerenter',function(e){if(e.pointerType==='mouse')pauseThenResume();});
         section.addEventListener('pointerleave',function(e){if(e.pointerType==='mouse')start();});
